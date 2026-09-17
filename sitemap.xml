@@ -2,24 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://acyclic0725.github.io/zh-tw/about/</loc>
-    
-    <lastmod>2026-09-17</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://acyclic0725.github.io/en/posts/agent-and-three-laws-of-robotics/</loc>
-    
-    <lastmod>2026-09-17</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://acyclic0725.github.io/zh-cn/posts/agent-and-three-laws-of-robotics/</loc>
     
     <lastmod>2026-09-17</lastmod>
@@ -47,6 +29,15 @@
   </url>
   
   <url>
+    <loc>https://acyclic0725.github.io/zh-tw/about/</loc>
+    
+    <lastmod>2026-09-17</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://acyclic0725.github.io/zh-cn/about/</loc>
     
     <lastmod>2026-09-17</lastmod>
@@ -57,6 +48,15 @@
   
   <url>
     <loc>https://acyclic0725.github.io/</loc>
+    
+    <lastmod>2026-09-17</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://acyclic0725.github.io/en/posts/agent-and-three-laws-of-robotics/</loc>
     
     <lastmod>2026-09-17</lastmod>
     
