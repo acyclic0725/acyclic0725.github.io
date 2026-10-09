@@ -1221,7 +1221,7 @@ pre code {
   vertical-align: middle;
 }
 .links-of-author a::before {
-  background: #71c3f6;
+  background: #7effc7;
   display: inline-block;
   margin-right: 3px;
   transform: translateY(-2px);
@@ -2530,7 +2530,7 @@ header.header {
 }
 .site-title {
   font-family: var(--night-serif);
-  font-size: 23px;
+  font-size: 28px;
   font-weight: 580;
   letter-spacing: 0.025em;
 }
@@ -2774,38 +2774,6 @@ header.header {
   color: var(--night-faint);
   font-size: 11px;
 }
-.night-language-gateway {
-  padding: 25px 0 20px;
-  text-align: center;
-}
-.gateway-links {
-  display: grid;
-  gap: 12px;
-  grid-template-columns: repeat(3, 1fr);
-  margin-top: 0;
-}
-.gateway-links a {
-  align-items: center;
-  background: var(--night-paper-raised);
-  border: 1px solid var(--night-line);
-  border-radius: 13px;
-  display: grid;
-  min-height: 150px;
-  padding: 20px;
-}
-.gateway-links a:hover {
-  border-color: var(--night-accent);
-}
-.gateway-links strong {
-  color: var(--night-accent);
-  font-family: var(--night-serif);
-  font-size: 34px;
-  font-weight: 560;
-}
-.gateway-links span {
-  color: var(--night-muted);
-  font-size: 12px;
-}
 .footer {
   border-top: 1px solid var(--night-line);
   color: var(--night-faint);
@@ -2885,12 +2853,6 @@ header.header {
   }
   .post-body {
     font-size: 16.5px;
-  }
-  .gateway-links {
-    grid-template-columns: 1fr;
-  }
-  .gateway-links a {
-    min-height: 110px;
   }
 }
 @media (max-width: 480px) {
