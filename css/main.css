@@ -1221,7 +1221,7 @@ pre code {
   vertical-align: middle;
 }
 .links-of-author a::before {
-  background: #dbd5ff;
+  background: #e3ffff;
   display: inline-block;
   margin-right: 3px;
   transform: translateY(-2px);
@@ -2637,16 +2637,26 @@ header.header {
   margin-bottom: 0;
   padding-bottom: 58px;
 }
+.index.posts-expand .post-block {
+  border-bottom: 0;
+}
+.index.posts-expand .post-block:last-of-type,
+.main-inner.index {
+  padding-bottom: 0;
+}
 .posts-expand .post-header {
   margin-bottom: 34px;
   text-align: left;
 }
 .posts-expand .post-title {
-  font-family: var(--night-serif);
-  font-size: clamp(1.9rem, 4.8vw, 3rem);
+  font-family: var(--night-sans);
+  font-size: clamp(1.9rem, 4.8vw, 2.15rem);
   font-weight: 580;
   letter-spacing: -0.025em;
   line-height: 1.2;
+}
+.post.posts-expand .post-title {
+  text-align: center;
 }
 .index .post-title {
   font-size: clamp(1.65rem, 3.5vw, 2.15rem);
@@ -2771,7 +2781,7 @@ header.header {
   padding-top: 42px;
 }
 .night-comments h2 {
-  font-family: var(--night-serif);
+  font-family: var(--night-sans);
   font-size: 30px;
   font-weight: 560;
   margin: 0 0 25px;
@@ -2791,10 +2801,13 @@ header.header {
   font-size: 11px;
 }
 .footer {
-  border-top: 1px solid var(--night-line);
   color: var(--night-faint);
   margin-top: 70px;
-  padding: 32px 0 38px;
+  padding: 0 0 38px;
+}
+.footer-inner {
+  border-top: 1px solid var(--night-line);
+  padding-top: 32px;
 }
 .night-footer-languages {
   display: flex;

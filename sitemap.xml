@@ -29,15 +29,6 @@
   </url>
   
   <url>
-    <loc>https://acyclic0725.github.io/en/posts/agent-and-three-laws-of-robotics/</loc>
-    
-    <lastmod>2026-10-10</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://acyclic0725.github.io/zh-cn/posts/agent-and-three-laws-of-robotics/</loc>
     
     <lastmod>2026-10-10</lastmod>
@@ -56,7 +47,7 @@
   </url>
   
   <url>
-    <loc>https://acyclic0725.github.io/en/posts/data-risks-and-illegal-firearms/</loc>
+    <loc>https://acyclic0725.github.io/en/posts/agent-and-three-laws-of-robotics/</loc>
     
     <lastmod>2026-10-10</lastmod>
     
@@ -66,6 +57,24 @@
   
   <url>
     <loc>https://acyclic0725.github.io/zh-cn/posts/data-risks-and-illegal-firearms/</loc>
+    
+    <lastmod>2026-10-10</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://acyclic0725.github.io/en/posts/data-risks-and-illegal-firearms/</loc>
+    
+    <lastmod>2026-10-10</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://acyclic0725.github.io/en/posts/dinosaurs-and-birds/</loc>
     
     <lastmod>2026-10-10</lastmod>
     
@@ -92,7 +101,7 @@
   </url>
   
   <url>
-    <loc>https://acyclic0725.github.io/en/posts/dinosaurs-and-birds/</loc>
+    <loc>https://acyclic0725.github.io/en/posts/genesis-9000-pro-max/</loc>
     
     <lastmod>2026-10-10</lastmod>
     
@@ -102,15 +111,6 @@
   
   <url>
     <loc>https://acyclic0725.github.io/zh-tw/posts/dinosaurs-and-birds/</loc>
-    
-    <lastmod>2026-10-10</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://acyclic0725.github.io/en/posts/genesis-9000-pro-max/</loc>
     
     <lastmod>2026-10-10</lastmod>
     
