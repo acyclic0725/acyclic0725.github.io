@@ -2,18 +2,18 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://acyclic0725.github.io/zh-tw/about/</loc>
+    <loc>https://acyclic0725.github.io/zh-cn/about/</loc>
     
-    <lastmod>2026-10-09</lastmod>
+    <lastmod>2026-10-10</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://acyclic0725.github.io/zh-cn/about/</loc>
+    <loc>https://acyclic0725.github.io/zh-tw/about/</loc>
     
-    <lastmod>2026-10-09</lastmod>
+    <lastmod>2026-10-10</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -22,7 +22,7 @@
   <url>
     <loc>https://acyclic0725.github.io/en/about/</loc>
     
-    <lastmod>2026-10-09</lastmod>
+    <lastmod>2026-10-10</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -31,7 +31,7 @@
   <url>
     <loc>https://acyclic0725.github.io/en/posts/agent-and-three-laws-of-robotics/</loc>
     
-    <lastmod>2026-10-09</lastmod>
+    <lastmod>2026-10-10</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -40,7 +40,7 @@
   <url>
     <loc>https://acyclic0725.github.io/zh-cn/posts/agent-and-three-laws-of-robotics/</loc>
     
-    <lastmod>2026-10-09</lastmod>
+    <lastmod>2026-10-10</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -49,7 +49,7 @@
   <url>
     <loc>https://acyclic0725.github.io/zh-tw/posts/agent-and-three-laws-of-robotics/</loc>
     
-    <lastmod>2026-10-09</lastmod>
+    <lastmod>2026-10-10</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -58,7 +58,7 @@
   <url>
     <loc>https://acyclic0725.github.io/en/posts/data-risks-and-illegal-firearms/</loc>
     
-    <lastmod>2026-10-09</lastmod>
+    <lastmod>2026-10-10</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -67,7 +67,7 @@
   <url>
     <loc>https://acyclic0725.github.io/zh-cn/posts/data-risks-and-illegal-firearms/</loc>
     
-    <lastmod>2026-10-09</lastmod>
+    <lastmod>2026-10-10</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -76,7 +76,34 @@
   <url>
     <loc>https://acyclic0725.github.io/zh-tw/posts/data-risks-and-illegal-firearms/</loc>
     
-    <lastmod>2026-10-09</lastmod>
+    <lastmod>2026-10-10</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://acyclic0725.github.io/zh-cn/posts/dinosaurs-and-birds/</loc>
+    
+    <lastmod>2026-10-10</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://acyclic0725.github.io/en/posts/dinosaurs-and-birds/</loc>
+    
+    <lastmod>2026-10-10</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://acyclic0725.github.io/zh-tw/posts/dinosaurs-and-birds/</loc>
+    
+    <lastmod>2026-10-10</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -85,7 +112,7 @@
   <url>
     <loc>https://acyclic0725.github.io/en/posts/genesis-9000-pro-max/</loc>
     
-    <lastmod>2026-10-09</lastmod>
+    <lastmod>2026-10-10</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -94,7 +121,7 @@
   <url>
     <loc>https://acyclic0725.github.io/zh-cn/posts/genesis-9000-pro-max/</loc>
     
-    <lastmod>2026-10-09</lastmod>
+    <lastmod>2026-10-10</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -103,7 +130,7 @@
   <url>
     <loc>https://acyclic0725.github.io/zh-tw/posts/genesis-9000-pro-max/</loc>
     
-    <lastmod>2026-10-09</lastmod>
+    <lastmod>2026-10-10</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -112,7 +139,7 @@
 
   <url>
     <loc>https://acyclic0725.github.io/</loc>
-    <lastmod>2026-10-09</lastmod>
+    <lastmod>2026-10-10</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>

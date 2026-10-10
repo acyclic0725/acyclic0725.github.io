@@ -1221,7 +1221,7 @@ pre code {
   vertical-align: middle;
 }
 .links-of-author a::before {
-  background: #7effc7;
+  background: #dbd5ff;
   display: inline-block;
   margin-right: 3px;
   transform: translateY(-2px);
@@ -2453,6 +2453,8 @@ header.header {
   --link-hover-color: #8fc7ff;
   --brand-color: #f1f4f8;
   --brand-hover-color: #8fc7ff;
+  --table-row-odd-bg-color: var(--night-paper-raised);
+  --table-row-hover-bg-color: var(--night-accent-soft);
   --selection-bg: #244d78;
   --selection-color: #f2f8ff;
   --btn-default-bg: #142033;
@@ -2701,11 +2703,25 @@ header.header {
   font-size: 1.23em;
   margin-top: 1.9em;
 }
+.post-body hr {
+  background: none;
+  border: 0;
+  border-top: 1px solid var(--night-line);
+  height: 0;
+  margin: 2.5em 0;
+}
 .post-body blockquote {
   border-left: 2px solid var(--night-accent);
   color: var(--night-muted);
   margin: 2em 0;
   padding: 0.1em 0 0.1em 1.35em;
+}
+.post-body th,
+.post-body td {
+  border-color: var(--link-color);
+}
+.post-body th {
+  background: var(--night-paper-raised);
 }
 .post-button .btn {
   border-radius: 999px;
