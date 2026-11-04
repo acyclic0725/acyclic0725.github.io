@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#0d1522"><meta name="generator" content="Hexo 8.1.2">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#0d1522">
+  <meta name="google-site-verification" content="aCRle-V_orW-i7a_tUrqKkhtBeb3qX5H0MfK9_hcxas">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha256-VHqXKFhhMxcpubYf9xiWdCiojEbY9NexQ4jh8AxbvcM=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"acyclic0725.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.29.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"remove","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"找到 ${hits} 個搜索結果（用時 ${time} 毫秒）","hits":"找到 ${hits} 個搜索結果"}}</script><script src="/js/config.js" defer></script>
+
+    <meta name="description" content="本文含AI生成內容，可能存在事實錯誤、資訊遺漏、理解偏差或時效性問題。對於可能影響重要決策的資訊，請結合官方資料、原始來源或其他可靠管道進行核實。  問：竊賊和強盜在古代經濟社會中處於什麼地位，產生了哪些影響和作用？ 答：從經濟史和社會史的角度看，竊賊和強盜並不只是古代社會的犯罪者，也是財富分配、人口流動、社會秩序和國家權力相互作用的一部分。 他們通常不直接創造財富，卻參與了財富的非自願轉移；他">
+<meta property="og:type" content="article">
+<meta property="og:title" content="數位時代的盜賊">
+<meta property="og:url" content="https://acyclic0725.github.io/zh-tw/posts/bandits-in-the-digital-age/">
+<meta property="og:site_name" content="Night Flighter">
+<meta property="og:description" content="本文含AI生成內容，可能存在事實錯誤、資訊遺漏、理解偏差或時效性問題。對於可能影響重要決策的資訊，請結合官方資料、原始來源或其他可靠管道進行核實。  問：竊賊和強盜在古代經濟社會中處於什麼地位，產生了哪些影響和作用？ 答：從經濟史和社會史的角度看，竊賊和強盜並不只是古代社會的犯罪者，也是財富分配、人口流動、社會秩序和國家權力相互作用的一部分。 他們通常不直接創造財富，卻參與了財富的非自願轉移；他">
+<meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2026-11-04T05:54:38.000Z">
+<meta property="article:modified_time" content="2026-11-04T06:05:04.559Z">
+<meta property="article:author" content="Eric Johnson">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://acyclic0725.github.io/zh-tw/posts/bandits-in-the-digital-age/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://acyclic0725.github.io/zh-tw/posts/bandits-in-the-digital-age/","path":"/zh-tw/posts/bandits-in-the-digital-age/","title":"數位時代的盜賊"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>數位時代的盜賊 | Night Flighter</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-579D5NTBWN"></script>
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-579D5NTBWN","only_pageview":false,"measure_protocol_api_secret":null}</script>
+  <script src="/js/third-party/analytics/google-analytics.js" defer></script>
+
+
+
+
+
+
+
+
+  
+<script src="/js/utils.js" defer></script><script src="/js/motion.js" defer></script><script src="/js/next-boot.js" defer></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+<link rel="alternate" hreflang="zh-CN" href="https://acyclic0725.github.io/zh-cn/posts/bandits-in-the-digital-age/">
+<link rel="alternate" hreflang="zh-TW" href="https://acyclic0725.github.io/zh-tw/posts/bandits-in-the-digital-age/">
+<link rel="alternate" hreflang="en" href="https://acyclic0725.github.io/en/posts/bandits-in-the-digital-age/">
+<link rel="alternate" hreflang="x-default" href="https://acyclic0725.github.io/en/posts/bandits-in-the-digital-age/">
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/atom.xml" title="Night Flighter" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Night Flighter</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜尋" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+  </ul>
+</nav>
+
+
+
+
+<nav class="night-nav" aria-label="閱讀語言">
+  <div class="night-nav-links">
+    <a href="/zh-tw/">首頁</a>
+    <a href="/zh-tw/archives/">歸檔</a>
+    <a href="/zh-tw/about/">關於</a>
+  </div>
+  <details class="night-lang-menu">
+    <summary aria-label="閱讀語言">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+        <circle cx="12" cy="12" r="9" />
+        <ellipse cx="12" cy="12" rx="4" ry="9" />
+        <path d="M3 12h18" />
+      </svg>
+      <small>正體</small>
+    </summary>
+    <div>
+      <a href="/zh-cn/posts/bandits-in-the-digital-age/" lang="zh-CN">
+        <span>简体中文</span><small>简</small>
+      </a>
+      <a href="/zh-tw/posts/bandits-in-the-digital-age/" lang="zh-TW" aria-current="page">
+        <span>正體中文</span><small>正</small>
+      </a>
+      <a href="/en/posts/bandits-in-the-digital-age/" lang="en">
+        <span>English</span><small>EN</small>
+      </a>
+    </div>
+  </details>
+</nav>
+
+</header>
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://acyclic0725.github.io/zh-tw/posts/bandits-in-the-digital-age/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Eric Johnson">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Night Flighter">
+      <meta itemprop="description" content="夜晚的思考">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="數位時代的盜賊 | Night Flighter">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          數位時代的盜賊
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+
+      <time title="創建時間：2026-11-04 13:54:38" itemprop="dateCreated datePublished" datetime="2026-11-04T13:54:38+08:00">2026-11-04</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><blockquote>
+<p>本文含AI生成內容，可能存在事實錯誤、資訊遺漏、理解偏差或時效性問題。對於可能影響重要決策的資訊，請結合官方資料、原始來源或其他可靠管道進行核實。</p>
+</blockquote>
+<p>問：竊賊和強盜在古代經濟社會中處於什麼地位，產生了哪些影響和作用？</p>
+<p>答：從經濟史和社會史的角度看，竊賊和強盜並不只是古代社會的犯罪者，也是財富分配、人口流動、社會秩序和國家權力相互作用的一部分。</p>
+<p>他們通常不直接創造財富，卻參與了財富的非自願轉移；他們破壞經濟秩序，但也間接促使社會發展治安、運輸保障和財產保護制度；他們可能是社會危機的產物，也可能發展為能夠影響地方政治的武裝力量。</p>
+<p>因此，理解古代盜賊，不能只從道德上的善惡出發，還要考察他們在當時經濟社會中的實際位置。</p>
+<h3 id="一、他們處於社會經濟結構的什麼位置？"><a href="#一、他們處於社會經濟結構的什麼位置？" class="headerlink" title="一、他們處於社會經濟結構的什麼位置？"></a>一、他們處於社會經濟結構的什麼位置？</h3><p>首先需要區分三類人。</p>
+<table>
+<thead>
+<tr>
+<th>類型</th>
+<th>主要活動</th>
+<th>經濟社會地位</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>普通竊賊</td>
+<td>偷盜糧食、錢財、牲畜和貨物</td>
+<td>往往分散活動，可能把偷盜作為臨時或長期收入來源</td>
+</tr>
+<tr>
+<td>職業性強盜</td>
+<td>攔路搶劫、綁架勒索、結夥劫掠</td>
+<td>依靠暴力獲取收入，部分形成穩定團夥</td>
+</tr>
+<tr>
+<td>組織化盜匪</td>
+<td>控制道路、村寨或局部地區，收取錢財</td>
+<td>可能發展為地方武裝或非正式權力組織</td>
+</tr>
+</tbody></table>
+<p>這些人並不必然屬於一個固定社會階層。貧困農民、失業勞工、流民、逃兵可能加入盜匪，某些富有的地方勢力也可能資助或利用他們。</p>
+<p>歷史學家 Robert J. Antony 對清代廣東的研究發現，不少盜匪原本是有家庭的勞動者，因就業不足和生活困境而間歇性參與盜竊。他們不是完全脫離正常社會的獨立群體。<a target="_blank" href="https://academic.oup.com/hong-kong-scholarship-online/book/30576/chapter-abstract/258210326" rel="noopener">Oxford Academic</a></p>
+<p>更重要的是，古代官方所稱的「盜賊」有時還包括反抗官府的飢民和地方武裝，不完全等同於今天刑法意義上的竊盜犯。<a target="_blank" href="https://cssn.cn/lsx/lsx_zgs/202210/t20221024_5552492.shtml" rel="noopener">中國社會科學網</a></p>
+<h3 id="二、他們對古代經濟產生了什麼影響？"><a href="#二、他們對古代經濟產生了什麼影響？" class="headerlink" title="二、他們對古代經濟產生了什麼影響？"></a>二、他們對古代經濟產生了什麼影響？</h3><h4 id="1-參與財富再分配，但不等於創造財富"><a href="#1-參與財富再分配，但不等於創造財富" class="headerlink" title="1. 參與財富再分配，但不等於創造財富"></a>1. 參與財富再分配，但不等於創造財富</h4><p>盜竊和搶劫本質上是以非自願方式改變財富的占有者。</p>
+<p>例如，一個強盜搶走商人的一百兩銀子，隨後把銀子用於購買糧食、酒肉或其他生活用品。原本屬於商人的購買力，轉移到了強盜及其交易對象手中。</p>
+<p><span id="more"></span></p>
+<p>從經濟角度看，這產生了兩種效果：</p>
+<p>一方面，原有財富被重新分配，贓物透過銷贓市場重新進入商品流通；另一方面，盜竊本身沒有增加商品總量，而且可能伴隨傷亡、損毀、停工和交易中斷。</p>
+<p>如果搶劫主要針對富人，確實可能在局部出現財富向窮人轉移的現象。但不能因此認為盜賊普遍具有劫富濟貧的作用。貧窮者、孤立的旅人和缺乏保護的家庭，同樣可能成為受害者。</p>
+<h4 id="2-增加經濟活動的成本"><a href="#2-增加經濟活動的成本" class="headerlink" title="2. 增加經濟活動的成本"></a>2. 增加經濟活動的成本</h4><p>假設兩個城市之間存在一條商路，貨物價值為一千兩銀子。</p>
+<p>沒有嚴重盜匪威脅時，商人可能只需要支付運輸費用；如果沿途經常發生搶劫，商人就需要增加護衛、繞道、結伴同行，甚至支付保護費。</p>
+<p>這些新增支出都不是商品生產本身所必需的成本。</p>
+<p>因此，盜匪活動頻繁會提高商品運輸和交換的費用，減少某些遠距離交易的吸引力，並削弱人們進行長期投資的意願。</p>
+<p>不過，另一個有意思的結果是：盜匪威脅也增加了人們對安全服務的需求。</p>
+<p>例如，明清時期逐漸發展的鏢局，便承擔了護送財貨、管理運輸風險、約定失鏢賠償等業務。它們在一定意義上成為商業運輸的安全保障機制。<a target="_blank" href="https://paper.people.com.cn/rmrb/pc/content/202606/15/content_30163037.html" rel="noopener">人民網紙媒</a></p>
+<p>這不意味著盜匪創造了經濟繁榮，而是社會為了因應風險，不得不發展相應的防護服務。</p>
+<h4 id="3-構成地下經濟的一部分"><a href="#3-構成地下經濟的一部分" class="headerlink" title="3. 構成地下經濟的一部分"></a>3. 構成地下經濟的一部分</h4><p>組織化盜匪通常不是單純地搶劫和消費。</p>
+<p>他們可能擁有銷贓者、情報提供者、運輸人員、窩藏者和腐敗官吏等合作網絡。</p>
+<p>Antony 對清代廣東的研究表明，盜匪與地方社會之間存在複雜聯繫，參與者包括普通居民、衙役、士紳、士兵等。某些團夥還參與走私、賭博及其他非法經營。<a target="_blank" href="https://academic.oup.com/hong-kong-scholarship-online/book/30576/chapter-abstract/258211646" rel="noopener">Oxford Academic</a> <a target="_blank" href="https://academic.oup.com/hong-kong-scholarship-online/book/30576/chapter-abstract/258210972" rel="noopener">Oxford Academic</a></p>
+<p>因此，古代地下經濟和正常經濟之間，並不存在絕對清晰的隔離。</p>
+<h3 id="三、他們在社會治理和政治結構中發揮什麼作用？"><a href="#三、他們在社會治理和政治結構中發揮什麼作用？" class="headerlink" title="三、他們在社會治理和政治結構中發揮什麼作用？"></a>三、他們在社會治理和政治結構中發揮什麼作用？</h3><p>這一點可能比直接經濟影響更深遠。</p>
+<h4 id="1-反映社會經濟體系的失衡"><a href="#1-反映社會經濟體系的失衡" class="headerlink" title="1. 反映社會經濟體系的失衡"></a>1. 反映社會經濟體系的失衡</h4><p>飢荒、戰爭、沉重的賦役以及就業機會不足，都會使部分人失去維持生計的正常管道。</p>
+<p>西漢宣帝時期，渤海一帶因連續飢荒出現大量盜賊。太守龔遂並非只依靠武力鎮壓，而是要求願意放棄兵器、重新耕作的人得到寬待，並透過開倉濟貧等措施恢復生計。</p>
+<p>《漢書·循吏傳》記載，人們於是逐漸放棄兵器、恢復農耕。<a target="_blank" href="https://ctext.org/han-shu/xun-li-zhuan/ens" rel="noopener">Chinese Text Project</a></p>
+<p>這個案例說明，部分盜匪行為是經濟困境的結果。改善生活條件，有時比單純增加刑罰更能消除其生存基礎。</p>
+<p>但這不能概括所有盜匪，尤其不能解釋那些以長期暴力掠奪為職業的組織。</p>
+<h4 id="2-在國家權力薄弱時形成非正式權力"><a href="#2-在國家權力薄弱時形成非正式權力" class="headerlink" title="2. 在國家權力薄弱時形成非正式權力"></a>2. 在國家權力薄弱時形成非正式權力</h4><p>當官府無法有效保護商路、村莊和市場時，某些武裝團夥可能實際控制道路和地方資源。</p>
+<p>他們可以向居民收取錢財，規定通行條件，甚至決定誰能夠在某一區域經營。</p>
+<p>這時，強盜已經不僅是偶爾實施搶劫的人，而具有某些地方統治者的特徵。</p>
+<p>經濟學家曼瑟·奧爾森曾提出一個很有啟發性的理論模型：</p>
+<ul>
+<li>流寇型掠奪者：不斷轉移地點，傾向於盡可能迅速地搶走財富。</li>
+<li>坐地型掠奪者：長期控制某一地區，為了持續獲取收入，反而可能有動力限制其他掠奪者、維護一定程度的秩序。</li>
+</ul>
+<p>奧爾森認為，從純粹經濟誘因出發，後者可能逐步形成徵收稅費和提供公共秩序的機制。<a target="_blank" href="https://www.cambridge.org/core/journals/american-political-science-review/article/abs/dictatorship-democracy-and-development/2776079374BF1E318DF928EA79EF2294" rel="noopener">Cambridge Core</a></p>
+<p>這是理解暴力與國家形成關係的一種理論，而不是說古代國家都是強盜建立的，更不意味著依靠武力收取保護費就具有正當性。</p>
+<h4 id="3-推動法律和地方治安制度演變"><a href="#3-推動法律和地方治安制度演變" class="headerlink" title="3. 推動法律和地方治安制度演變"></a>3. 推動法律和地方治安制度演變</h4><p>盜匪的存在迫使國家思考兩個問題：如何保護財產，以及如何防止民眾走向犯罪和反抗。</p>
+<p>中國古代對盜賊數量的統計，曾是地方官員政績考核的一部分。清代地方政府也透過整頓商業秩序、打擊勒索和清理地方惡勢力等方式保護貿易。<a target="_blank" href="https://cssn.cn/lsx/lsx_zgs/202210/t20221024_5552492.shtml" rel="noopener">中國社會科學網</a> <a target="_blank" href="https://iqh.ruc.edu.cn/old/qdshsyj/shyjj/cd8096cab6d24a07a7e27be5ea7ac909.htm" rel="noopener">中國人民大學清史研究所</a></p>
+<p>因此，盜匪與國家之間不僅存在對抗，也存在一種間接的制度互動：盜匪活動暴露治理缺陷，促使政府與地方社會尋找新的安全保障方式。</p>
+<h3 id="四、盜賊是否也具有社會反抗和調節作用？"><a href="#四、盜賊是否也具有社會反抗和調節作用？" class="headerlink" title="四、盜賊是否也具有社會反抗和調節作用？"></a>四、盜賊是否也具有社會反抗和調節作用？</h3><p>這是歷史學界長期討論的問題。</p>
+<p>歷史學家埃里克·霍布斯鮑姆曾提出「社會盜匪」（social banditry）的概念。</p>
+<p>在這一理論中，某些被國家認定為罪犯的人，在當地百姓眼中卻可能是反抗壓迫、伸張正義的英雄。</p>
+<p>歐洲的羅賓漢傳說、中國文學中的梁山好漢，都體現了這種文化想像。</p>
+<p>但是，被民眾塑造成英雄，與真實地幫助窮人，是兩回事。</p>
+<p>研究者 Kim A. Wagner 等人對社會盜匪理論提出過批評，指出關於盜匪的傳說、官方記載和他們的實際行為之間，往往有很大差別。<a target="_blank" href="https://www.cambridge.org/core/services/aop-cambridge-core/content/view/F4AFDA95450FCDED1685C3D21AC3C5C8/S0018246X07006103a.pdf/thuggee_and_social_banditry_reconsidered.pdf" rel="noopener">Cambridge Core</a></p>
+<p>因此，盜匪有時確實可能成為社會反抗的組織基礎，但不能把一般的掠奪活動全部理解為對不平等的糾正。</p>
+<h3 id="五、從整個經濟社會來看，他們究竟起了什麼作用？"><a href="#五、從整個經濟社會來看，他們究竟起了什麼作用？" class="headerlink" title="五、從整個經濟社會來看，他們究竟起了什麼作用？"></a>五、從整個經濟社會來看，他們究竟起了什麼作用？</h3><p>可以把這些影響歸納為幾個相互關聯的方面。</p>
+<table>
+<thead>
+<tr>
+<th>影響領域</th>
+<th>具體表現</th>
+<th>綜合性質</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>財富分配</td>
+<td>非自願轉移財富，贓物重新流通</td>
+<td>具有再分配效果，但通常損害財產權</td>
+</tr>
+<tr>
+<td>生產與貿易</td>
+<td>增加風險和成本，破壞生產、投資預期</td>
+<td>主要為負面</td>
+</tr>
+<tr>
+<td>勞動力與生計</td>
+<td>為部分失業、流動人口提供非法收入來源</td>
+<td>反映經濟結構中的脆弱性</td>
+</tr>
+<tr>
+<td>社會組織</td>
+<td>形成幫派、地下交易網絡和非正式關係</td>
+<td>影響地方社會結構</td>
+</tr>
+<tr>
+<td>國家治理</td>
+<td>推動治安、賑濟、法律和商業保障措施</td>
+<td>間接促進制度調整</td>
+</tr>
+<tr>
+<td>政治變遷</td>
+<td>某些武裝團夥轉化為反叛力量或地方勢力</td>
+<td>取決於歷史環境</td>
+</tr>
+</tbody></table>
+<p>這裡最重要的是區分經濟功能與經濟貢獻。</p>
+<p>一種活動可以實際承擔財富轉移、風險分配或組織人口的功能，卻未必對整個社會有淨收益。</p>
+<p>同樣，某些盜匪後來參與了政治變革，也不代表其早期劫掠行為本身具有積極作用。</p>
+<hr>
+<p>問：在現代社會，人們普遍使用銀行儲蓄和數位資產，實體盜竊和搶劫變得困難，電信詐騙和勒索病毒的組織是否用另一種形式占據了與竊賊強盜相同的生態位？造成這一群體存在的根本原因是什麼？</p>
+<p>答：在「利用他人的脆弱性，透過盜取、欺騙或脅迫獲得財富」這個意義上，是的：電信詐騙、帳戶盜用和勒索軟體組織，延續了傳統竊賊、騙子、強盜和綁匪的部分經濟角色。不過，這種延續不能理解成「過去的扒手都變成了駭客」，也不能理解成社會始終存在一個數量固定、只是不斷更換工具的犯罪群體。</p>
+<p>「生態位」這個比喻最有價值的地方，在於追問：<strong>這些組織依靠什麼資源生存，利用哪些制度缺口獲利，又為什麼能夠不斷招募新人、複製自身？</strong> 沿著這個方向看，問題比「有人貪婪，所以有人犯罪」要深一層。</p>
+<h3 id="一、財富數位化之後，爭奪的重點轉向了控制權"><a href="#一、財富數位化之後，爭奪的重點轉向了控制權" class="headerlink" title="一、財富數位化之後，爭奪的重點轉向了控制權"></a>一、財富數位化之後，爭奪的重點轉向了控制權</h3><p>你提出的前提有一定依據：現金減少，確實可能壓縮某些傳統犯罪的機會。例如，一項研究利用美國密蘇里州各郡福利支付電子化的實施時間差異，發現現金流通減少與入室盜竊、財物盜竊等犯罪下降有關。但這一結果本身，並不能證明減少的犯罪隨後都轉化成了網路詐騙。<a target="_blank" href="https://www.iza.org/index.php/en/publications/dp/8402/less-cash-less-crime-evidence-from-the-electronic-benefit-transfer-program" rel="noopener">IZA</a></p>
+<p>可以把現代財產保護分成三個問題：<strong>錢存在哪裡，誰有權動用，以及有權動用的人根據什麼資訊作出決定。</strong> 銀行保管解決了部分實物安全問題，身分驗證保護了部分操作權限，但「本人操作」和「在真實資訊下作出的決定」仍然是兩回事。英國支付系統監管機構所說的「授權轉帳詐騙」，就是受害者受到欺騙後，親自把錢轉給了詐騙者。<a target="_blank" href="https://www.psr.org.uk/our-work/app-scams/" rel="noopener">PSR</a></p>
+<p>按獲取財富的機制類比，可以看到三個不同的位置：</p>
+<table>
+<thead>
+<tr>
+<th>現代犯罪形式</th>
+<th>與傳統犯罪的近似關係</th>
+<th>主要侵犯什麼</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>盜用帳戶、支付憑證</td>
+<td>竊賊偷走財物或鑰匙</td>
+<td>財產的存取權、操作權</td>
+</tr>
+<tr>
+<td>電信詐騙、網路詐騙</td>
+<td>騙子冒充熟人、商人或官員詐取財物</td>
+<td>作出財產處分決定所依賴的資訊與信任</td>
+</tr>
+<tr>
+<td>勒索軟體、資料勒索</td>
+<td>綁架、敲詐、以毀壞財產相威脅</td>
+<td>資料機密性、系統可用性，以及正常經營的能力</td>
+</tr>
+</tbody></table>
+<p>這些只是經濟機制上的對應，並非各地法律罪名的一一對應。現實中的網路犯罪也經常把盜取資料、身分冒用、詐騙和勒索連接起來。<a target="_blank" href="https://www.europol.europa.eu/media-press/newsroom/news/steal-deal-repeat-cybercriminals-cash-in-your-data" rel="noopener">Europol</a></p>
+<p>其中兩個變化尤其重要。</p>
+<p><strong>詐騙可以在銀行系統正常運作的情況下成功。</strong> 銀行可能準確識別了付款人的身分，也準確執行了指令，但付款人相信的「家屬急需用錢」「供應商更換帳戶」或者「安全投資機會」是假的。從這個角度看，詐騙攻擊的是付款決定的形成過程。<a target="_blank" href="https://www.fca.org.uk/consumers/fraudulent-payments" rel="noopener">FCA</a></p>
+<p><strong>勒索者甚至不必先接觸你的錢。</strong> 他們可以讓企業無法使用系統，或者以公布敏感資料相威脅，再迫使受害者動用原本安全存放的資金。美國國家安全局與合作機構發布的防勒索指南就明確指出，攻擊者既會加密檔案，也會竊取資料並威脅公開。<a target="_blank" href="https://www.nsa.gov/Press-Room/Press-Releases-Statements/Press-Release-View/Article/3403814/stopransomware-guide-released-by-nsa-and-partners/" rel="noopener">National Security Agency</a></p>
+<p>因此，用一句話概括這種遷移就是：<strong>從搶奪財富的載體，擴展到奪取支配財富、信任和正常生活的能力。</strong></p>
+<h3 id="二、相似的經濟角色，出現了不同的規模和組織方式"><a href="#二、相似的經濟角色，出現了不同的規模和組織方式" class="headerlink" title="二、相似的經濟角色，出現了不同的規模和組織方式"></a>二、相似的經濟角色，出現了不同的規模和組織方式</h3><p>數位犯罪並非只是在螢幕上重演街頭犯罪。它改變了作案規模擴張的可能性，也改變了犯罪者之間的分工。</p>
+<p>傳統的攔路搶劫通常要求實施者接近受害者，承擔現場被認出、遭遇反抗和被捕的風險。網路犯罪則能夠跨地區接觸目標，把實施地點、受害者所在地和資金流經地分開。關於網路犯罪經濟學的研究，早已把這種跨境轉移能力和執法協調困難列為核心問題。<a target="_blank" href="https://www.aeaweb.org/articles?id=10.1257/jep.23.3.3" rel="noopener">American Economic Association</a></p>
+<p>由此可以作出一個經濟推論：<strong>即便單次嘗試的成功率不高，只要接觸大量目標的成本夠低，整體活動仍可能有利可圖。</strong> 這意味著數位化不僅轉移了既有機會，還可能創造出過去因成本太高而不值得實施的犯罪機會。</p>
+<p>與此同時，犯罪也能形成專業分工。取得資料的人、開發工具的人、實施欺騙的人和負責轉移犯罪收益的人，不必屬於同一個緊密團夥。國際刑警組織 2026 年的金融詐騙評估指出，犯罪網絡正在與專業洗錢團夥合作，並透過共享技術和專業能力擴大活動。<a target="_blank" href="https://www.interpol.int/News-and-Events/News/2026/INTERPOL-report-warns-of-increasingly-sophisticated-global-financial-fraud-threat?trk=public_post_comment-text&amp;utm_source=chatgpt.com" rel="noopener">Interpol</a></p>
+<p>勒索軟體也存在類似的服務化結構：工具開發者向其他實施者提供服務，入侵存取權限可以由不同參與者提供。這降低了某些參與者必須掌握全部技術的門檻。<a target="_blank" href="https://www.cyber.gc.ca/en/guidance/ransomware-threat-outlook-2025-2027" rel="noopener">Canadian Centre for Cyber Security</a></p>
+<p>所以，現代的「生態位」更接近<strong>相互連接的犯罪產業鏈</strong>。分析它為什麼存在，需要同時解釋作案者、組織者和配套服務為什麼能夠獲利。</p>
+<h3 id="三、根本原因：侵犯他人權利，有時能獲得較高的私人收益，而代價沒有充分落到實施者身上"><a href="#三、根本原因：侵犯他人權利，有時能獲得較高的私人收益，而代價沒有充分落到實施者身上" class="headerlink" title="三、根本原因：侵犯他人權利，有時能獲得較高的私人收益，而代價沒有充分落到實施者身上"></a>三、根本原因：侵犯他人權利，有時能獲得較高的私人收益，而代價沒有充分落到實施者身上</h3><p>我認為最有解釋力的概括是：</p>
+<blockquote>
+<p><strong>當奪取他人資源的預期私人收益，高於實施成本、追責風險和放棄合法機會的代價時，部分人就有動力進入；當這種機會可以被組織化複製時，它就可能形成持續存在的行業。</strong></p>
+</blockquote>
+<p>這是一種簡化的誘因模型，不是對每個犯罪者心理的完整描述。可以寫成：</p>
+<blockquote>
+<p>犯罪預期淨收益 ≈ 成功機率 × 可兌現收益 − 實施成本 − 被追責機率 × 追責代價</p>
+</blockquote>
+<p>還需要考慮合法收入的替代機會、道德約束、社會關係，以及有些參與者並非自願行動。這個模型的用途，是幫助區分「為什麼有動機」和「為什麼動機能夠變成穩定的組織」。</p>
+<p>具體而言，有四個機制尤其關鍵。</p>
+<h4 id="1-創造財富的成本，與奪取財富控制權的成本不對稱"><a href="#1-創造財富的成本，與奪取財富控制權的成本不對稱" class="headerlink" title="1. 創造財富的成本，與奪取財富控制權的成本不對稱"></a>1. 創造財富的成本，與奪取財富控制權的成本不對稱</h4><p>這是一個很基礎的經濟問題：一個人累積存款，可能需要多年勞動；但讓這筆存款改變歸屬，並不需要重新完成那些勞動。合法支付系統本來就要讓財產轉移變得方便，犯罪者則試圖利用同一套轉移能力。</p>
+<p>同樣，一套經營系統的價值，來自大量人員、設備、知識和客戶關係的長期累積。勒索者無需創造這些價值，只要能破壞某個關鍵依賴，就可能取得施壓能力。加拿大網路安全中心的評估明確指出，勒索攻擊的影響包括營運中斷、供應鏈延誤和復原成本，遠遠不限於贖金本身。<a target="_blank" href="https://www.cyber.gc.ca/en/guidance/ransomware-threat-outlook-2025-2027" rel="noopener">Canadian Centre for Cyber Security</a></p>
+<p>由此可見，<strong>財富越依賴複雜的協作系統，保護財富就越不能只理解為「把錢藏好」。</strong></p>
+<h4 id="2-社會必須使用信任，而核驗資訊始終需要成本"><a href="#2-社會必須使用信任，而核驗資訊始終需要成本" class="headerlink" title="2. 社會必須使用信任，而核驗資訊始終需要成本"></a>2. 社會必須使用信任，而核驗資訊始終需要成本</h4><p>設想一個完全不相信任何人的社會：每次接到客戶電話、收到同事請求、購買商品，都必須獨立核實對方身分、全部背景和每項承諾。這樣的社會很難正常運作。</p>
+<p>現實中的合作因此需要使用有限的資訊、信譽和既有關係。詐騙者利用的，正是這些原本讓合作成為可能的機制。國際刑警組織對社交工程詐騙的概括，就是透過利用人的信任來獲取錢財或機密資訊。<a target="_blank" href="https://www.interpol.int/News-and-Events/News/2026/Over-5-800-arrests-USD-293-million-intercepted-in-global-fraud-bust" rel="noopener">Interpol</a></p>
+<p>所以，把受害原因一概歸結為「貪心」或「愚蠢」，會遺漏重要機制。有人追求收益，也有人只是相信熟人、履行工作職責、尋找就業機會，或者試圖保護自己的帳戶；這些正常需要，都可能被虛假資訊利用。冒充詐騙、感情詐騙以及以虛假工作機會誘騙人員，均有官方調查紀錄。<a target="_blank" href="https://www.psr.org.uk/our-work/app-scams/" rel="noopener">PSR</a></p>
+<p>這也說明，僅靠讓每個人「永遠保持警惕」，很難承擔全部防護任務。</p>
+<h4 id="3-犯罪活動可以跨境組合，治理能力卻存在邊界和差異"><a href="#3-犯罪活動可以跨境組合，治理能力卻存在邊界和差異" class="headerlink" title="3. 犯罪活動可以跨境組合，治理能力卻存在邊界和差異"></a>3. 犯罪活動可以跨境組合，治理能力卻存在邊界和差異</h4><p>可以設想：受害者在甲地，實施者在乙地，伺服器在丙地，資金流經另外幾個地區。即使每個地方都禁止詐騙，調查、蒐證、凍結資金和逮捕仍需要不同機構協調。網路犯罪經濟學研究把這種跨境性視為執法與集體行動的重要難題。<a target="_blank" href="https://www.aeaweb.org/articles?id=10.1257/jep.23.3.3" rel="noopener">American Economic Association</a></p>
+<p>此外，一些地區存在監管薄弱、法律執行不一致，以及洗錢、腐敗與非法經營相互支持的問題。聯合國毒品和犯罪問題辦公室 2026 年關於詐騙活動的分析，就指出數位產業擴張快於監管、監督不足等條件可能被犯罪網絡利用。<a target="_blank" href="https://www.unodc.org/southasia/en/frontpage/2026/September/south-asia_-trafficked-to-scam-an-emerging-threat.html" rel="noopener">UNODC</a></p>
+<p>從中可以推導出：<strong>一個社會在本地壓低了犯罪機會，並不自動意味著其居民不再受到外地犯罪者的侵害。</strong> 安全既是本地治理問題，也成了跨境協調問題。</p>
+<h4 id="4-能夠降低風險的人，不一定承擔最多損失"><a href="#4-能夠降低風險的人，不一定承擔最多損失" class="headerlink" title="4. 能夠降低風險的人，不一定承擔最多損失"></a>4. 能夠降低風險的人，不一定承擔最多損失</h4><p>這一點往往比單純的技術漏洞更深。</p>
+<p>設想某個平台加強身分核驗需要自己投入成本，但核驗不足導致的詐騙損失主要由使用者承擔。僅從短期財務誘因看，平台就可能缺乏足夠的投入動力。類似地，設計支付系統、保管個人資料和處理可疑交易的各方，也可能承擔不同的成本與風險。</p>
+<p>這是一個假設性的例子，但它所體現的機制，是資訊安全經濟學長期研究的重點：<strong>安全程度既取決於技術設計，也取決於各參與者的利益是否一致。</strong> <a target="_blank" href="https://pubmed.ncbi.nlm.nih.gov/17068253/" rel="noopener">PubMed</a></p>
+<p>因此，「系統為什麼仍有漏洞」有時需要追問：誰有能力修補？誰付錢？損失最終由誰承擔？不能把所有失敗都歸因於某個使用者點錯了一次按鈕。</p>
+<h3 id="四、貧困和不平等能解釋一部分，卻不足以解釋整個群體"><a href="#四、貧困和不平等能解釋一部分，卻不足以解釋整個群體" class="headerlink" title="四、貧困和不平等能解釋一部分，卻不足以解釋整個群體"></a>四、貧困和不平等能解釋一部分，卻不足以解釋整個群體</h3><p>貧困、債務和缺少合法機會，可以作為理解某些人為何容易被招募或誘騙的線索。但即使提供了基本生活保障，也不能在邏輯上保證一切逐利犯罪消失：只要仍然存在獲取更多財富的機會，某些人就可能願意侵犯他人權利。反過來，生活困難本身也不能推出一個人會犯罪。</p>
+<p>更重要的是，<strong>組織者和第一線執行者未必具有相同動機，更不能自動視為同一類人。</strong></p>
+<p>在詐騙園區中，確實存在被虛假徵才誘騙、被限制自由、遭受暴力，並被迫實施詐騙的人。國際刑警組織明確區分了兩類受害者：一類是被強迫作案的人，另一類是被他們聯繫並騙取錢財的人；同時也強調，並非園區內每個實施詐騙的人都屬於人口販運受害者。<a target="_blank" href="https://www.interpol.int/News-and-Events/News/2025/INTERPOL-releases-new-information-on-globalization-of-scam-centres" rel="noopener">Interpol</a></p>
+<p>這意味著，同一個犯罪組織內部可能同時存在逐利的組織者、自願參與者和受脅迫的執行者。用「他們都是窮人走投無路」或「他們都是天生的壞人」概括，都會妨礙理解，也會妨礙準確追責。</p>
+<p>你所問的「為什麼這一群體長期存在」，因此還需要與「為什麼某個具體的人參與犯罪」分開：</p>
+<p><strong>前者關乎機會、利潤、配套網絡和治理條件；後者還涉及個人選擇、經歷、社會關係與是否受到脅迫。</strong></p>
+<h3 id="五、「生態位存在」不意味著它必不可少，也不意味著犯罪總量守恆"><a href="#五、「生態位存在」不意味著它必不可少，也不意味著犯罪總量守恆" class="headerlink" title="五、「生態位存在」不意味著它必不可少，也不意味著犯罪總量守恆"></a>五、「生態位存在」不意味著它必不可少，也不意味著犯罪總量守恆</h3><p>這個比喻最容易產生的誤解，是認為：既然社會有財富，就必然需要一定數量的掠奪者；一種犯罪被壓制，另一種犯罪就一定等量增長。</p>
+<p>現有犯罪轉移研究不支持這種簡單的「守恆」想像。相關綜述發現，預防措施並不必然把犯罪趕到其他地方，有時還會讓周邊區域同時受益。不過，這些研究對不同形式轉移的涵蓋並不完整，不能據此斷言網路犯罪不會發生轉移。<a target="_blank" href="https://link.springer.com/article/10.1007/s11292-014-9209-4" rel="noopener">Springer</a></p>
+<p>沿著前面的分析，可以更準確地理解兩種情況。</p>
+<p>當犯罪收益、資金轉移網絡和組織能力基本保留時，僅清除部分執行者，新的參與者仍可能被吸引或強迫進入。<strong>這可以解釋組織為何可能「換一批人繼續做」，卻不意味著它永遠消滅不了。</strong></p>
+<p>相反，降低成功後的可兌現收益、提高被識別和追責的機率、減少關鍵系統的脆弱性，以及讓有能力防範的機構承擔適當責任，都可以改變其生存條件。例如，英國支付監管機構要求付款與收款服務機構共同承擔符合規定的詐騙賠付責任，其明確目的之一，就是加強雙方的防範誘因。<a target="_blank" href="https://www.psr.org.uk/our-work/app-scams/" rel="noopener">PSR</a></p>
+<p>這裡也要區分追責的<strong>確定性</strong>與刑罰的<strong>嚴厲程度</strong>。美國國家司法研究所對威懾研究的總結認為，被捕的可能性通常比單純加重刑罰更有威懾作用；這一一般性研究結論有啟發性，但不能直接當作所有跨境網路犯罪的精確效果估計。<a target="_blank" href="https://nij.ojp.gov/topics/articles/five-things-about-deterrence" rel="noopener">National Institute of Justice</a></p>
+<p>最後，還應接著上一問區分「產生了社會影響」和「具有社會必要性」。犯罪可能刺激安全技術和制度改進，但不能因此認定社會需要它。就像修復損壞會帶來工作機會，也不能據此認為損壞本身增加了社會福利。</p>
+<p><strong>所以，我對你的問題的最終判斷是：這些組織確實占據了與傳統盜賊、強盜高度相似的掠奪性位置，但數位化同時改變了它們的目標、規模和組織形式。其持續存在的深層條件，是侵犯他人權利仍可能帶來可兌現的私人收益，而防護、追責與損失承擔沒有充分約束這種收益。</strong></p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    
+<section class="night-comments" aria-labelledby="night-comments-title">
+  <h2 id="night-comments-title">留言</h2>
+  <div class="giscus"></div>
+  <script
+    src="https://giscus.app/client.js"
+    data-repo="acyclic0725/acyclic0725.github.io"
+    data-repo-id="R_kgDOLQEIDA"
+    data-category="Announcements"
+    data-category-id="DIC_kwDOLQEIDM4DFwDj"
+    data-mapping="pathname"
+    data-strict="1"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="top"
+    data-theme="dark"
+    data-lang="zh-TW"
+    data-loading="lazy"
+    crossorigin="anonymous"
+    async>
+  </script>
+</section>
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2026</span>
+    <span class="with-love">
+      <i class="fa fa-paper-plane"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Night Flighter</span>
+  </div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 強力驅動
+  </div><div class="night-footer-license">
+  <a target="_blank" href="https://creativecommons.org/licenses/by-nc/4.0/" rel="license noopener">
+    <img src="/images/cc-by-nc.png" alt="Creative Commons CC BY-NC 4.0" width="88" height="31" loading="lazy">
+    <span>除另有說明外，本站內容採用創用 CC 姓名標示—非商業性 4.0 國際授權條款（CC BY-NC 4.0）。</span>
+  </a>
+</div>
+
+
+    </div>
+  </footer>
+
+  
+  <div class="back-to-top" role="button" aria-label="回到頂端">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+</body>
+</html>
