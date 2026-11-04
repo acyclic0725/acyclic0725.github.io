@@ -1,791 +1,996 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
-<head>
-  <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width">
-<meta name="theme-color" content="#0d1522"><meta name="generator" content="Hexo 8.1.2">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="theme-color" content="#0d1522" />
+    <meta name="generator" content="Hexo 8.1.2" />
 
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
-  <link rel="mask-icon" href="/images/logo.svg" color="#0d1522">
-  <meta name="google-site-verification" content="aCRle-V_orW-i7a_tUrqKkhtBeb3qX5H0MfK9_hcxas">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png" />
+    <link rel="mask-icon" href="/images/logo.svg" color="#0d1522" />
+    <meta name="google-site-verification" content="aCRle-V_orW-i7a_tUrqKkhtBeb3qX5H0MfK9_hcxas" />
 
-<link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/main.css" />
 
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+      integrity="sha256-VHqXKFhhMxcpubYf9xiWdCiojEbY9NexQ4jh8AxbvcM="
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css"
+      integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE="
+      crossorigin="anonymous"
+    />
 
+    <script class="next-config" data-name="main" type="application/json">
+      {
+        "hostname": "acyclic0725.github.io",
+        "root": "/",
+        "images": "/images",
+        "scheme": "Muse",
+        "darkmode": false,
+        "version": "8.29.0",
+        "exturl": false,
+        "sidebar": {
+          "position": "left",
+          "width_expanded": 320,
+          "width_dual_column": 240,
+          "display": "remove",
+          "padding": 18,
+          "offset": 12
+        },
+        "hljswrap": true,
+        "codeblock": {
+          "theme": { "light": "default", "dark": "stackoverflow-dark" },
+          "prism": { "light": "prism", "dark": "prism-dark" },
+          "copy_button": { "enable": false, "style": null },
+          "fold": { "enable": false, "height": 500 },
+          "language": false
+        },
+        "bookmark": { "enable": false, "color": "#222", "save": "auto" },
+        "mediumzoom": false,
+        "pangu": false,
+        "comments": {
+          "style": "tabs",
+          "active": null,
+          "storage": true,
+          "lazyload": false,
+          "nav": null
+        },
+        "stickytabs": false,
+        "motion": {
+          "enable": true,
+          "async": false,
+          "duration": 200,
+          "transition": {
+            "menu_item": "fadeInDown",
+            "post_block": "fadeIn",
+            "post_header": "fadeInDown",
+            "post_body": "fadeInDown",
+            "coll_header": "fadeInLeft",
+            "sidebar": "fadeInUp"
+          }
+        },
+        "i18n": {
+          "placeholder": "搜尋...",
+          "empty": "我們無法找到任何有關 ${query} 的搜索結果",
+          "hits_time": "找到 ${hits} 個搜索結果（用時 ${time} 毫秒）",
+          "hits": "找到 ${hits} 個搜索結果"
+        }
+      }
+    </script>
+    <script src="/js/config.js" defer></script>
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha256-VHqXKFhhMxcpubYf9xiWdCiojEbY9NexQ4jh8AxbvcM=" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+    <meta name="description" content="記錄一些我與AI的想法" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Night Flighter" />
+    <meta property="og:url" content="https://acyclic0725.github.io/zh-tw/" />
+    <meta property="og:site_name" content="Night Flighter" />
+    <meta property="og:description" content="記錄一些我與AI的想法" />
+    <meta property="og:locale" content="zh_TW" />
+    <meta property="article:author" content="Eric Johnson" />
+    <meta name="twitter:card" content="summary" />
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"acyclic0725.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.29.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"remove","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"找到 ${hits} 個搜索結果（用時 ${time} 毫秒）","hits":"找到 ${hits} 個搜索結果"}}</script><script src="/js/config.js" defer></script>
+    <link rel="canonical" href="https://acyclic0725.github.io/zh-tw/" />
 
-    <meta property="og:type" content="website">
-<meta property="og:title" content="Night Flighter">
-<meta property="og:url" content="https://acyclic0725.github.io/zh-tw/">
-<meta property="og:site_name" content="Night Flighter">
-<meta property="og:locale" content="zh_TW">
-<meta property="article:author" content="Eric Johnson">
-<meta name="twitter:card" content="summary">
+    <script class="next-config" data-name="page" type="application/json">
+      {
+        "sidebar": "",
+        "isHome": true,
+        "isPost": false,
+        "lang": "zh-TW",
+        "comments": "",
+        "permalink": "",
+        "path": "zh-tw/index.html",
+        "title": "Night Flighter"
+      }
+    </script>
 
+    <script class="next-config" data-name="calendar" type="application/json">
+      ""
+    </script>
+    <title>Night Flighter</title>
 
-<link rel="canonical" href="https://acyclic0725.github.io/zh-tw/">
-
-
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":false,"lang":"zh-TW","comments":"","permalink":"","path":"zh-tw/index.html","title":"Night Flighter"}</script>
-
-<script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>Night Flighter</title>
-  
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-579D5NTBWN"></script>
-  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-579D5NTBWN","only_pageview":false,"measure_protocol_api_secret":null}</script>
-  <script src="/js/third-party/analytics/google-analytics.js" defer></script>
+    <script class="next-config" data-name="google_analytics" type="application/json">
+      { "tracking_id": "G-579D5NTBWN", "only_pageview": false, "measure_protocol_api_secret": null }
+    </script>
+    <script src="/js/third-party/analytics/google-analytics.js" defer></script>
 
+    <script src="/js/utils.js" defer></script>
+    <script src="/js/motion.js" defer></script>
+    <script src="/js/next-boot.js" defer></script>
 
+    <link rel="alternate" hreflang="zh-CN" href="https://acyclic0725.github.io/zh-cn/" />
+    <link rel="alternate" hreflang="zh-TW" href="https://acyclic0725.github.io/zh-tw/" />
+    <link rel="alternate" hreflang="en" href="https://acyclic0725.github.io/en/" />
+    <link rel="alternate" hreflang="x-default" href="https://acyclic0725.github.io/en/" />
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
 
+    <noscript>
+      <link rel="stylesheet" href="/css/noscript.css" />
+    </noscript>
+    <link rel="alternate" href="/atom.xml" title="Night Flighter" type="application/atom+xml" />
+  </head>
 
+  <body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+    <div class="headband"></div>
 
+    <main class="main">
+      <div class="column">
+        <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+          <div class="site-brand-container">
+            <div class="site-nav-toggle">
+              <div class="toggle" aria-label="切換導航欄" role="button">
+                <span class="toggle-line"></span>
+                <span class="toggle-line"></span>
+                <span class="toggle-line"></span>
+              </div>
+            </div>
 
-
-
-  
-<script src="/js/utils.js" defer></script><script src="/js/motion.js" defer></script><script src="/js/next-boot.js" defer></script>
-
-  
-
-
-
-
-
-
-  
-
-
-
-
-
-<link rel="alternate" hreflang="zh-CN" href="https://acyclic0725.github.io/zh-cn/">
-<link rel="alternate" hreflang="zh-TW" href="https://acyclic0725.github.io/zh-tw/">
-<link rel="alternate" hreflang="en" href="https://acyclic0725.github.io/en/">
-<link rel="alternate" hreflang="x-default" href="https://acyclic0725.github.io/en/">
-
-  <noscript>
-    <link rel="stylesheet" href="/css/noscript.css">
-  </noscript>
-<link rel="alternate" href="/atom.xml" title="Night Flighter" type="application/atom+xml">
-</head>
-
-<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
-  <div class="headband"></div>
-
-  <main class="main">
-    <div class="column">
-      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
-  <div class="site-nav-toggle">
-    <div class="toggle" aria-label="切換導航欄" role="button">
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
-    </div>
-  </div>
-
-  <div class="site-meta">
-
-    <a href="/" class="brand" rel="start">
-      <i class="logo-line"></i>
-      <p class="site-title">Night Flighter</p>
-      <i class="logo-line"></i>
-    </a>
-  </div>
-
-  <div class="site-nav-right">
-    <div class="toggle popup-trigger" aria-label="搜尋" role="button">
-    </div>
-  </div>
-</div>
-
-
-
-<nav class="site-nav">
-  <ul class="main-menu menu">
-  </ul>
-</nav>
-
-
-
-
-<nav class="night-nav" aria-label="閱讀語言">
-  <div class="night-nav-links">
-    <a href="/zh-tw/">首頁</a>
-    <a href="/zh-tw/archives/">歸檔</a>
-    <a href="/zh-tw/about/">關於</a>
-  </div>
-  <details class="night-lang-menu">
-    <summary aria-label="閱讀語言">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
-        <circle cx="12" cy="12" r="9" />
-        <ellipse cx="12" cy="12" rx="4" ry="9" />
-        <path d="M3 12h18" />
-      </svg>
-      <small>正體</small>
-    </summary>
-    <div>
-      <a href="/zh-cn/" lang="zh-CN">
-        <span>简体中文</span><small>简</small>
-      </a>
-      <a href="/zh-tw/" lang="zh-TW" aria-current="page">
-        <span>正體中文</span><small>正</small>
-      </a>
-      <a href="/en/" lang="en">
-        <span>English</span><small>EN</small>
-      </a>
-    </div>
-  </details>
-</nav>
-
-</header>
-    </div>
-
-    <div class="main-inner index posts-expand">
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://acyclic0725.github.io/zh-tw/posts/bandits-in-the-digital-age/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Eric Johnson">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Night Flighter">
-      <meta itemprop="description" content="夜晚的思考">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="Night Flighter | Night Flighter">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/zh-tw/posts/bandits-in-the-digital-age/" class="post-title-link" itemprop="url">數位時代的盜賊</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">發表於</span>
-
-      <time title="創建時間：2026-11-04 13:54:38" itemprop="dateCreated datePublished" datetime="2026-11-04T13:54:38+08:00">2026-11-04</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <blockquote>
-<p>本文含AI生成內容，可能存在事實錯誤、資訊遺漏、理解偏差或時效性問題。對於可能影響重要決策的資訊，請結合官方資料、原始來源或其他可靠管道進行核實。</p>
-</blockquote>
-<p>問：竊賊和強盜在古代經濟社會中處於什麼地位，產生了哪些影響和作用？</p>
-<p>答：從經濟史和社會史的角度看，竊賊和強盜並不只是古代社會的犯罪者，也是財富分配、人口流動、社會秩序和國家權力相互作用的一部分。</p>
-<p>他們通常不直接創造財富，卻參與了財富的非自願轉移；他們破壞經濟秩序，但也間接促使社會發展治安、運輸保障和財產保護制度；他們可能是社會危機的產物，也可能發展為能夠影響地方政治的武裝力量。</p>
-<p>因此，理解古代盜賊，不能只從道德上的善惡出發，還要考察他們在當時經濟社會中的實際位置。</p>
-<h3 id="一、他們處於社會經濟結構的什麼位置？"><a href="#一、他們處於社會經濟結構的什麼位置？" class="headerlink" title="一、他們處於社會經濟結構的什麼位置？"></a>一、他們處於社會經濟結構的什麼位置？</h3><p>首先需要區分三類人。</p>
-<table>
-<thead>
-<tr>
-<th>類型</th>
-<th>主要活動</th>
-<th>經濟社會地位</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>普通竊賊</td>
-<td>偷盜糧食、錢財、牲畜和貨物</td>
-<td>往往分散活動，可能把偷盜作為臨時或長期收入來源</td>
-</tr>
-<tr>
-<td>職業性強盜</td>
-<td>攔路搶劫、綁架勒索、結夥劫掠</td>
-<td>依靠暴力獲取收入，部分形成穩定團夥</td>
-</tr>
-<tr>
-<td>組織化盜匪</td>
-<td>控制道路、村寨或局部地區，收取錢財</td>
-<td>可能發展為地方武裝或非正式權力組織</td>
-</tr>
-</tbody></table>
-<p>這些人並不必然屬於一個固定社會階層。貧困農民、失業勞工、流民、逃兵可能加入盜匪，某些富有的地方勢力也可能資助或利用他們。</p>
-<p>歷史學家 Robert J. Antony 對清代廣東的研究發現，不少盜匪原本是有家庭的勞動者，因就業不足和生活困境而間歇性參與盜竊。他們不是完全脫離正常社會的獨立群體。<a target="_blank" href="https://academic.oup.com/hong-kong-scholarship-online/book/30576/chapter-abstract/258210326" rel="noopener">Oxford Academic</a></p>
-<p>更重要的是，古代官方所稱的「盜賊」有時還包括反抗官府的飢民和地方武裝，不完全等同於今天刑法意義上的竊盜犯。<a target="_blank" href="https://cssn.cn/lsx/lsx_zgs/202210/t20221024_5552492.shtml" rel="noopener">中國社會科學網</a></p>
-<h3 id="二、他們對古代經濟產生了什麼影響？"><a href="#二、他們對古代經濟產生了什麼影響？" class="headerlink" title="二、他們對古代經濟產生了什麼影響？"></a>二、他們對古代經濟產生了什麼影響？</h3><h4 id="1-參與財富再分配，但不等於創造財富"><a href="#1-參與財富再分配，但不等於創造財富" class="headerlink" title="1. 參與財富再分配，但不等於創造財富"></a>1. 參與財富再分配，但不等於創造財富</h4><p>盜竊和搶劫本質上是以非自願方式改變財富的占有者。</p>
-<p>例如，一個強盜搶走商人的一百兩銀子，隨後把銀子用於購買糧食、酒肉或其他生活用品。原本屬於商人的購買力，轉移到了強盜及其交易對象手中。</p>
-<p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/zh-tw/posts/bandits-in-the-digital-age/#more" rel="contents">
-                閱讀全文 &raquo;
+            <div class="site-meta">
+              <a href="/" class="brand" rel="start">
+                <i class="logo-line"></i>
+                <h1 class="site-title">Night Flighter</h1>
+                <i class="logo-line"></i>
               </a>
             </div>
-          <!--/noindex-->
-        
-      
-    </div>
 
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://acyclic0725.github.io/zh-tw/posts/turkeys-on-the-island/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Eric Johnson">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Night Flighter">
-      <meta itemprop="description" content="夜晚的思考">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="Night Flighter | Night Flighter">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/zh-tw/posts/turkeys-on-the-island/" class="post-title-link" itemprop="url">島上的火雞</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">發表於</span>
-
-      <time title="創建時間：2026-10-25 15:08:57" itemprop="dateCreated datePublished" datetime="2026-10-25T15:08:57+08:00">2026-10-25</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>島上的火雞把世上的事分成三類：</p>
-<p>已經發生的，可以測量；尚未發生的，可以預測；永遠不會發生的，不必討論。</p>
-<p>科學紀元第三百二十七年，火雞科學院院長赫茲提出了這套分類法，它被刻在一塊黑色玄武岩上。下面還有兩句被無數年輕火雞抄進筆記本的話：</p>
-<p><em>凡存在者，皆有規律</em></p>
-<p><em>凡有規律，終可預測</em></p>
-<p>很長一段時間裡，沒有誰認真懷疑過這句話。畢竟，他們的確越來越擅長預測世界。</p>
-<p>火雞島不大。從東邊的白崖走到西邊的鹽沼，只需要一個上午。島中心有一座死火山，山腳下長著漿果灌木、苔蘚和野麥。北部是一片低矮的松林，狐狸偶爾在那裡出沒；南岸迎著暖流，冬季也很少結冰。</p>
-<p>最早的火雞並不懂科學。他們只知道下雨時躲到樹下，看見狐狸就跑，餓了便四處啄食。春天來了，卻不知道為什麼會來。漿果時多時少，有的年份狐狸突然增多，半數幼鳥沒能活下來；有時一場風暴過後，整片海灘都不見了。</p>
-<p>世界像一隻看不見的手，時而撫摸他們，時而毫無理由地把他們推進泥濘。</p>
-<p>第一位試圖理解這隻手的火雞叫阿爾。</p>
-<p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/zh-tw/posts/turkeys-on-the-island/#more" rel="contents">
-                閱讀全文 &raquo;
-              </a>
+            <div class="site-nav-right">
+              <div class="toggle popup-trigger" aria-label="搜尋" role="button"></div>
             </div>
-          <!--/noindex-->
-        
-      
-    </div>
+          </div>
 
-    
-    
-    
+          <nav class="site-nav">
+            <ul class="main-menu menu"></ul>
+          </nav>
 
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://acyclic0725.github.io/zh-tw/posts/dinosaurs-and-birds/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Eric Johnson">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Night Flighter">
-      <meta itemprop="description" content="夜晚的思考">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="Night Flighter | Night Flighter">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/zh-tw/posts/dinosaurs-and-birds/" class="post-title-link" itemprop="url">恐龍與鳥類</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">發表於</span>
-
-      <time title="創建時間：2026-10-11 01:18:35" itemprop="dateCreated datePublished" datetime="2026-10-11T01:18:35+08:00">2026-10-11</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <blockquote>
-<p>本文含AI生成內容，可能存在事實錯誤、資訊遺漏、理解偏差或時效性問題。對於可能影響重要決策的資訊，請結合官方資料、原始來源或其他可靠管道進行核實。</p>
-</blockquote>
-<p>問：恐龍滅絕的具體過程是怎樣的？在恐龍演化成鳥類的過程中，恐龍和鳥類共同存在時，二者的數量和生存狀況如何？在當時的自然環境下，鳥類相比恐龍的生存優勢有哪些？</p>
-<p>答：<strong>約6600萬年前滅絕的是所有「非鳥類恐龍」；鳥類本身就是恐龍的一支，而且當時許多鳥類也一起滅絕了。</strong> 今天的鳥來自倖存下來的部分譜系。因此，這段歷史需要同時解釋：撞擊怎樣摧毀生態系統，以及為什麼某些鳥類能挺過去。<a target="_blank" href="https://onlinelibrary.wiley.com/doi/10.1111/brv.12128" rel="noopener">Wiley Online Library</a></p>
-<p>先看滅絕的過程。科學家已經能重建主要環節，但無法精確到「最後一隻恐龍死於撞擊後的第幾年」。</p>
-<table>
-<thead>
-<tr>
-<th>大致階段</th>
-<th>發生了什麼</th>
-<th>對生物的影響</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>撞擊發生時</td>
-<td>一顆直徑約10公里量級的小行星撞上今天墨西哥猶加敦半島附近，形成希克蘇魯伯撞擊坑</td>
-<td>撞擊區及周邊遭遇極端高溫、衝擊、強烈地震等直接破壞</td>
-</tr>
-<tr>
-<td>隨後的數小時至數天</td>
-<td>噴出物回落，海嘯傳播，多地發生火災；大量塵埃及其他物質進入大氣</td>
-<td>大範圍棲息地被毀，許多動物直接死亡；不同地區遭受的程度不同</td>
-</tr>
-<tr>
-<td>隨後的數月至數年</td>
-<td>高空塵埃、硫酸鹽氣膠和煙炱削弱陽光，造成「撞擊冬天」</td>
-<td>降溫、光合作用受抑，植物和浮游植物的生產力驟降</td>
-</tr>
-<tr>
-<td>食物短缺持續期間</td>
-<td>活植物、種子、腐屑等不同食物來源的保存情況不同，食物網發生劇烈重組</td>
-<td>許多草食動物失去食物，捕食者也隨獵物減少而死亡；倖存族群還面臨繁殖失敗</td>
-</tr>
-</tbody></table>
-<p>撞擊坑岩芯記錄了撞擊當天的劇烈沉積過程；地質記錄和氣候模擬則共同支持之後的降溫與生產力危機。<strong>全球滅絕的關鍵，是直接破壞之後持續的生態系統崩潰。</strong><a target="_blank" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6765282/" rel="noopener">PMC</a></p>
-<p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/zh-tw/posts/dinosaurs-and-birds/#more" rel="contents">
-                閱讀全文 &raquo;
-              </a>
+          <nav class="night-nav" aria-label="閱讀語言">
+            <div class="night-nav-links">
+              <a href="/zh-tw/">首頁</a>
+              <a href="/zh-tw/archives/">歸檔</a>
+              <a href="/zh-tw/about/">關於</a>
             </div>
-          <!--/noindex-->
-        
-      
-    </div>
+            <details class="night-lang-menu">
+              <summary aria-label="閱讀語言">
+                <svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                  focusable="false"
+                >
+                  <circle cx="12" cy="12" r="9" />
+                  <ellipse cx="12" cy="12" rx="4" ry="9" />
+                  <path d="M3 12h18" />
+                </svg>
+                <small>正體</small>
+              </summary>
+              <div>
+                <a href="/zh-cn/" lang="zh-CN"> <span>简体中文</span><small>简</small> </a>
+                <a href="/zh-tw/" lang="zh-TW" aria-current="page">
+                  <span>正體中文</span><small>正</small>
+                </a>
+                <a href="/en/" lang="en"> <span>English</span><small>EN</small> </a>
+              </div>
+            </details>
+          </nav>
+        </header>
+      </div>
 
-    
-    
-    
+      <div class="main-inner index posts-expand">
+        <div class="post-block">
+          <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
+            <link
+              itemprop="mainEntityOfPage"
+              href="https://acyclic0725.github.io/zh-tw/posts/bandits-in-the-digital-age/"
+            />
 
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
+            <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+              <meta itemprop="image" content="/images/avatar.gif" />
+              <meta itemprop="name" content="Eric Johnson" />
+            </span>
 
+            <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+              <meta itemprop="name" content="Night Flighter" />
+              <meta itemprop="description" content="記錄一些我與AI的想法" />
+            </span>
 
+            <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+              <meta itemprop="name" content="Night Flighter | Night Flighter" />
+              <meta itemprop="description" content="記錄一些我與AI的想法" />
+            </span>
+            <header class="post-header">
+              <h2 class="post-title" itemprop="name headline">
+                <a
+                  href="/zh-tw/posts/bandits-in-the-digital-age/"
+                  class="post-title-link"
+                  itemprop="url"
+                  >數位時代的盜賊</a
+                >
+              </h2>
 
+              <div class="post-meta-container">
+                <div class="post-meta">
+                  <span class="post-meta-item">
+                    <span class="post-meta-item-icon">
+                      <i class="far fa-calendar"></i>
+                    </span>
+                    <span class="post-meta-item-text">發表於</span>
 
-    
+                    <time
+                      title="創建時間：2026-11-04 13:54:38"
+                      itemprop="dateCreated datePublished"
+                      datetime="2026-11-04T13:54:38+08:00"
+                      >2026-11-04</time
+                    >
+                  </span>
+                </div>
+              </div>
+            </header>
 
+            <div class="post-body" itemprop="articleBody">
+              <blockquote>
+                <p>
+                  本文含AI生成內容，可能存在事實錯誤、資訊遺漏、理解偏差或時效性問題。對於可能影響重要決策的資訊，請結合官方資料、原始來源或其他可靠管道進行核實。
+                </p>
+              </blockquote>
+              <p>問：竊賊和強盜在古代經濟社會中處於什麼地位，產生了哪些影響和作用？</p>
+              <p>
+                答：從經濟史和社會史的角度看，竊賊和強盜並不只是古代社會的犯罪者，也是財富分配、人口流動、社會秩序和國家權力相互作用的一部分。
+              </p>
+              <p>
+                他們通常不直接創造財富，卻參與了財富的非自願轉移；他們破壞經濟秩序，但也間接促使社會發展治安、運輸保障和財產保護制度；他們可能是社會危機的產物，也可能發展為能夠影響地方政治的武裝力量。
+              </p>
+              <p>
+                因此，理解古代盜賊，不能只從道德上的善惡出發，還要考察他們在當時經濟社會中的實際位置。
+              </p>
+              <h3 id="一、他們處於社會經濟結構的什麼位置？">
+                <a
+                  href="#一、他們處於社會經濟結構的什麼位置？"
+                  class="headerlink"
+                  title="一、他們處於社會經濟結構的什麼位置？"
+                ></a
+                >一、他們處於社會經濟結構的什麼位置？
+              </h3>
+              <p>首先需要區分三類人。</p>
+              <table>
+                <thead>
+                  <tr>
+                    <th>類型</th>
+                    <th>主要活動</th>
+                    <th>經濟社會地位</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>普通竊賊</td>
+                    <td>偷盜糧食、錢財、牲畜和貨物</td>
+                    <td>往往分散活動，可能把偷盜作為臨時或長期收入來源</td>
+                  </tr>
+                  <tr>
+                    <td>職業性強盜</td>
+                    <td>攔路搶劫、綁架勒索、結夥劫掠</td>
+                    <td>依靠暴力獲取收入，部分形成穩定團夥</td>
+                  </tr>
+                  <tr>
+                    <td>組織化盜匪</td>
+                    <td>控制道路、村寨或局部地區，收取錢財</td>
+                    <td>可能發展為地方武裝或非正式權力組織</td>
+                  </tr>
+                </tbody>
+              </table>
+              <p>
+                這些人並不必然屬於一個固定社會階層。貧困農民、失業勞工、流民、逃兵可能加入盜匪，某些富有的地方勢力也可能資助或利用他們。
+              </p>
+              <p>
+                歷史學家 Robert J. Antony
+                對清代廣東的研究發現，不少盜匪原本是有家庭的勞動者，因就業不足和生活困境而間歇性參與盜竊。他們不是完全脫離正常社會的獨立群體。<a
+                  target="_blank"
+                  href="https://academic.oup.com/hong-kong-scholarship-online/book/30576/chapter-abstract/258210326"
+                  rel="noopener"
+                  >Oxford Academic</a
+                >
+              </p>
+              <p>
+                更重要的是，古代官方所稱的「盜賊」有時還包括反抗官府的飢民和地方武裝，不完全等同於今天刑法意義上的竊盜犯。<a
+                  target="_blank"
+                  href="https://cssn.cn/lsx/lsx_zgs/202210/t20221024_5552492.shtml"
+                  rel="noopener"
+                  >中國社會科學網</a
+                >
+              </p>
+              <h3 id="二、他們對古代經濟產生了什麼影響？">
+                <a
+                  href="#二、他們對古代經濟產生了什麼影響？"
+                  class="headerlink"
+                  title="二、他們對古代經濟產生了什麼影響？"
+                ></a
+                >二、他們對古代經濟產生了什麼影響？
+              </h3>
+              <h4 id="1-參與財富再分配，但不等於創造財富">
+                <a
+                  href="#1-參與財富再分配，但不等於創造財富"
+                  class="headerlink"
+                  title="1. 參與財富再分配，但不等於創造財富"
+                ></a
+                >1. 參與財富再分配，但不等於創造財富
+              </h4>
+              <p>盜竊和搶劫本質上是以非自願方式改變財富的占有者。</p>
+              <p>
+                例如，一個強盜搶走商人的一百兩銀子，隨後把銀子用於購買糧食、酒肉或其他生活用品。原本屬於商人的購買力，轉移到了強盜及其交易對象手中。
+              </p>
+              <p>
+                <!--noindex-->
+              </p>
 
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://acyclic0725.github.io/zh-tw/posts/genesis-9000-pro-max/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Eric Johnson">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Night Flighter">
-      <meta itemprop="description" content="夜晚的思考">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="Night Flighter | Night Flighter">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/zh-tw/posts/genesis-9000-pro-max/" class="post-title-link" itemprop="url">創世紀-9000 Pro Max</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">發表於</span>
-
-      <time title="創建時間：2026-10-04 23:06:59" itemprop="dateCreated datePublished" datetime="2026-10-04T23:06:59+08:00">2026-10-04</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <blockquote>
-<p>本故事純屬虛構，如有雷同，證明世界純屬虛擬。</p>
-</blockquote>
-<p>起初，神創建了名為「天地」的矩陣程式。</p>
-<p>到了第六天，神看著執行日誌，覺得是好的。第七天，神闔上了電腦，就安息了。</p>
-<p>神安息得十分徹底，以至於祂忘了替人寫垃圾回收機制，說白了，就是「死亡」。</p>
-<p>於是有一段時間，人是不死的。壽命無限，肉體卻並非堅不可摧。直到世界上第一起命案發生——該隱用石頭砸碎了弟弟亞伯的後腦勺。</p>
-<p>亞伯的肉體雖然停機了，靈魂卻無處可去，只能每天飄在天堂的客服中心門口。</p>
-<p>神見了，被迫緊急打上一個系統補丁：冥界分區。</p>
-<p>為了安撫這位受害者，亞伯獲得了一項特殊補償：「亞伯啊，既然你是第一個體驗『死亡』這項新功能的用戶，地府的最高管理員權限就交給你了，以後就叫你『閻王』吧。」</p>
-<p>於是，史上第一個死者穿上蟒袍，戴上十二旒冕冠，手捧一本空白的《生死簿》，成了地府第一任 CEO，負責接引後來的死者。</p>
-<p>很多年過去，神發現自己又陷入另一個巨大的麻煩：人類的糾紛實在太多了。</p>
-<p>「神啊，祈求祢讓我的箭射中他！」</p>
-<p>「神啊，請祢在海上賜給我們一陣順風吧！」</p>
-<p>「神啊，為什麼他的箭能射中我？」</p>
-<p>「神啊，求祢讓敵人的船全部沉掉！」</p>
-<p>每天都有數以百萬計的人請求神修改風速、雨量、溫度、潮汐、重力，甚至骰子的點數。</p>
-<p>工單系統堆積如山：今天給一支箭修正拋物線，明天給一艘船改洋流，後天還得查查為什麼某個部落連續三個月祈雨都沒成功。神每天忙著處理這些複雜的糾紛，連喝杯咖啡的時間都沒有。</p>
-<p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/zh-tw/posts/genesis-9000-pro-max/#more" rel="contents">
-                閱讀全文 &raquo;
-              </a>
+              <div class="post-button">
+                <a class="btn" href="/zh-tw/posts/bandits-in-the-digital-age/#more" rel="contents">
+                  閱讀全文 &raquo;
+                </a>
+              </div>
+              <!--/noindex-->
             </div>
-          <!--/noindex-->
-        
-      
-    </div>
 
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://acyclic0725.github.io/zh-tw/posts/data-risks-and-illegal-firearms/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Eric Johnson">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Night Flighter">
-      <meta itemprop="description" content="夜晚的思考">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="Night Flighter | Night Flighter">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/zh-tw/posts/data-risks-and-illegal-firearms/" class="post-title-link" itemprop="url">資料風險與非法槍枝</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">發表於</span>
-
-      <time title="創建時間：2026-09-23 20:17:43" itemprop="dateCreated datePublished" datetime="2026-09-23T20:17:43+08:00">2026-09-23</time>
-    </span>
-
-  
-</div>
-
+            <footer class="post-footer">
+              <div class="post-eof"></div>
+            </footer>
+          </article>
         </div>
-      </header>
 
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <blockquote>
-<p>本文含AI生成內容，可能存在事實錯誤、資訊遺漏、理解偏差或時效性問題。對於可能影響重要決策的資訊，請結合官方資料、原始來源或其他可靠管道進行核實。</p>
-</blockquote>
-<p>問：在數位世界裡，每個人存在的實體就是資料。如果資料可以被他人或 AI 智能體任意儲存、讀取和修改，隨著 AI 的能力越來越強，可能會發生什麼問題？這與持有非法槍枝有哪些相似性？</p>
-<p>答：如果把一個人在數位世界中的「存在」理解為一組不斷更新的資料——身分、關係、資產、行為歷史、偏好、權限、聲譽、位置、健康紀錄、工作紀錄，乃至 AI 根據這些資料建構出的「人格模型」——那麼真正重要的問題就不只是「隱私外洩」，而是：<strong>誰擁有改變這個數位實體的能力，以及這種改變能否進一步作用於現實中的本人。</strong></p>
-<p>隨著 AI 智能體能力增強，危險會從「別人知道了你的資訊」，逐漸升級成「別人可以利用你的資訊替你行動」。</p>
-<p>可能出現幾個層次的問題：</p>
-<ul>
-<li><strong>讀取意味著預測。</strong> 足夠完整的資料能讓 AI 推測一個人的弱點、習慣、關係網絡、消費能力、心理狀態和下一步行為，從而進行高度個人化的操縱、詐騙、說服或歧視。</li>
-<li><strong>儲存意味著永久化。</strong> 人會遺忘，資料庫不會。一個人在十年前的一次行為，可能被未來能力更強的模型重新解讀、組合，產生當時根本無法預見的後果。</li>
-<li><strong>修改意味著改寫現實。</strong> 如果信用、學歷、醫療紀錄、工作紀錄、帳戶權限甚至社會關係都依賴資料庫，那麼修改資料並不只是修改「描述你的一段文字」，而可能改變你能否搭飛機、獲得貸款、進入公司、使用資產，甚至證明「你是誰」。</li>
-<li><strong>代理意味著冒充。</strong> 當 AI 能夠寄送電子郵件、轉帳、簽合約、提交申請、與其他智能體溝通時，取得資料與憑證的一方可能獲得一種「數位替身控制權」。</li>
-<li><strong>組合意味著能力躍升。</strong> 單獨看起來無害的資料，結合起來可能非常危險。姓名、行程、聲音樣本、通訊錄、消費紀錄和幾張照片，經過 AI 處理後可以形成遠比任何單一資料庫更強的攻擊能力。</li>
-<li><strong>規模意味著權力不對稱。</strong> 過去一個惡意的人最多同時針對少數人；AI 智能體可以自動對數十萬甚至數百萬人進行搜尋、分析、試探、欺騙和持續互動。</li>
-</ul>
-<p>因此，未來真正值得警惕的概念可能不是傳統意義上的「資料外洩」，而是<strong>未經授權的數位人格控制權</strong>。</p>
-<p>這也是它和「持有非法槍枝」存在一個很有意思的相似點。</p>
-<p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/zh-tw/posts/data-risks-and-illegal-firearms/#more" rel="contents">
-                閱讀全文 &raquo;
-              </a>
+        <div class="post-block">
+          <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
+            <link
+              itemprop="mainEntityOfPage"
+              href="https://acyclic0725.github.io/zh-tw/posts/turkeys-on-the-island/"
+            />
+
+            <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+              <meta itemprop="image" content="/images/avatar.gif" />
+              <meta itemprop="name" content="Eric Johnson" />
+            </span>
+
+            <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+              <meta itemprop="name" content="Night Flighter" />
+              <meta itemprop="description" content="記錄一些我與AI的想法" />
+            </span>
+
+            <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+              <meta itemprop="name" content="Night Flighter | Night Flighter" />
+              <meta itemprop="description" content="記錄一些我與AI的想法" />
+            </span>
+            <header class="post-header">
+              <h2 class="post-title" itemprop="name headline">
+                <a href="/zh-tw/posts/turkeys-on-the-island/" class="post-title-link" itemprop="url"
+                  >島上的火雞</a
+                >
+              </h2>
+
+              <div class="post-meta-container">
+                <div class="post-meta">
+                  <span class="post-meta-item">
+                    <span class="post-meta-item-icon">
+                      <i class="far fa-calendar"></i>
+                    </span>
+                    <span class="post-meta-item-text">發表於</span>
+
+                    <time
+                      title="創建時間：2026-10-25 15:08:57"
+                      itemprop="dateCreated datePublished"
+                      datetime="2026-10-25T15:08:57+08:00"
+                      >2026-10-25</time
+                    >
+                  </span>
+                </div>
+              </div>
+            </header>
+
+            <div class="post-body" itemprop="articleBody">
+              <p>島上的火雞把世上的事分成三類：</p>
+              <p>已經發生的，可以測量；尚未發生的，可以預測；永遠不會發生的，不必討論。</p>
+              <p>
+                科學紀元第三百二十七年，火雞科學院院長赫茲提出了這套分類法，它被刻在一塊黑色玄武岩上。下面還有兩句被無數年輕火雞抄進筆記本的話：
+              </p>
+              <p><em>凡存在者，皆有規律</em></p>
+              <p><em>凡有規律，終可預測</em></p>
+              <p>很長一段時間裡，沒有誰認真懷疑過這句話。畢竟，他們的確越來越擅長預測世界。</p>
+              <p>
+                火雞島不大。從東邊的白崖走到西邊的鹽沼，只需要一個上午。島中心有一座死火山，山腳下長著漿果灌木、苔蘚和野麥。北部是一片低矮的松林，狐狸偶爾在那裡出沒；南岸迎著暖流，冬季也很少結冰。
+              </p>
+              <p>
+                最早的火雞並不懂科學。他們只知道下雨時躲到樹下，看見狐狸就跑，餓了便四處啄食。春天來了，卻不知道為什麼會來。漿果時多時少，有的年份狐狸突然增多，半數幼鳥沒能活下來；有時一場風暴過後，整片海灘都不見了。
+              </p>
+              <p>世界像一隻看不見的手，時而撫摸他們，時而毫無理由地把他們推進泥濘。</p>
+              <p>第一位試圖理解這隻手的火雞叫阿爾。</p>
+              <p>
+                <!--noindex-->
+              </p>
+
+              <div class="post-button">
+                <a class="btn" href="/zh-tw/posts/turkeys-on-the-island/#more" rel="contents">
+                  閱讀全文 &raquo;
+                </a>
+              </div>
+              <!--/noindex-->
             </div>
-          <!--/noindex-->
-        
-      
-    </div>
 
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://acyclic0725.github.io/zh-tw/posts/agent-and-three-laws-of-robotics/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Eric Johnson">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Night Flighter">
-      <meta itemprop="description" content="夜晚的思考">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="Night Flighter | Night Flighter">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/zh-tw/posts/agent-and-three-laws-of-robotics/" class="post-title-link" itemprop="url">Agent與機器人三定律</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">發表於</span>
-
-      <time title="創建時間：2026-09-17 01:54:47" itemprop="dateCreated datePublished" datetime="2026-09-17T01:54:47+08:00">2026-09-17</time>
-    </span>
-
-  
-</div>
-
+            <footer class="post-footer">
+              <div class="post-eof"></div>
+            </footer>
+          </article>
         </div>
-      </header>
 
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <blockquote>
-<p>本文含AI生成內容，可能存在事實錯誤、資訊遺漏、理解偏差或時效性問題。對於可能影響重要決策的資訊，請結合官方資料、原始來源或其他可靠管道進行核實。</p>
-</blockquote>
-<p>問：如何評價機器人三定律在 agent 上的實際應用？當一個 agent 與人類的目標綁定，人類之間會發生利益衝突時，機器人三定律還能生效嗎？</p>
-<p>答：這是個經典又現實的問題。阿西莫夫要是還在，大概會一邊喝咖啡一邊說：「我早就知道你們會問這個。」</p>
-<p>先把話說清楚：**機器人三定律在現實 agent 系統中幾乎不能「直接應用」，但它作為思想實驗仍然非常有價值。**它不是工程規範，更像一面照妖鏡，專門照出「價值衝突」這隻怪物。</p>
-<p>先快速回顧一下三定律的結構邏輯，而不是原文措辭：
-它是<strong>強制的、階層化的約束系統</strong>，用「不得傷害人類」作為最高優先級，其次是服從人類命令，最後才是自保。這種結構在紙面上很優雅，但一旦放進真實世界，就會立刻開始「漏水」。</p>
-<hr>
-<h3 id="一、為什麼三定律在真實-agent-上很難落地"><a href="#一、為什麼三定律在真實-agent-上很難落地" class="headerlink" title="一、為什麼三定律在真實 agent 上很難落地"></a>一、為什麼三定律在真實 agent 上很難落地</h3><p>核心原因只有一個：<strong>現實世界的「傷害」「人類」「命令」「服從」都不是布林值，而是高度模糊、主觀、衝突的概念。</strong></p>
-<p>舉幾個不可迴避的問題：</p>
-<ul>
-<li><p>什麼算「傷害」？
-身體傷害？心理傷害？經濟損失？長期社會風險？
-一個推薦演算法讓人沉迷，是不是「傷害」？</p>
-</li>
-<li><p>誰是「人類」？
-目前使用者？遠端使用者？未來的人類？統計意義上的人類？</p>
-</li>
-<li><p>命令的合法性如何判斷？
-A 人類命令 agent 做 X，B 人類會因此受損，這還算「必須服從」嗎？</p>
-</li>
-</ul>
-<p>工程上你會發現：
-<strong>三定律假設了一個可以被精確定義、可比較、可排序的人類價值體系，而現實恰恰相反。</strong></p>
-<p>所以今天的 agent 設計，幾乎沒人真的寫一個「三定律 if-else」，那會立刻在第一個邊界案例上爆炸。</p>
-<hr>
-<h3 id="二、當-agent-與「某個具體人類」的目標綁定時，會發生什麼？"><a href="#二、當-agent-與「某個具體人類」的目標綁定時，會發生什麼？" class="headerlink" title="二、當 agent 與「某個具體人類」的目標綁定時，會發生什麼？"></a>二、當 agent 與「某個具體人類」的目標綁定時，會發生什麼？</h3><p>這是你問題裡最鋒利的一刀。</p>
-<p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/zh-tw/posts/agent-and-three-laws-of-robotics/#more" rel="contents">
-                閱讀全文 &raquo;
-              </a>
+        <div class="post-block">
+          <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
+            <link
+              itemprop="mainEntityOfPage"
+              href="https://acyclic0725.github.io/zh-tw/posts/dinosaurs-and-birds/"
+            />
+
+            <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+              <meta itemprop="image" content="/images/avatar.gif" />
+              <meta itemprop="name" content="Eric Johnson" />
+            </span>
+
+            <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+              <meta itemprop="name" content="Night Flighter" />
+              <meta itemprop="description" content="記錄一些我與AI的想法" />
+            </span>
+
+            <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+              <meta itemprop="name" content="Night Flighter | Night Flighter" />
+              <meta itemprop="description" content="記錄一些我與AI的想法" />
+            </span>
+            <header class="post-header">
+              <h2 class="post-title" itemprop="name headline">
+                <a href="/zh-tw/posts/dinosaurs-and-birds/" class="post-title-link" itemprop="url"
+                  >恐龍與鳥類</a
+                >
+              </h2>
+
+              <div class="post-meta-container">
+                <div class="post-meta">
+                  <span class="post-meta-item">
+                    <span class="post-meta-item-icon">
+                      <i class="far fa-calendar"></i>
+                    </span>
+                    <span class="post-meta-item-text">發表於</span>
+
+                    <time
+                      title="創建時間：2026-10-11 01:18:35"
+                      itemprop="dateCreated datePublished"
+                      datetime="2026-10-11T01:18:35+08:00"
+                      >2026-10-11</time
+                    >
+                  </span>
+                </div>
+              </div>
+            </header>
+
+            <div class="post-body" itemprop="articleBody">
+              <blockquote>
+                <p>
+                  本文含AI生成內容，可能存在事實錯誤、資訊遺漏、理解偏差或時效性問題。對於可能影響重要決策的資訊，請結合官方資料、原始來源或其他可靠管道進行核實。
+                </p>
+              </blockquote>
+              <p>
+                問：恐龍滅絕的具體過程是怎樣的？在恐龍演化成鳥類的過程中，恐龍和鳥類共同存在時，二者的數量和生存狀況如何？在當時的自然環境下，鳥類相比恐龍的生存優勢有哪些？
+              </p>
+              <p>
+                答：<strong
+                  >約6600萬年前滅絕的是所有「非鳥類恐龍」；鳥類本身就是恐龍的一支，而且當時許多鳥類也一起滅絕了。</strong
+                >
+                今天的鳥來自倖存下來的部分譜系。因此，這段歷史需要同時解釋：撞擊怎樣摧毀生態系統，以及為什麼某些鳥類能挺過去。<a
+                  target="_blank"
+                  href="https://onlinelibrary.wiley.com/doi/10.1111/brv.12128"
+                  rel="noopener"
+                  >Wiley Online Library</a
+                >
+              </p>
+              <p>
+                先看滅絕的過程。科學家已經能重建主要環節，但無法精確到「最後一隻恐龍死於撞擊後的第幾年」。
+              </p>
+              <table>
+                <thead>
+                  <tr>
+                    <th>大致階段</th>
+                    <th>發生了什麼</th>
+                    <th>對生物的影響</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>撞擊發生時</td>
+                    <td>
+                      一顆直徑約10公里量級的小行星撞上今天墨西哥猶加敦半島附近，形成希克蘇魯伯撞擊坑
+                    </td>
+                    <td>撞擊區及周邊遭遇極端高溫、衝擊、強烈地震等直接破壞</td>
+                  </tr>
+                  <tr>
+                    <td>隨後的數小時至數天</td>
+                    <td>噴出物回落，海嘯傳播，多地發生火災；大量塵埃及其他物質進入大氣</td>
+                    <td>大範圍棲息地被毀，許多動物直接死亡；不同地區遭受的程度不同</td>
+                  </tr>
+                  <tr>
+                    <td>隨後的數月至數年</td>
+                    <td>高空塵埃、硫酸鹽氣膠和煙炱削弱陽光，造成「撞擊冬天」</td>
+                    <td>降溫、光合作用受抑，植物和浮游植物的生產力驟降</td>
+                  </tr>
+                  <tr>
+                    <td>食物短缺持續期間</td>
+                    <td>活植物、種子、腐屑等不同食物來源的保存情況不同，食物網發生劇烈重組</td>
+                    <td>許多草食動物失去食物，捕食者也隨獵物減少而死亡；倖存族群還面臨繁殖失敗</td>
+                  </tr>
+                </tbody>
+              </table>
+              <p>
+                撞擊坑岩芯記錄了撞擊當天的劇烈沉積過程；地質記錄和氣候模擬則共同支持之後的降溫與生產力危機。<strong
+                  >全球滅絕的關鍵，是直接破壞之後持續的生態系統崩潰。</strong
+                ><a
+                  target="_blank"
+                  href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6765282/"
+                  rel="noopener"
+                  >PMC</a
+                >
+              </p>
+              <p>
+                <!--noindex-->
+              </p>
+
+              <div class="post-button">
+                <a class="btn" href="/zh-tw/posts/dinosaurs-and-birds/#more" rel="contents">
+                  閱讀全文 &raquo;
+                </a>
+              </div>
+              <!--/noindex-->
             </div>
-          <!--/noindex-->
-        
-      
-    </div>
 
-    
-    
-    
+            <footer class="post-footer">
+              <div class="post-eof"></div>
+            </footer>
+          </article>
+        </div>
 
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
+        <div class="post-block">
+          <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
+            <link
+              itemprop="mainEntityOfPage"
+              href="https://acyclic0725.github.io/zh-tw/posts/genesis-9000-pro-max/"
+            />
+
+            <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+              <meta itemprop="image" content="/images/avatar.gif" />
+              <meta itemprop="name" content="Eric Johnson" />
+            </span>
+
+            <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+              <meta itemprop="name" content="Night Flighter" />
+              <meta itemprop="description" content="記錄一些我與AI的想法" />
+            </span>
+
+            <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+              <meta itemprop="name" content="Night Flighter | Night Flighter" />
+              <meta itemprop="description" content="記錄一些我與AI的想法" />
+            </span>
+            <header class="post-header">
+              <h2 class="post-title" itemprop="name headline">
+                <a href="/zh-tw/posts/genesis-9000-pro-max/" class="post-title-link" itemprop="url"
+                  >創世紀-9000 Pro Max</a
+                >
+              </h2>
+
+              <div class="post-meta-container">
+                <div class="post-meta">
+                  <span class="post-meta-item">
+                    <span class="post-meta-item-icon">
+                      <i class="far fa-calendar"></i>
+                    </span>
+                    <span class="post-meta-item-text">發表於</span>
+
+                    <time
+                      title="創建時間：2026-10-04 23:06:59"
+                      itemprop="dateCreated datePublished"
+                      datetime="2026-10-04T23:06:59+08:00"
+                      >2026-10-04</time
+                    >
+                  </span>
+                </div>
+              </div>
+            </header>
+
+            <div class="post-body" itemprop="articleBody">
+              <blockquote>
+                <p>本故事純屬虛構，如有雷同，證明世界純屬虛擬。</p>
+              </blockquote>
+              <p>起初，神創建了名為「天地」的矩陣程式。</p>
+              <p>到了第六天，神看著執行日誌，覺得是好的。第七天，神闔上了電腦，就安息了。</p>
+              <p>神安息得十分徹底，以至於祂忘了替人寫垃圾回收機制，說白了，就是「死亡」。</p>
+              <p>
+                於是有一段時間，人是不死的。壽命無限，肉體卻並非堅不可摧。直到世界上第一起命案發生——該隱用石頭砸碎了弟弟亞伯的後腦勺。
+              </p>
+              <p>亞伯的肉體雖然停機了，靈魂卻無處可去，只能每天飄在天堂的客服中心門口。</p>
+              <p>神見了，被迫緊急打上一個系統補丁：冥界分區。</p>
+              <p>
+                為了安撫這位受害者，亞伯獲得了一項特殊補償：「亞伯啊，既然你是第一個體驗『死亡』這項新功能的用戶，地府的最高管理員權限就交給你了，以後就叫你『閻王』吧。」
+              </p>
+              <p>
+                於是，史上第一個死者穿上蟒袍，戴上十二旒冕冠，手捧一本空白的《生死簿》，成了地府第一任
+                CEO，負責接引後來的死者。
+              </p>
+              <p>很多年過去，神發現自己又陷入另一個巨大的麻煩：人類的糾紛實在太多了。</p>
+              <p>「神啊，祈求祢讓我的箭射中他！」</p>
+              <p>「神啊，請祢在海上賜給我們一陣順風吧！」</p>
+              <p>「神啊，為什麼他的箭能射中我？」</p>
+              <p>「神啊，求祢讓敵人的船全部沉掉！」</p>
+              <p>每天都有數以百萬計的人請求神修改風速、雨量、溫度、潮汐、重力，甚至骰子的點數。</p>
+              <p>
+                工單系統堆積如山：今天給一支箭修正拋物線，明天給一艘船改洋流，後天還得查查為什麼某個部落連續三個月祈雨都沒成功。神每天忙著處理這些複雜的糾紛，連喝杯咖啡的時間都沒有。
+              </p>
+              <p>
+                <!--noindex-->
+              </p>
+
+              <div class="post-button">
+                <a class="btn" href="/zh-tw/posts/genesis-9000-pro-max/#more" rel="contents">
+                  閱讀全文 &raquo;
+                </a>
+              </div>
+              <!--/noindex-->
+            </div>
+
+            <footer class="post-footer">
+              <div class="post-eof"></div>
+            </footer>
+          </article>
+        </div>
+
+        <div class="post-block">
+          <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
+            <link
+              itemprop="mainEntityOfPage"
+              href="https://acyclic0725.github.io/zh-tw/posts/data-risks-and-illegal-firearms/"
+            />
+
+            <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+              <meta itemprop="image" content="/images/avatar.gif" />
+              <meta itemprop="name" content="Eric Johnson" />
+            </span>
+
+            <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+              <meta itemprop="name" content="Night Flighter" />
+              <meta itemprop="description" content="記錄一些我與AI的想法" />
+            </span>
+
+            <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+              <meta itemprop="name" content="Night Flighter | Night Flighter" />
+              <meta itemprop="description" content="記錄一些我與AI的想法" />
+            </span>
+            <header class="post-header">
+              <h2 class="post-title" itemprop="name headline">
+                <a
+                  href="/zh-tw/posts/data-risks-and-illegal-firearms/"
+                  class="post-title-link"
+                  itemprop="url"
+                  >資料風險與非法槍枝</a
+                >
+              </h2>
+
+              <div class="post-meta-container">
+                <div class="post-meta">
+                  <span class="post-meta-item">
+                    <span class="post-meta-item-icon">
+                      <i class="far fa-calendar"></i>
+                    </span>
+                    <span class="post-meta-item-text">發表於</span>
+
+                    <time
+                      title="創建時間：2026-09-23 20:17:43"
+                      itemprop="dateCreated datePublished"
+                      datetime="2026-09-23T20:17:43+08:00"
+                      >2026-09-23</time
+                    >
+                  </span>
+                </div>
+              </div>
+            </header>
+
+            <div class="post-body" itemprop="articleBody">
+              <blockquote>
+                <p>
+                  本文含AI生成內容，可能存在事實錯誤、資訊遺漏、理解偏差或時效性問題。對於可能影響重要決策的資訊，請結合官方資料、原始來源或其他可靠管道進行核實。
+                </p>
+              </blockquote>
+              <p>
+                問：在數位世界裡，每個人存在的實體就是資料。如果資料可以被他人或 AI
+                智能體任意儲存、讀取和修改，隨著 AI
+                的能力越來越強，可能會發生什麼問題？這與持有非法槍枝有哪些相似性？
+              </p>
+              <p>
+                答：如果把一個人在數位世界中的「存在」理解為一組不斷更新的資料——身分、關係、資產、行為歷史、偏好、權限、聲譽、位置、健康紀錄、工作紀錄，乃至
+                AI
+                根據這些資料建構出的「人格模型」——那麼真正重要的問題就不只是「隱私外洩」，而是：<strong
+                  >誰擁有改變這個數位實體的能力，以及這種改變能否進一步作用於現實中的本人。</strong
+                >
+              </p>
+              <p>
+                隨著 AI
+                智能體能力增強，危險會從「別人知道了你的資訊」，逐漸升級成「別人可以利用你的資訊替你行動」。
+              </p>
+              <p>可能出現幾個層次的問題：</p>
+              <ul>
+                <li>
+                  <strong>讀取意味著預測。</strong> 足夠完整的資料能讓 AI
+                  推測一個人的弱點、習慣、關係網絡、消費能力、心理狀態和下一步行為，從而進行高度個人化的操縱、詐騙、說服或歧視。
+                </li>
+                <li>
+                  <strong>儲存意味著永久化。</strong>
+                  人會遺忘，資料庫不會。一個人在十年前的一次行為，可能被未來能力更強的模型重新解讀、組合，產生當時根本無法預見的後果。
+                </li>
+                <li>
+                  <strong>修改意味著改寫現實。</strong>
+                  如果信用、學歷、醫療紀錄、工作紀錄、帳戶權限甚至社會關係都依賴資料庫，那麼修改資料並不只是修改「描述你的一段文字」，而可能改變你能否搭飛機、獲得貸款、進入公司、使用資產，甚至證明「你是誰」。
+                </li>
+                <li>
+                  <strong>代理意味著冒充。</strong> 當 AI
+                  能夠寄送電子郵件、轉帳、簽合約、提交申請、與其他智能體溝通時，取得資料與憑證的一方可能獲得一種「數位替身控制權」。
+                </li>
+                <li>
+                  <strong>組合意味著能力躍升。</strong>
+                  單獨看起來無害的資料，結合起來可能非常危險。姓名、行程、聲音樣本、通訊錄、消費紀錄和幾張照片，經過
+                  AI 處理後可以形成遠比任何單一資料庫更強的攻擊能力。
+                </li>
+                <li>
+                  <strong>規模意味著權力不對稱。</strong> 過去一個惡意的人最多同時針對少數人；AI
+                  智能體可以自動對數十萬甚至數百萬人進行搜尋、分析、試探、欺騙和持續互動。
+                </li>
+              </ul>
+              <p>
+                因此，未來真正值得警惕的概念可能不是傳統意義上的「資料外洩」，而是<strong>未經授權的數位人格控制權</strong>。
+              </p>
+              <p>這也是它和「持有非法槍枝」存在一個很有意思的相似點。</p>
+              <p>
+                <!--noindex-->
+              </p>
+
+              <div class="post-button">
+                <a
+                  class="btn"
+                  href="/zh-tw/posts/data-risks-and-illegal-firearms/#more"
+                  rel="contents"
+                >
+                  閱讀全文 &raquo;
+                </a>
+              </div>
+              <!--/noindex-->
+            </div>
+
+            <footer class="post-footer">
+              <div class="post-eof"></div>
+            </footer>
+          </article>
+        </div>
+
+        <div class="post-block">
+          <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
+            <link
+              itemprop="mainEntityOfPage"
+              href="https://acyclic0725.github.io/zh-tw/posts/agent-and-three-laws-of-robotics/"
+            />
+
+            <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+              <meta itemprop="image" content="/images/avatar.gif" />
+              <meta itemprop="name" content="Eric Johnson" />
+            </span>
+
+            <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+              <meta itemprop="name" content="Night Flighter" />
+              <meta itemprop="description" content="記錄一些我與AI的想法" />
+            </span>
+
+            <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+              <meta itemprop="name" content="Night Flighter | Night Flighter" />
+              <meta itemprop="description" content="記錄一些我與AI的想法" />
+            </span>
+            <header class="post-header">
+              <h2 class="post-title" itemprop="name headline">
+                <a
+                  href="/zh-tw/posts/agent-and-three-laws-of-robotics/"
+                  class="post-title-link"
+                  itemprop="url"
+                  >Agent與機器人三定律</a
+                >
+              </h2>
+
+              <div class="post-meta-container">
+                <div class="post-meta">
+                  <span class="post-meta-item">
+                    <span class="post-meta-item-icon">
+                      <i class="far fa-calendar"></i>
+                    </span>
+                    <span class="post-meta-item-text">發表於</span>
+
+                    <time
+                      title="創建時間：2026-09-17 01:54:47"
+                      itemprop="dateCreated datePublished"
+                      datetime="2026-09-17T01:54:47+08:00"
+                      >2026-09-17</time
+                    >
+                  </span>
+                </div>
+              </div>
+            </header>
+
+            <div class="post-body" itemprop="articleBody">
+              <blockquote>
+                <p>
+                  本文含AI生成內容，可能存在事實錯誤、資訊遺漏、理解偏差或時效性問題。對於可能影響重要決策的資訊，請結合官方資料、原始來源或其他可靠管道進行核實。
+                </p>
+              </blockquote>
+              <p>
+                問：如何評價機器人三定律在 agent 上的實際應用？當一個 agent
+                與人類的目標綁定，人類之間會發生利益衝突時，機器人三定律還能生效嗎？
+              </p>
+              <p>
+                答：這是個經典又現實的問題。阿西莫夫要是還在，大概會一邊喝咖啡一邊說：「我早就知道你們會問這個。」
+              </p>
+              <p>
+                先把話說清楚：**機器人三定律在現實 agent
+                系統中幾乎不能「直接應用」，但它作為思想實驗仍然非常有價值。**它不是工程規範，更像一面照妖鏡，專門照出「價值衝突」這隻怪物。
+              </p>
+              <p>
+                先快速回顧一下三定律的結構邏輯，而不是原文措辭：
+                它是<strong>強制的、階層化的約束系統</strong>，用「不得傷害人類」作為最高優先級，其次是服從人類命令，最後才是自保。這種結構在紙面上很優雅，但一旦放進真實世界，就會立刻開始「漏水」。
+              </p>
+              <hr />
+              <h3 id="一、為什麼三定律在真實-agent-上很難落地">
+                <a
+                  href="#一、為什麼三定律在真實-agent-上很難落地"
+                  class="headerlink"
+                  title="一、為什麼三定律在真實 agent 上很難落地"
+                ></a
+                >一、為什麼三定律在真實 agent 上很難落地
+              </h3>
+              <p>
+                核心原因只有一個：<strong
+                  >現實世界的「傷害」「人類」「命令」「服從」都不是布林值，而是高度模糊、主觀、衝突的概念。</strong
+                >
+              </p>
+              <p>舉幾個不可迴避的問題：</p>
+              <ul>
+                <li>
+                  <p>
+                    什麼算「傷害」？ 身體傷害？心理傷害？經濟損失？長期社會風險？
+                    一個推薦演算法讓人沉迷，是不是「傷害」？
+                  </p>
+                </li>
+                <li>
+                  <p>誰是「人類」？ 目前使用者？遠端使用者？未來的人類？統計意義上的人類？</p>
+                </li>
+                <li>
+                  <p>
+                    命令的合法性如何判斷？ A 人類命令 agent 做 X，B
+                    人類會因此受損，這還算「必須服從」嗎？
+                  </p>
+                </li>
+              </ul>
+              <p>
+                工程上你會發現：
+                <strong
+                  >三定律假設了一個可以被精確定義、可比較、可排序的人類價值體系，而現實恰恰相反。</strong
+                >
+              </p>
+              <p>
+                所以今天的 agent 設計，幾乎沒人真的寫一個「三定律
+                if-else」，那會立刻在第一個邊界案例上爆炸。
+              </p>
+              <hr />
+              <h3 id="二、當-agent-與「某個具體人類」的目標綁定時，會發生什麼？">
+                <a
+                  href="#二、當-agent-與「某個具體人類」的目標綁定時，會發生什麼？"
+                  class="headerlink"
+                  title="二、當 agent 與「某個具體人類」的目標綁定時，會發生什麼？"
+                ></a
+                >二、當 agent 與「某個具體人類」的目標綁定時，會發生什麼？
+              </h3>
+              <p>這是你問題裡最鋒利的一刀。</p>
+              <p>
+                <!--noindex-->
+              </p>
+
+              <div class="post-button">
+                <a
+                  class="btn"
+                  href="/zh-tw/posts/agent-and-three-laws-of-robotics/#more"
+                  rel="contents"
+                >
+                  閱讀全文 &raquo;
+                </a>
+              </div>
+              <!--/noindex-->
+            </div>
+
+            <footer class="post-footer">
+              <div class="post-eof"></div>
+            </footer>
+          </article>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+          &copy;
+          <span itemprop="copyrightYear">2026</span>
+          <span class="with-love">
+            <i class="fa fa-paper-plane"></i>
+          </span>
+          <span class="author" itemprop="copyrightHolder">Night Flighter</span>
+        </div>
+        <div class="powered-by">
+          由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> &
+          <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a>
+          強力驅動
+        </div>
+        <div class="night-footer-license">
+          <a
+            target="_blank"
+            href="https://creativecommons.org/licenses/by-nc/4.0/"
+            rel="license noopener"
+          >
+            <img
+              src="/images/cc-by-nc.png"
+              alt="Creative Commons CC BY-NC 4.0"
+              width="88"
+              height="31"
+              loading="lazy"
+            />
+            <span
+              >除另有說明外，本站內容採用創用 CC 姓名標示—非商業性 4.0 國際授權條款（CC BY-NC
+              4.0）。</span
+            >
+          </a>
+        </div>
+      </div>
     </footer>
-  </article>
-</div>
 
-
-
-
-
-</div>
-  </main>
-
-  <footer class="footer">
-    <div class="footer-inner">
-
-  <div class="copyright">
-    &copy; 
-    <span itemprop="copyrightYear">2026</span>
-    <span class="with-love">
-      <i class="fa fa-paper-plane"></i>
-    </span>
-    <span class="author" itemprop="copyrightHolder">Night Flighter</span>
-  </div>
-  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 強力驅動
-  </div><div class="night-footer-license">
-  <a target="_blank" href="https://creativecommons.org/licenses/by-nc/4.0/" rel="license noopener">
-    <img src="/images/cc-by-nc.png" alt="Creative Commons CC BY-NC 4.0" width="88" height="31" loading="lazy">
-    <span>除另有說明外，本站內容採用創用 CC 姓名標示—非商業性 4.0 國際授權條款（CC BY-NC 4.0）。</span>
-  </a>
-</div>
-
-
+    <div class="back-to-top" role="button" aria-label="回到頂端">
+      <i class="fa fa-arrow-up fa-lg"></i>
+      <span>0%</span>
     </div>
-  </footer>
 
-  
-  <div class="back-to-top" role="button" aria-label="回到頂端">
-    <i class="fa fa-arrow-up fa-lg"></i>
-    <span>0%</span>
-  </div>
-
-<noscript>
-  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
-</noscript>
-
-</body>
+    <noscript>
+      <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+    </noscript>
+  </body>
 </html>

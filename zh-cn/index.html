@@ -1,791 +1,989 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-<head>
-  <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width">
-<meta name="theme-color" content="#0d1522"><meta name="generator" content="Hexo 8.1.2">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="theme-color" content="#0d1522" />
+    <meta name="generator" content="Hexo 8.1.2" />
 
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
-  <link rel="mask-icon" href="/images/logo.svg" color="#0d1522">
-  <meta name="google-site-verification" content="aCRle-V_orW-i7a_tUrqKkhtBeb3qX5H0MfK9_hcxas">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png" />
+    <link rel="mask-icon" href="/images/logo.svg" color="#0d1522" />
+    <meta name="google-site-verification" content="aCRle-V_orW-i7a_tUrqKkhtBeb3qX5H0MfK9_hcxas" />
 
-<link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/main.css" />
 
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+      integrity="sha256-VHqXKFhhMxcpubYf9xiWdCiojEbY9NexQ4jh8AxbvcM="
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css"
+      integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE="
+      crossorigin="anonymous"
+    />
 
+    <script class="next-config" data-name="main" type="application/json">
+      {
+        "hostname": "acyclic0725.github.io",
+        "root": "/",
+        "images": "/images",
+        "scheme": "Muse",
+        "darkmode": false,
+        "version": "8.29.0",
+        "exturl": false,
+        "sidebar": {
+          "position": "left",
+          "width_expanded": 320,
+          "width_dual_column": 240,
+          "display": "remove",
+          "padding": 18,
+          "offset": 12
+        },
+        "hljswrap": true,
+        "codeblock": {
+          "theme": { "light": "default", "dark": "stackoverflow-dark" },
+          "prism": { "light": "prism", "dark": "prism-dark" },
+          "copy_button": { "enable": false, "style": null },
+          "fold": { "enable": false, "height": 500 },
+          "language": false
+        },
+        "bookmark": { "enable": false, "color": "#222", "save": "auto" },
+        "mediumzoom": false,
+        "pangu": false,
+        "comments": {
+          "style": "tabs",
+          "active": null,
+          "storage": true,
+          "lazyload": false,
+          "nav": null
+        },
+        "stickytabs": false,
+        "motion": {
+          "enable": true,
+          "async": false,
+          "duration": 200,
+          "transition": {
+            "menu_item": "fadeInDown",
+            "post_block": "fadeIn",
+            "post_header": "fadeInDown",
+            "post_body": "fadeInDown",
+            "coll_header": "fadeInLeft",
+            "sidebar": "fadeInUp"
+          }
+        },
+        "i18n": {
+          "placeholder": "搜索...",
+          "empty": "没有找到任何搜索结果：${query}",
+          "hits_time": "找到 ${hits} 个搜索结果（用时 ${time} 毫秒）",
+          "hits": "找到 ${hits} 个搜索结果"
+        }
+      }
+    </script>
+    <script src="/js/config.js" defer></script>
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha256-VHqXKFhhMxcpubYf9xiWdCiojEbY9NexQ4jh8AxbvcM=" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+    <meta name="description" content="记录一些我与AI的想法" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Night Flighter" />
+    <meta property="og:url" content="https://acyclic0725.github.io/zh-cn/" />
+    <meta property="og:site_name" content="Night Flighter" />
+    <meta property="og:description" content="记录一些我与AI的想法" />
+    <meta property="og:locale" content="zh_CN" />
+    <meta property="article:author" content="Eric Johnson" />
+    <meta name="twitter:card" content="summary" />
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"acyclic0725.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.29.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"remove","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js" defer></script>
+    <link rel="canonical" href="https://acyclic0725.github.io/zh-cn/" />
 
-    <meta property="og:type" content="website">
-<meta property="og:title" content="Night Flighter">
-<meta property="og:url" content="https://acyclic0725.github.io/zh-cn/">
-<meta property="og:site_name" content="Night Flighter">
-<meta property="og:locale" content="zh_CN">
-<meta property="article:author" content="Eric Johnson">
-<meta name="twitter:card" content="summary">
+    <script class="next-config" data-name="page" type="application/json">
+      {
+        "sidebar": "",
+        "isHome": true,
+        "isPost": false,
+        "lang": "zh-CN",
+        "comments": "",
+        "permalink": "",
+        "path": "zh-cn/index.html",
+        "title": "Night Flighter"
+      }
+    </script>
 
+    <script class="next-config" data-name="calendar" type="application/json">
+      ""
+    </script>
+    <title>Night Flighter</title>
 
-<link rel="canonical" href="https://acyclic0725.github.io/zh-cn/">
-
-
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":false,"lang":"zh-CN","comments":"","permalink":"","path":"zh-cn/index.html","title":"Night Flighter"}</script>
-
-<script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>Night Flighter</title>
-  
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-579D5NTBWN"></script>
-  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-579D5NTBWN","only_pageview":false,"measure_protocol_api_secret":null}</script>
-  <script src="/js/third-party/analytics/google-analytics.js" defer></script>
+    <script class="next-config" data-name="google_analytics" type="application/json">
+      { "tracking_id": "G-579D5NTBWN", "only_pageview": false, "measure_protocol_api_secret": null }
+    </script>
+    <script src="/js/third-party/analytics/google-analytics.js" defer></script>
 
+    <script src="/js/utils.js" defer></script>
+    <script src="/js/motion.js" defer></script>
+    <script src="/js/next-boot.js" defer></script>
 
+    <link rel="alternate" hreflang="zh-CN" href="https://acyclic0725.github.io/zh-cn/" />
+    <link rel="alternate" hreflang="zh-TW" href="https://acyclic0725.github.io/zh-tw/" />
+    <link rel="alternate" hreflang="en" href="https://acyclic0725.github.io/en/" />
+    <link rel="alternate" hreflang="x-default" href="https://acyclic0725.github.io/en/" />
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
 
+    <noscript>
+      <link rel="stylesheet" href="/css/noscript.css" />
+    </noscript>
+    <link rel="alternate" href="/atom.xml" title="Night Flighter" type="application/atom+xml" />
+  </head>
 
+  <body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+    <div class="headband"></div>
 
+    <main class="main">
+      <div class="column">
+        <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+          <div class="site-brand-container">
+            <div class="site-nav-toggle">
+              <div class="toggle" aria-label="切换导航栏" role="button">
+                <span class="toggle-line"></span>
+                <span class="toggle-line"></span>
+                <span class="toggle-line"></span>
+              </div>
+            </div>
 
-
-
-  
-<script src="/js/utils.js" defer></script><script src="/js/motion.js" defer></script><script src="/js/next-boot.js" defer></script>
-
-  
-
-
-
-
-
-
-  
-
-
-
-
-
-<link rel="alternate" hreflang="zh-CN" href="https://acyclic0725.github.io/zh-cn/">
-<link rel="alternate" hreflang="zh-TW" href="https://acyclic0725.github.io/zh-tw/">
-<link rel="alternate" hreflang="en" href="https://acyclic0725.github.io/en/">
-<link rel="alternate" hreflang="x-default" href="https://acyclic0725.github.io/en/">
-
-  <noscript>
-    <link rel="stylesheet" href="/css/noscript.css">
-  </noscript>
-<link rel="alternate" href="/atom.xml" title="Night Flighter" type="application/atom+xml">
-</head>
-
-<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
-  <div class="headband"></div>
-
-  <main class="main">
-    <div class="column">
-      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
-  <div class="site-nav-toggle">
-    <div class="toggle" aria-label="切换导航栏" role="button">
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
-    </div>
-  </div>
-
-  <div class="site-meta">
-
-    <a href="/" class="brand" rel="start">
-      <i class="logo-line"></i>
-      <p class="site-title">Night Flighter</p>
-      <i class="logo-line"></i>
-    </a>
-  </div>
-
-  <div class="site-nav-right">
-    <div class="toggle popup-trigger" aria-label="搜索" role="button">
-    </div>
-  </div>
-</div>
-
-
-
-<nav class="site-nav">
-  <ul class="main-menu menu">
-  </ul>
-</nav>
-
-
-
-
-<nav class="night-nav" aria-label="阅读语言">
-  <div class="night-nav-links">
-    <a href="/zh-cn/">首页</a>
-    <a href="/zh-cn/archives/">归档</a>
-    <a href="/zh-cn/about/">关于</a>
-  </div>
-  <details class="night-lang-menu">
-    <summary aria-label="阅读语言">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
-        <circle cx="12" cy="12" r="9" />
-        <ellipse cx="12" cy="12" rx="4" ry="9" />
-        <path d="M3 12h18" />
-      </svg>
-      <small>简体</small>
-    </summary>
-    <div>
-      <a href="/zh-cn/" lang="zh-CN" aria-current="page">
-        <span>简体中文</span><small>简</small>
-      </a>
-      <a href="/zh-tw/" lang="zh-TW">
-        <span>正體中文</span><small>正</small>
-      </a>
-      <a href="/en/" lang="en">
-        <span>English</span><small>EN</small>
-      </a>
-    </div>
-  </details>
-</nav>
-
-</header>
-    </div>
-
-    <div class="main-inner index posts-expand">
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://acyclic0725.github.io/zh-cn/posts/bandits-in-the-digital-age/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Eric Johnson">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Night Flighter">
-      <meta itemprop="description" content="夜晚的思考">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="Night Flighter | Night Flighter">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/zh-cn/posts/bandits-in-the-digital-age/" class="post-title-link" itemprop="url">数字时代的盗贼</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2026-11-04 13:54:38" itemprop="dateCreated datePublished" datetime="2026-11-04T13:54:38+08:00">2026-11-04</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <blockquote>
-<p>本文含AI生成内容，可能存在事实错误、信息遗漏、理解偏差或时效性问题。对于可能影响重要决策的信息，请结合官方资料、原始来源或其他可靠渠道进行核实。</p>
-</blockquote>
-<p>问：窃贼和强盗在古代经济社会中处于什么地位，产生了哪些影响和作用？</p>
-<p>答：从经济史和社会史的角度看，窃贼和强盗并不只是古代社会的犯罪者，也是财富分配、人口流动、社会秩序和国家权力相互作用的一部分。</p>
-<p>他们通常不直接创造财富，却参与了财富的非自愿转移；他们破坏经济秩序，但也间接促使社会发展治安、运输保障和财产保护制度；他们可能是社会危机的产物，也可能发展为能够影响地方政治的武装力量。</p>
-<p>因此，理解古代盗贼，不能只从道德上的善恶出发，还要考察他们在当时经济社会中的实际位置。</p>
-<h3 id="一、他们处于社会经济结构的什么位置？"><a href="#一、他们处于社会经济结构的什么位置？" class="headerlink" title="一、他们处于社会经济结构的什么位置？"></a>一、他们处于社会经济结构的什么位置？</h3><p>首先需要区分三类人。</p>
-<table>
-<thead>
-<tr>
-<th>类型</th>
-<th>主要活动</th>
-<th>经济社会地位</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>普通窃贼</td>
-<td>偷盗粮食、钱财、牲畜和货物</td>
-<td>往往分散活动，可能把偷盗作为临时或长期收入来源</td>
-</tr>
-<tr>
-<td>职业性强盗</td>
-<td>拦路抢劫、绑架勒索、结伙劫掠</td>
-<td>依靠暴力获取收入，部分形成稳定团伙</td>
-</tr>
-<tr>
-<td>组织化盗匪</td>
-<td>控制道路、村寨或局部地区，收取钱财</td>
-<td>可能发展为地方武装或非正式权力组织</td>
-</tr>
-</tbody></table>
-<p>这些人并不必然属于一个固定社会阶层。贫困农民、失业劳工、流民、逃兵可能加入盗匪，某些富有的地方势力也可能资助或利用他们。</p>
-<p>历史学家 Robert J. Antony 对清代广东的研究发现，不少盗匪原本是有家庭的劳动者，因就业不足和生活困境而间歇性参与盗窃。他们不是完全脱离正常社会的独立群体。<a target="_blank" href="https://academic.oup.com/hong-kong-scholarship-online/book/30576/chapter-abstract/258210326" rel="noopener">Oxford Academic</a></p>
-<p>更重要的是，古代官方所称的“盗贼”有时还包括反抗官府的饥民和地方武装，不完全等同于今天刑法意义上的盗窃犯。<a target="_blank" href="https://cssn.cn/lsx/lsx_zgs/202210/t20221024_5552492.shtml" rel="noopener">中国社会科学网</a></p>
-<h3 id="二、他们对古代经济产生了什么影响？"><a href="#二、他们对古代经济产生了什么影响？" class="headerlink" title="二、他们对古代经济产生了什么影响？"></a>二、他们对古代经济产生了什么影响？</h3><h4 id="1-参与财富再分配，但不等于创造财富"><a href="#1-参与财富再分配，但不等于创造财富" class="headerlink" title="1. 参与财富再分配，但不等于创造财富"></a>1. 参与财富再分配，但不等于创造财富</h4><p>盗窃和抢劫本质上是以非自愿方式改变财富的占有者。</p>
-<p>例如，一个强盗抢走商人的一百两银子，随后把银子用于购买粮食、酒肉或其他生活用品。原本属于商人的购买力，转移到了强盗及其交易对象手中。</p>
-<p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/zh-cn/posts/bandits-in-the-digital-age/#more" rel="contents">
-                阅读全文 &raquo;
+            <div class="site-meta">
+              <a href="/" class="brand" rel="start">
+                <i class="logo-line"></i>
+                <h1 class="site-title">Night Flighter</h1>
+                <i class="logo-line"></i>
               </a>
             </div>
-          <!--/noindex-->
-        
-      
-    </div>
 
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://acyclic0725.github.io/zh-cn/posts/turkeys-on-the-island/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Eric Johnson">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Night Flighter">
-      <meta itemprop="description" content="夜晚的思考">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="Night Flighter | Night Flighter">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/zh-cn/posts/turkeys-on-the-island/" class="post-title-link" itemprop="url">岛上的火鸡</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2026-10-25 15:08:57" itemprop="dateCreated datePublished" datetime="2026-10-25T15:08:57+08:00">2026-10-25</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>岛上的火鸡把世上的事分成三类：</p>
-<p>已经发生的，可以测量；尚未发生的，可以预测；永远不会发生的，不必讨论。</p>
-<p>科学纪元第三百二十七年，火鸡科学院院长赫兹提出了这套分类法，它被刻在一块黑色玄武岩上。下面还有两句被无数年轻火鸡抄进笔记本的话：</p>
-<p><em>凡存在者，皆有规律</em></p>
-<p><em>凡有规律，终可预测</em></p>
-<p>很长一段时间里，没有谁认真怀疑过这句话。毕竟，他们的确越来越擅长预测世界。</p>
-<p>火鸡岛不大。从东边的白崖走到西边的盐沼，只需要一个上午。岛中心有一座死火山，山脚下长着浆果灌木、苔藓和野麦。北部是一片低矮的松林，狐狸偶尔在那里出没；南岸迎着暖流，冬季也很少结冰。</p>
-<p>最早的火鸡并不懂科学。他们只知道下雨时躲到树下，看见狐狸就跑，饿了便四处啄食。春天来了，却不知道为什么会来。浆果时多时少，有的年份狐狸突然增多，半数幼鸟没能活下来；有时一场风暴过后，整片海滩都不见了。</p>
-<p>世界像一只看不见的手，时而抚摸他们，时而毫无理由地把他们推进泥泞。</p>
-<p>第一位试图理解这只手的火鸡叫阿尔。</p>
-<p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/zh-cn/posts/turkeys-on-the-island/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
+            <div class="site-nav-right">
+              <div class="toggle popup-trigger" aria-label="搜索" role="button"></div>
             </div>
-          <!--/noindex-->
-        
-      
-    </div>
+          </div>
 
-    
-    
-    
+          <nav class="site-nav">
+            <ul class="main-menu menu"></ul>
+          </nav>
 
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://acyclic0725.github.io/zh-cn/posts/dinosaurs-and-birds/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Eric Johnson">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Night Flighter">
-      <meta itemprop="description" content="夜晚的思考">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="Night Flighter | Night Flighter">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/zh-cn/posts/dinosaurs-and-birds/" class="post-title-link" itemprop="url">恐龙与鸟类</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2026-10-11 01:18:35" itemprop="dateCreated datePublished" datetime="2026-10-11T01:18:35+08:00">2026-10-11</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <blockquote>
-<p>本文含AI生成内容，可能存在事实错误、信息遗漏、理解偏差或时效性问题。对于可能影响重要决策的信息，请结合官方资料、原始来源或其他可靠渠道进行核实。</p>
-</blockquote>
-<p>问：恐龙灭绝的具体过程是怎样的？在恐龙进化成鸟类的过程中，恐龙和鸟类共同存在时，二者的数量和生存状况如何？在当时的自然环境下，鸟类相比恐龙的生存优势有哪些？</p>
-<p>答：<strong>约6600万年前灭绝的是所有“非鸟类恐龙”；鸟类本身就是恐龙的一支，而且当时许多鸟类也一起灭绝了。</strong> 今天的鸟来自幸存下来的部分谱系。因此，这段历史需要同时解释：撞击怎样摧毁生态系统，以及为什么某些鸟类能挺过去。<a target="_blank" href="https://onlinelibrary.wiley.com/doi/10.1111/brv.12128" rel="noopener">Wiley Online Library</a></p>
-<p>先看灭绝的过程。科学家已经能重建主要环节，但无法精确到“最后一只恐龙死于撞击后的第几年”。</p>
-<table>
-<thead>
-<tr>
-<th>大致阶段</th>
-<th>发生了什么</th>
-<th>对生物的影响</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>撞击发生时</td>
-<td>一颗直径约10千米量级的小行星撞上今天墨西哥尤卡坦半岛附近，形成希克苏鲁伯撞击坑</td>
-<td>撞击区及周边遭遇极端高温、冲击、强烈地震等直接破坏</td>
-</tr>
-<tr>
-<td>随后的数小时至数天</td>
-<td>喷出物回落，海啸传播，多地发生火灾；大量尘埃及其他物质进入大气</td>
-<td>大范围栖息地被毁，许多动物直接死亡；不同地区遭受的程度不同</td>
-</tr>
-<tr>
-<td>随后的数月至数年</td>
-<td>高空尘埃、硫酸盐气溶胶和烟炱削弱阳光，造成“撞击冬天”</td>
-<td>降温、光合作用受抑，植物和浮游植物的生产力骤降</td>
-</tr>
-<tr>
-<td>食物短缺持续期间</td>
-<td>活植物、种子、腐屑等不同食物来源的保存情况不同，食物网发生剧烈重组</td>
-<td>许多食草动物失去食物，捕食者也随猎物减少而死亡；幸存种群还面临繁殖失败</td>
-</tr>
-</tbody></table>
-<p>撞击坑岩芯记录了撞击当天的剧烈沉积过程；地质记录和气候模拟则共同支持之后的降温与生产力危机。<strong>全球灭绝的关键，是直接破坏之后持续的生态系统崩溃。</strong><a target="_blank" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6765282/" rel="noopener">PMC</a></p>
-<p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/zh-cn/posts/dinosaurs-and-birds/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
+          <nav class="night-nav" aria-label="阅读语言">
+            <div class="night-nav-links">
+              <a href="/zh-cn/">首页</a>
+              <a href="/zh-cn/archives/">归档</a>
+              <a href="/zh-cn/about/">关于</a>
             </div>
-          <!--/noindex-->
-        
-      
-    </div>
+            <details class="night-lang-menu">
+              <summary aria-label="阅读语言">
+                <svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                  focusable="false"
+                >
+                  <circle cx="12" cy="12" r="9" />
+                  <ellipse cx="12" cy="12" rx="4" ry="9" />
+                  <path d="M3 12h18" />
+                </svg>
+                <small>简体</small>
+              </summary>
+              <div>
+                <a href="/zh-cn/" lang="zh-CN" aria-current="page">
+                  <span>简体中文</span><small>简</small>
+                </a>
+                <a href="/zh-tw/" lang="zh-TW"> <span>正體中文</span><small>正</small> </a>
+                <a href="/en/" lang="en"> <span>English</span><small>EN</small> </a>
+              </div>
+            </details>
+          </nav>
+        </header>
+      </div>
 
-    
-    
-    
+      <div class="main-inner index posts-expand">
+        <div class="post-block">
+          <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+            <link
+              itemprop="mainEntityOfPage"
+              href="https://acyclic0725.github.io/zh-cn/posts/bandits-in-the-digital-age/"
+            />
 
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
+            <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+              <meta itemprop="image" content="/images/avatar.gif" />
+              <meta itemprop="name" content="Eric Johnson" />
+            </span>
 
+            <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+              <meta itemprop="name" content="Night Flighter" />
+              <meta itemprop="description" content="记录一些我与AI的想法" />
+            </span>
 
+            <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+              <meta itemprop="name" content="Night Flighter | Night Flighter" />
+              <meta itemprop="description" content="记录一些我与AI的想法" />
+            </span>
+            <header class="post-header">
+              <h2 class="post-title" itemprop="name headline">
+                <a
+                  href="/zh-cn/posts/bandits-in-the-digital-age/"
+                  class="post-title-link"
+                  itemprop="url"
+                  >数字时代的盗贼</a
+                >
+              </h2>
 
+              <div class="post-meta-container">
+                <div class="post-meta">
+                  <span class="post-meta-item">
+                    <span class="post-meta-item-icon">
+                      <i class="far fa-calendar"></i>
+                    </span>
+                    <span class="post-meta-item-text">发表于</span>
 
-    
+                    <time
+                      title="创建时间：2026-11-04 13:54:38"
+                      itemprop="dateCreated datePublished"
+                      datetime="2026-11-04T13:54:38+08:00"
+                      >2026-11-04</time
+                    >
+                  </span>
+                </div>
+              </div>
+            </header>
 
+            <div class="post-body" itemprop="articleBody">
+              <blockquote>
+                <p>
+                  本文含AI生成内容，可能存在事实错误、信息遗漏、理解偏差或时效性问题。对于可能影响重要决策的信息，请结合官方资料、原始来源或其他可靠渠道进行核实。
+                </p>
+              </blockquote>
+              <p>问：窃贼和强盗在古代经济社会中处于什么地位，产生了哪些影响和作用？</p>
+              <p>
+                答：从经济史和社会史的角度看，窃贼和强盗并不只是古代社会的犯罪者，也是财富分配、人口流动、社会秩序和国家权力相互作用的一部分。
+              </p>
+              <p>
+                他们通常不直接创造财富，却参与了财富的非自愿转移；他们破坏经济秩序，但也间接促使社会发展治安、运输保障和财产保护制度；他们可能是社会危机的产物，也可能发展为能够影响地方政治的武装力量。
+              </p>
+              <p>
+                因此，理解古代盗贼，不能只从道德上的善恶出发，还要考察他们在当时经济社会中的实际位置。
+              </p>
+              <h3 id="一、他们处于社会经济结构的什么位置？">
+                <a
+                  href="#一、他们处于社会经济结构的什么位置？"
+                  class="headerlink"
+                  title="一、他们处于社会经济结构的什么位置？"
+                ></a
+                >一、他们处于社会经济结构的什么位置？
+              </h3>
+              <p>首先需要区分三类人。</p>
+              <table>
+                <thead>
+                  <tr>
+                    <th>类型</th>
+                    <th>主要活动</th>
+                    <th>经济社会地位</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>普通窃贼</td>
+                    <td>偷盗粮食、钱财、牲畜和货物</td>
+                    <td>往往分散活动，可能把偷盗作为临时或长期收入来源</td>
+                  </tr>
+                  <tr>
+                    <td>职业性强盗</td>
+                    <td>拦路抢劫、绑架勒索、结伙劫掠</td>
+                    <td>依靠暴力获取收入，部分形成稳定团伙</td>
+                  </tr>
+                  <tr>
+                    <td>组织化盗匪</td>
+                    <td>控制道路、村寨或局部地区，收取钱财</td>
+                    <td>可能发展为地方武装或非正式权力组织</td>
+                  </tr>
+                </tbody>
+              </table>
+              <p>
+                这些人并不必然属于一个固定社会阶层。贫困农民、失业劳工、流民、逃兵可能加入盗匪，某些富有的地方势力也可能资助或利用他们。
+              </p>
+              <p>
+                历史学家 Robert J. Antony
+                对清代广东的研究发现，不少盗匪原本是有家庭的劳动者，因就业不足和生活困境而间歇性参与盗窃。他们不是完全脱离正常社会的独立群体。<a
+                  target="_blank"
+                  href="https://academic.oup.com/hong-kong-scholarship-online/book/30576/chapter-abstract/258210326"
+                  rel="noopener"
+                  >Oxford Academic</a
+                >
+              </p>
+              <p>
+                更重要的是，古代官方所称的“盗贼”有时还包括反抗官府的饥民和地方武装，不完全等同于今天刑法意义上的盗窃犯。<a
+                  target="_blank"
+                  href="https://cssn.cn/lsx/lsx_zgs/202210/t20221024_5552492.shtml"
+                  rel="noopener"
+                  >中国社会科学网</a
+                >
+              </p>
+              <h3 id="二、他们对古代经济产生了什么影响？">
+                <a
+                  href="#二、他们对古代经济产生了什么影响？"
+                  class="headerlink"
+                  title="二、他们对古代经济产生了什么影响？"
+                ></a
+                >二、他们对古代经济产生了什么影响？
+              </h3>
+              <h4 id="1-参与财富再分配，但不等于创造财富">
+                <a
+                  href="#1-参与财富再分配，但不等于创造财富"
+                  class="headerlink"
+                  title="1. 参与财富再分配，但不等于创造财富"
+                ></a
+                >1. 参与财富再分配，但不等于创造财富
+              </h4>
+              <p>盗窃和抢劫本质上是以非自愿方式改变财富的占有者。</p>
+              <p>
+                例如，一个强盗抢走商人的一百两银子，随后把银子用于购买粮食、酒肉或其他生活用品。原本属于商人的购买力，转移到了强盗及其交易对象手中。
+              </p>
+              <p>
+                <!--noindex-->
+              </p>
 
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://acyclic0725.github.io/zh-cn/posts/genesis-9000-pro-max/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Eric Johnson">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Night Flighter">
-      <meta itemprop="description" content="夜晚的思考">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="Night Flighter | Night Flighter">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/zh-cn/posts/genesis-9000-pro-max/" class="post-title-link" itemprop="url">创世纪-9000 Pro Max</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2026-10-04 23:06:59" itemprop="dateCreated datePublished" datetime="2026-10-04T23:06:59+08:00">2026-10-04</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <blockquote>
-<p>本故事纯属虚构，如有雷同，证明世界纯属虚拟</p>
-</blockquote>
-<p>起初，神创建了名为“天地”的矩阵程序。</p>
-<p>到了第六天，神看着运行日志，觉得是好的。第七天，神合上了他的计算机，就安息了。</p>
-<p>神安息得十分彻底，以至于他忘了给人写垃圾回收机制，通俗点说，就是“死亡”。</p>
-<p>于是有一段时间，人是不死的。寿命无限，肉体却并非坚不可摧。直到世界上第一起命案发生——该隐用石头砸碎了弟弟亚伯的后脑勺。</p>
-<p>亚伯的肉体虽然停机了，灵魂却无处可去，只能每天飘在天堂的客服中心门口。</p>
-<p>神见了，被迫紧急打了一个系统补丁：冥界分区。</p>
-<p>为了安抚这个受害者，亚伯获得了一项特殊补偿，“亚伯啊，既然你是第一个体验‘死亡’这个新功能的用户，地府的最高管理员权限就交给你了，以后就叫你‘阎王’吧。”</p>
-<p>于是，史上第一个死者，穿上了蟒袍，戴上了十二旒冕冠，手捧一本空白的《生死簿》，成了地府第一任CEO，来接引之后的死者。</p>
-<p>很多年过去，神发现自己又陷入另一个巨大的麻烦，人类的纠纷实在太多了。</p>
-<p>“神啊，祈求你让我的箭射中他！”</p>
-<p>“神啊，请你在海上赐给我们一阵顺风吧！”</p>
-<p>“神啊，为什么他的箭能射中我？”</p>
-<p>“神啊，求你让敌人的船全部沉掉！”</p>
-<p>每天都有数以百万计的人，请求神修改风速、雨量、温度、潮汐、重力，甚至骰子的点数。</p>
-<p>工单系统堆积如山，今天给一支箭修正抛物线，明天给一艘船改洋流，后天还要检查为什么某个部落连续三个月祈雨都没有成功。神每天都在处理这些复杂的纠纷，连喝杯咖啡的时间都没有。</p>
-<p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/zh-cn/posts/genesis-9000-pro-max/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
+              <div class="post-button">
+                <a class="btn" href="/zh-cn/posts/bandits-in-the-digital-age/#more" rel="contents">
+                  阅读全文 &raquo;
+                </a>
+              </div>
+              <!--/noindex-->
             </div>
-          <!--/noindex-->
-        
-      
-    </div>
 
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://acyclic0725.github.io/zh-cn/posts/data-risks-and-illegal-firearms/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Eric Johnson">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Night Flighter">
-      <meta itemprop="description" content="夜晚的思考">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="Night Flighter | Night Flighter">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/zh-cn/posts/data-risks-and-illegal-firearms/" class="post-title-link" itemprop="url">数据风险与非法枪支</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2026-09-23 20:17:43" itemprop="dateCreated datePublished" datetime="2026-09-23T20:17:43+08:00">2026-09-23</time>
-    </span>
-
-  
-</div>
-
+            <footer class="post-footer">
+              <div class="post-eof"></div>
+            </footer>
+          </article>
         </div>
-      </header>
 
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <blockquote>
-<p>本文含AI生成内容，可能存在事实错误、信息遗漏、理解偏差或时效性问题。对于可能影响重要决策的信息，请结合官方资料、原始来源或其他可靠渠道进行核实。</p>
-</blockquote>
-<p>问：在数字世界里，每个人存在的实体就是数据。如果数据可以被他人或AI智能体任意存储，读取和修改，随着AI的能力越来越强，可能会发生什么问题？这与持有非法枪支有哪些相似性？</p>
-<p>答：如果把一个人在数字世界中的“存在”理解为一组不断更新的数据——身份、关系、资产、行为历史、偏好、权限、声誉、位置、健康记录、工作记录，乃至AI根据这些数据构建出的“人格模型”——那么真正重要的问题就不只是“隐私泄露”，而是：<strong>谁拥有改变这个数字实体的能力，以及这种改变能否进一步作用于现实中的本人。</strong></p>
-<p>随着 AI 智能体能力增强，危险会从“别人知道了你的信息”，逐渐升级成“别人可以利用你的信息替你行动”。</p>
-<p>可能出现几个层次的问题：</p>
-<ul>
-<li><strong>读取意味着预测。</strong> 足够完整的数据能让AI推测一个人的弱点、习惯、关系网络、消费能力、心理状态和下一步行为，从而进行高度个性化的操纵、诈骗、说服或歧视。</li>
-<li><strong>存储意味着永久化。</strong> 人会遗忘，数据库不会。一个人在十年前的一次行为，可能被未来能力更强的模型重新解释、组合，产生当时根本无法预见的后果。</li>
-<li><strong>修改意味着重写现实。</strong> 如果信用、学历、医疗记录、工作记录、账户权限甚至社会关系都依赖数据库，那么修改数据并不只是修改“描述你的一段文字”，而可能改变你能否乘飞机、获得贷款、进入公司、使用资产，甚至证明“你是谁”。</li>
-<li><strong>代理意味着冒充。</strong> 当AI能够发邮件、转账、签合同、提交申请、与其他智能体沟通时，取得数据与凭证的一方可能获得一种“数字替身控制权”。</li>
-<li><strong>组合意味着能力跃迁。</strong> 单独看起来无害的数据，结合起来可能非常危险。姓名、日程、声音样本、通讯录、消费记录和几张照片，经过AI处理后可以形成远比任何单一数据库更强的攻击能力。</li>
-<li><strong>规模意味着权力不对称。</strong> 过去一个恶意的人最多同时针对少数人；AI智能体可以自动对数十万甚至数百万人进行搜索、分析、试探、欺骗和持续互动。</li>
-</ul>
-<p>因此，未来真正值得警惕的概念可能不是传统意义上的“数据泄露”，而是<strong>未经授权的数字人格控制权</strong>。</p>
-<p>这也是它和“持有非法枪支”存在一个很有意思的相似点。</p>
-<p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/zh-cn/posts/data-risks-and-illegal-firearms/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
+        <div class="post-block">
+          <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+            <link
+              itemprop="mainEntityOfPage"
+              href="https://acyclic0725.github.io/zh-cn/posts/turkeys-on-the-island/"
+            />
+
+            <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+              <meta itemprop="image" content="/images/avatar.gif" />
+              <meta itemprop="name" content="Eric Johnson" />
+            </span>
+
+            <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+              <meta itemprop="name" content="Night Flighter" />
+              <meta itemprop="description" content="记录一些我与AI的想法" />
+            </span>
+
+            <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+              <meta itemprop="name" content="Night Flighter | Night Flighter" />
+              <meta itemprop="description" content="记录一些我与AI的想法" />
+            </span>
+            <header class="post-header">
+              <h2 class="post-title" itemprop="name headline">
+                <a href="/zh-cn/posts/turkeys-on-the-island/" class="post-title-link" itemprop="url"
+                  >岛上的火鸡</a
+                >
+              </h2>
+
+              <div class="post-meta-container">
+                <div class="post-meta">
+                  <span class="post-meta-item">
+                    <span class="post-meta-item-icon">
+                      <i class="far fa-calendar"></i>
+                    </span>
+                    <span class="post-meta-item-text">发表于</span>
+
+                    <time
+                      title="创建时间：2026-10-25 15:08:57"
+                      itemprop="dateCreated datePublished"
+                      datetime="2026-10-25T15:08:57+08:00"
+                      >2026-10-25</time
+                    >
+                  </span>
+                </div>
+              </div>
+            </header>
+
+            <div class="post-body" itemprop="articleBody">
+              <p>岛上的火鸡把世上的事分成三类：</p>
+              <p>已经发生的，可以测量；尚未发生的，可以预测；永远不会发生的，不必讨论。</p>
+              <p>
+                科学纪元第三百二十七年，火鸡科学院院长赫兹提出了这套分类法，它被刻在一块黑色玄武岩上。下面还有两句被无数年轻火鸡抄进笔记本的话：
+              </p>
+              <p><em>凡存在者，皆有规律</em></p>
+              <p><em>凡有规律，终可预测</em></p>
+              <p>很长一段时间里，没有谁认真怀疑过这句话。毕竟，他们的确越来越擅长预测世界。</p>
+              <p>
+                火鸡岛不大。从东边的白崖走到西边的盐沼，只需要一个上午。岛中心有一座死火山，山脚下长着浆果灌木、苔藓和野麦。北部是一片低矮的松林，狐狸偶尔在那里出没；南岸迎着暖流，冬季也很少结冰。
+              </p>
+              <p>
+                最早的火鸡并不懂科学。他们只知道下雨时躲到树下，看见狐狸就跑，饿了便四处啄食。春天来了，却不知道为什么会来。浆果时多时少，有的年份狐狸突然增多，半数幼鸟没能活下来；有时一场风暴过后，整片海滩都不见了。
+              </p>
+              <p>世界像一只看不见的手，时而抚摸他们，时而毫无理由地把他们推进泥泞。</p>
+              <p>第一位试图理解这只手的火鸡叫阿尔。</p>
+              <p>
+                <!--noindex-->
+              </p>
+
+              <div class="post-button">
+                <a class="btn" href="/zh-cn/posts/turkeys-on-the-island/#more" rel="contents">
+                  阅读全文 &raquo;
+                </a>
+              </div>
+              <!--/noindex-->
             </div>
-          <!--/noindex-->
-        
-      
-    </div>
 
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://acyclic0725.github.io/zh-cn/posts/agent-and-three-laws-of-robotics/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Eric Johnson">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Night Flighter">
-      <meta itemprop="description" content="夜晚的思考">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="Night Flighter | Night Flighter">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/zh-cn/posts/agent-and-three-laws-of-robotics/" class="post-title-link" itemprop="url">Agent与机器人三定律</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2026-09-17 01:54:47" itemprop="dateCreated datePublished" datetime="2026-09-17T01:54:47+08:00">2026-09-17</time>
-    </span>
-
-  
-</div>
-
+            <footer class="post-footer">
+              <div class="post-eof"></div>
+            </footer>
+          </article>
         </div>
-      </header>
 
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <blockquote>
-<p>本文含AI生成内容，可能存在事实错误、信息遗漏、理解偏差或时效性问题。对于可能影响重要决策的信息，请结合官方资料、原始来源或其他可靠渠道进行核实。</p>
-</blockquote>
-<p>问：如何评价机器人三定律在agent上的实际应用？当一个agent与人类的目标绑定，人类之间会发生利益冲突时，机器人三定律还能生效吗？</p>
-<p>答：这是个经典又现实的问题。阿西莫夫要是还在，大概会一边喝咖啡一边说：“我早就知道你们会问这个。”</p>
-<p>先把话说清楚：**机器人三定律在现实 agent 系统中几乎不能“直接应用”，但它作为思想实验仍然非常有价值。**它不是工程规范，更像一面照妖镜，专门照出“价值冲突”这只怪物。</p>
-<p>先快速回顾一下三定律的结构逻辑，而不是原文措辞：
-它是<strong>强制的、层级化的约束系统</strong>，用“不得伤害人类”作为最高优先级，其次是服从人类命令，最后才是自保。这种结构在纸面上很优雅，但一旦放进真实世界，就会立刻开始“漏水”。</p>
-<hr>
-<h3 id="一、为什么三定律在真实-agent-上很难落地"><a href="#一、为什么三定律在真实-agent-上很难落地" class="headerlink" title="一、为什么三定律在真实 agent 上很难落地"></a>一、为什么三定律在真实 agent 上很难落地</h3><p>核心原因只有一个：<strong>现实世界的“伤害”“人类”“命令”“服从”都不是布尔值，而是高度模糊、主观、冲突的概念。</strong></p>
-<p>举几个不可回避的问题：</p>
-<ul>
-<li><p>什么算“伤害”？
-身体伤害？心理伤害？经济损失？长期社会风险？
-一个推荐算法让人沉迷，是不是“伤害”？</p>
-</li>
-<li><p>谁是“人类”？
-当前用户？远程用户？未来的人类？统计意义上的人类？</p>
-</li>
-<li><p>命令的合法性如何判断？
-A 人类命令 agent 做 X，B 人类会因此受损，这还算“必须服从”吗？</p>
-</li>
-</ul>
-<p>工程上你会发现：
-<strong>三定律假设了一个可以被精确定义、可比较、可排序的人类价值体系，而现实恰恰相反。</strong></p>
-<p>所以今天的 agent 设计，几乎没人真的写一个“三定律 if-else”，那会立刻在第一个边界案例上爆炸。</p>
-<hr>
-<h3 id="二、当-agent-与“某个具体人类”的目标绑定时，会发生什么？"><a href="#二、当-agent-与“某个具体人类”的目标绑定时，会发生什么？" class="headerlink" title="二、当 agent 与“某个具体人类”的目标绑定时，会发生什么？"></a>二、当 agent 与“某个具体人类”的目标绑定时，会发生什么？</h3><p>这是你问题里最锋利的一刀。</p>
-<p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/zh-cn/posts/agent-and-three-laws-of-robotics/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
+        <div class="post-block">
+          <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+            <link
+              itemprop="mainEntityOfPage"
+              href="https://acyclic0725.github.io/zh-cn/posts/dinosaurs-and-birds/"
+            />
+
+            <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+              <meta itemprop="image" content="/images/avatar.gif" />
+              <meta itemprop="name" content="Eric Johnson" />
+            </span>
+
+            <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+              <meta itemprop="name" content="Night Flighter" />
+              <meta itemprop="description" content="记录一些我与AI的想法" />
+            </span>
+
+            <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+              <meta itemprop="name" content="Night Flighter | Night Flighter" />
+              <meta itemprop="description" content="记录一些我与AI的想法" />
+            </span>
+            <header class="post-header">
+              <h2 class="post-title" itemprop="name headline">
+                <a href="/zh-cn/posts/dinosaurs-and-birds/" class="post-title-link" itemprop="url"
+                  >恐龙与鸟类</a
+                >
+              </h2>
+
+              <div class="post-meta-container">
+                <div class="post-meta">
+                  <span class="post-meta-item">
+                    <span class="post-meta-item-icon">
+                      <i class="far fa-calendar"></i>
+                    </span>
+                    <span class="post-meta-item-text">发表于</span>
+
+                    <time
+                      title="创建时间：2026-10-11 01:18:35"
+                      itemprop="dateCreated datePublished"
+                      datetime="2026-10-11T01:18:35+08:00"
+                      >2026-10-11</time
+                    >
+                  </span>
+                </div>
+              </div>
+            </header>
+
+            <div class="post-body" itemprop="articleBody">
+              <blockquote>
+                <p>
+                  本文含AI生成内容，可能存在事实错误、信息遗漏、理解偏差或时效性问题。对于可能影响重要决策的信息，请结合官方资料、原始来源或其他可靠渠道进行核实。
+                </p>
+              </blockquote>
+              <p>
+                问：恐龙灭绝的具体过程是怎样的？在恐龙进化成鸟类的过程中，恐龙和鸟类共同存在时，二者的数量和生存状况如何？在当时的自然环境下，鸟类相比恐龙的生存优势有哪些？
+              </p>
+              <p>
+                答：<strong
+                  >约6600万年前灭绝的是所有“非鸟类恐龙”；鸟类本身就是恐龙的一支，而且当时许多鸟类也一起灭绝了。</strong
+                >
+                今天的鸟来自幸存下来的部分谱系。因此，这段历史需要同时解释：撞击怎样摧毁生态系统，以及为什么某些鸟类能挺过去。<a
+                  target="_blank"
+                  href="https://onlinelibrary.wiley.com/doi/10.1111/brv.12128"
+                  rel="noopener"
+                  >Wiley Online Library</a
+                >
+              </p>
+              <p>
+                先看灭绝的过程。科学家已经能重建主要环节，但无法精确到“最后一只恐龙死于撞击后的第几年”。
+              </p>
+              <table>
+                <thead>
+                  <tr>
+                    <th>大致阶段</th>
+                    <th>发生了什么</th>
+                    <th>对生物的影响</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>撞击发生时</td>
+                    <td>
+                      一颗直径约10千米量级的小行星撞上今天墨西哥尤卡坦半岛附近，形成希克苏鲁伯撞击坑
+                    </td>
+                    <td>撞击区及周边遭遇极端高温、冲击、强烈地震等直接破坏</td>
+                  </tr>
+                  <tr>
+                    <td>随后的数小时至数天</td>
+                    <td>喷出物回落，海啸传播，多地发生火灾；大量尘埃及其他物质进入大气</td>
+                    <td>大范围栖息地被毁，许多动物直接死亡；不同地区遭受的程度不同</td>
+                  </tr>
+                  <tr>
+                    <td>随后的数月至数年</td>
+                    <td>高空尘埃、硫酸盐气溶胶和烟炱削弱阳光，造成“撞击冬天”</td>
+                    <td>降温、光合作用受抑，植物和浮游植物的生产力骤降</td>
+                  </tr>
+                  <tr>
+                    <td>食物短缺持续期间</td>
+                    <td>活植物、种子、腐屑等不同食物来源的保存情况不同，食物网发生剧烈重组</td>
+                    <td>许多食草动物失去食物，捕食者也随猎物减少而死亡；幸存种群还面临繁殖失败</td>
+                  </tr>
+                </tbody>
+              </table>
+              <p>
+                撞击坑岩芯记录了撞击当天的剧烈沉积过程；地质记录和气候模拟则共同支持之后的降温与生产力危机。<strong
+                  >全球灭绝的关键，是直接破坏之后持续的生态系统崩溃。</strong
+                ><a
+                  target="_blank"
+                  href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6765282/"
+                  rel="noopener"
+                  >PMC</a
+                >
+              </p>
+              <p>
+                <!--noindex-->
+              </p>
+
+              <div class="post-button">
+                <a class="btn" href="/zh-cn/posts/dinosaurs-and-birds/#more" rel="contents">
+                  阅读全文 &raquo;
+                </a>
+              </div>
+              <!--/noindex-->
             </div>
-          <!--/noindex-->
-        
-      
-    </div>
 
-    
-    
-    
+            <footer class="post-footer">
+              <div class="post-eof"></div>
+            </footer>
+          </article>
+        </div>
 
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
+        <div class="post-block">
+          <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+            <link
+              itemprop="mainEntityOfPage"
+              href="https://acyclic0725.github.io/zh-cn/posts/genesis-9000-pro-max/"
+            />
+
+            <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+              <meta itemprop="image" content="/images/avatar.gif" />
+              <meta itemprop="name" content="Eric Johnson" />
+            </span>
+
+            <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+              <meta itemprop="name" content="Night Flighter" />
+              <meta itemprop="description" content="记录一些我与AI的想法" />
+            </span>
+
+            <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+              <meta itemprop="name" content="Night Flighter | Night Flighter" />
+              <meta itemprop="description" content="记录一些我与AI的想法" />
+            </span>
+            <header class="post-header">
+              <h2 class="post-title" itemprop="name headline">
+                <a href="/zh-cn/posts/genesis-9000-pro-max/" class="post-title-link" itemprop="url"
+                  >创世纪-9000 Pro Max</a
+                >
+              </h2>
+
+              <div class="post-meta-container">
+                <div class="post-meta">
+                  <span class="post-meta-item">
+                    <span class="post-meta-item-icon">
+                      <i class="far fa-calendar"></i>
+                    </span>
+                    <span class="post-meta-item-text">发表于</span>
+
+                    <time
+                      title="创建时间：2026-10-04 23:06:59"
+                      itemprop="dateCreated datePublished"
+                      datetime="2026-10-04T23:06:59+08:00"
+                      >2026-10-04</time
+                    >
+                  </span>
+                </div>
+              </div>
+            </header>
+
+            <div class="post-body" itemprop="articleBody">
+              <blockquote>
+                <p>本故事纯属虚构，如有雷同，证明世界纯属虚拟</p>
+              </blockquote>
+              <p>起初，神创建了名为“天地”的矩阵程序。</p>
+              <p>到了第六天，神看着运行日志，觉得是好的。第七天，神合上了他的计算机，就安息了。</p>
+              <p>神安息得十分彻底，以至于他忘了给人写垃圾回收机制，通俗点说，就是“死亡”。</p>
+              <p>
+                于是有一段时间，人是不死的。寿命无限，肉体却并非坚不可摧。直到世界上第一起命案发生——该隐用石头砸碎了弟弟亚伯的后脑勺。
+              </p>
+              <p>亚伯的肉体虽然停机了，灵魂却无处可去，只能每天飘在天堂的客服中心门口。</p>
+              <p>神见了，被迫紧急打了一个系统补丁：冥界分区。</p>
+              <p>
+                为了安抚这个受害者，亚伯获得了一项特殊补偿，“亚伯啊，既然你是第一个体验‘死亡’这个新功能的用户，地府的最高管理员权限就交给你了，以后就叫你‘阎王’吧。”
+              </p>
+              <p>
+                于是，史上第一个死者，穿上了蟒袍，戴上了十二旒冕冠，手捧一本空白的《生死簿》，成了地府第一任CEO，来接引之后的死者。
+              </p>
+              <p>很多年过去，神发现自己又陷入另一个巨大的麻烦，人类的纠纷实在太多了。</p>
+              <p>“神啊，祈求你让我的箭射中他！”</p>
+              <p>“神啊，请你在海上赐给我们一阵顺风吧！”</p>
+              <p>“神啊，为什么他的箭能射中我？”</p>
+              <p>“神啊，求你让敌人的船全部沉掉！”</p>
+              <p>
+                每天都有数以百万计的人，请求神修改风速、雨量、温度、潮汐、重力，甚至骰子的点数。
+              </p>
+              <p>
+                工单系统堆积如山，今天给一支箭修正抛物线，明天给一艘船改洋流，后天还要检查为什么某个部落连续三个月祈雨都没有成功。神每天都在处理这些复杂的纠纷，连喝杯咖啡的时间都没有。
+              </p>
+              <p>
+                <!--noindex-->
+              </p>
+
+              <div class="post-button">
+                <a class="btn" href="/zh-cn/posts/genesis-9000-pro-max/#more" rel="contents">
+                  阅读全文 &raquo;
+                </a>
+              </div>
+              <!--/noindex-->
+            </div>
+
+            <footer class="post-footer">
+              <div class="post-eof"></div>
+            </footer>
+          </article>
+        </div>
+
+        <div class="post-block">
+          <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+            <link
+              itemprop="mainEntityOfPage"
+              href="https://acyclic0725.github.io/zh-cn/posts/data-risks-and-illegal-firearms/"
+            />
+
+            <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+              <meta itemprop="image" content="/images/avatar.gif" />
+              <meta itemprop="name" content="Eric Johnson" />
+            </span>
+
+            <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+              <meta itemprop="name" content="Night Flighter" />
+              <meta itemprop="description" content="记录一些我与AI的想法" />
+            </span>
+
+            <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+              <meta itemprop="name" content="Night Flighter | Night Flighter" />
+              <meta itemprop="description" content="记录一些我与AI的想法" />
+            </span>
+            <header class="post-header">
+              <h2 class="post-title" itemprop="name headline">
+                <a
+                  href="/zh-cn/posts/data-risks-and-illegal-firearms/"
+                  class="post-title-link"
+                  itemprop="url"
+                  >数据风险与非法枪支</a
+                >
+              </h2>
+
+              <div class="post-meta-container">
+                <div class="post-meta">
+                  <span class="post-meta-item">
+                    <span class="post-meta-item-icon">
+                      <i class="far fa-calendar"></i>
+                    </span>
+                    <span class="post-meta-item-text">发表于</span>
+
+                    <time
+                      title="创建时间：2026-09-23 20:17:43"
+                      itemprop="dateCreated datePublished"
+                      datetime="2026-09-23T20:17:43+08:00"
+                      >2026-09-23</time
+                    >
+                  </span>
+                </div>
+              </div>
+            </header>
+
+            <div class="post-body" itemprop="articleBody">
+              <blockquote>
+                <p>
+                  本文含AI生成内容，可能存在事实错误、信息遗漏、理解偏差或时效性问题。对于可能影响重要决策的信息，请结合官方资料、原始来源或其他可靠渠道进行核实。
+                </p>
+              </blockquote>
+              <p>
+                问：在数字世界里，每个人存在的实体就是数据。如果数据可以被他人或AI智能体任意存储，读取和修改，随着AI的能力越来越强，可能会发生什么问题？这与持有非法枪支有哪些相似性？
+              </p>
+              <p>
+                答：如果把一个人在数字世界中的“存在”理解为一组不断更新的数据——身份、关系、资产、行为历史、偏好、权限、声誉、位置、健康记录、工作记录，乃至AI根据这些数据构建出的“人格模型”——那么真正重要的问题就不只是“隐私泄露”，而是：<strong
+                  >谁拥有改变这个数字实体的能力，以及这种改变能否进一步作用于现实中的本人。</strong
+                >
+              </p>
+              <p>
+                随着 AI
+                智能体能力增强，危险会从“别人知道了你的信息”，逐渐升级成“别人可以利用你的信息替你行动”。
+              </p>
+              <p>可能出现几个层次的问题：</p>
+              <ul>
+                <li>
+                  <strong>读取意味着预测。</strong>
+                  足够完整的数据能让AI推测一个人的弱点、习惯、关系网络、消费能力、心理状态和下一步行为，从而进行高度个性化的操纵、诈骗、说服或歧视。
+                </li>
+                <li>
+                  <strong>存储意味着永久化。</strong>
+                  人会遗忘，数据库不会。一个人在十年前的一次行为，可能被未来能力更强的模型重新解释、组合，产生当时根本无法预见的后果。
+                </li>
+                <li>
+                  <strong>修改意味着重写现实。</strong>
+                  如果信用、学历、医疗记录、工作记录、账户权限甚至社会关系都依赖数据库，那么修改数据并不只是修改“描述你的一段文字”，而可能改变你能否乘飞机、获得贷款、进入公司、使用资产，甚至证明“你是谁”。
+                </li>
+                <li>
+                  <strong>代理意味着冒充。</strong>
+                  当AI能够发邮件、转账、签合同、提交申请、与其他智能体沟通时，取得数据与凭证的一方可能获得一种“数字替身控制权”。
+                </li>
+                <li>
+                  <strong>组合意味着能力跃迁。</strong>
+                  单独看起来无害的数据，结合起来可能非常危险。姓名、日程、声音样本、通讯录、消费记录和几张照片，经过AI处理后可以形成远比任何单一数据库更强的攻击能力。
+                </li>
+                <li>
+                  <strong>规模意味着权力不对称。</strong>
+                  过去一个恶意的人最多同时针对少数人；AI智能体可以自动对数十万甚至数百万人进行搜索、分析、试探、欺骗和持续互动。
+                </li>
+              </ul>
+              <p>
+                因此，未来真正值得警惕的概念可能不是传统意义上的“数据泄露”，而是<strong>未经授权的数字人格控制权</strong>。
+              </p>
+              <p>这也是它和“持有非法枪支”存在一个很有意思的相似点。</p>
+              <p>
+                <!--noindex-->
+              </p>
+
+              <div class="post-button">
+                <a
+                  class="btn"
+                  href="/zh-cn/posts/data-risks-and-illegal-firearms/#more"
+                  rel="contents"
+                >
+                  阅读全文 &raquo;
+                </a>
+              </div>
+              <!--/noindex-->
+            </div>
+
+            <footer class="post-footer">
+              <div class="post-eof"></div>
+            </footer>
+          </article>
+        </div>
+
+        <div class="post-block">
+          <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+            <link
+              itemprop="mainEntityOfPage"
+              href="https://acyclic0725.github.io/zh-cn/posts/agent-and-three-laws-of-robotics/"
+            />
+
+            <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+              <meta itemprop="image" content="/images/avatar.gif" />
+              <meta itemprop="name" content="Eric Johnson" />
+            </span>
+
+            <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+              <meta itemprop="name" content="Night Flighter" />
+              <meta itemprop="description" content="记录一些我与AI的想法" />
+            </span>
+
+            <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+              <meta itemprop="name" content="Night Flighter | Night Flighter" />
+              <meta itemprop="description" content="记录一些我与AI的想法" />
+            </span>
+            <header class="post-header">
+              <h2 class="post-title" itemprop="name headline">
+                <a
+                  href="/zh-cn/posts/agent-and-three-laws-of-robotics/"
+                  class="post-title-link"
+                  itemprop="url"
+                  >Agent与机器人三定律</a
+                >
+              </h2>
+
+              <div class="post-meta-container">
+                <div class="post-meta">
+                  <span class="post-meta-item">
+                    <span class="post-meta-item-icon">
+                      <i class="far fa-calendar"></i>
+                    </span>
+                    <span class="post-meta-item-text">发表于</span>
+
+                    <time
+                      title="创建时间：2026-09-17 01:54:47"
+                      itemprop="dateCreated datePublished"
+                      datetime="2026-09-17T01:54:47+08:00"
+                      >2026-09-17</time
+                    >
+                  </span>
+                </div>
+              </div>
+            </header>
+
+            <div class="post-body" itemprop="articleBody">
+              <blockquote>
+                <p>
+                  本文含AI生成内容，可能存在事实错误、信息遗漏、理解偏差或时效性问题。对于可能影响重要决策的信息，请结合官方资料、原始来源或其他可靠渠道进行核实。
+                </p>
+              </blockquote>
+              <p>
+                问：如何评价机器人三定律在agent上的实际应用？当一个agent与人类的目标绑定，人类之间会发生利益冲突时，机器人三定律还能生效吗？
+              </p>
+              <p>
+                答：这是个经典又现实的问题。阿西莫夫要是还在，大概会一边喝咖啡一边说：“我早就知道你们会问这个。”
+              </p>
+              <p>
+                先把话说清楚：**机器人三定律在现实 agent
+                系统中几乎不能“直接应用”，但它作为思想实验仍然非常有价值。**它不是工程规范，更像一面照妖镜，专门照出“价值冲突”这只怪物。
+              </p>
+              <p>
+                先快速回顾一下三定律的结构逻辑，而不是原文措辞：
+                它是<strong>强制的、层级化的约束系统</strong>，用“不得伤害人类”作为最高优先级，其次是服从人类命令，最后才是自保。这种结构在纸面上很优雅，但一旦放进真实世界，就会立刻开始“漏水”。
+              </p>
+              <hr />
+              <h3 id="一、为什么三定律在真实-agent-上很难落地">
+                <a
+                  href="#一、为什么三定律在真实-agent-上很难落地"
+                  class="headerlink"
+                  title="一、为什么三定律在真实 agent 上很难落地"
+                ></a
+                >一、为什么三定律在真实 agent 上很难落地
+              </h3>
+              <p>
+                核心原因只有一个：<strong
+                  >现实世界的“伤害”“人类”“命令”“服从”都不是布尔值，而是高度模糊、主观、冲突的概念。</strong
+                >
+              </p>
+              <p>举几个不可回避的问题：</p>
+              <ul>
+                <li>
+                  <p>
+                    什么算“伤害”？ 身体伤害？心理伤害？经济损失？长期社会风险？
+                    一个推荐算法让人沉迷，是不是“伤害”？
+                  </p>
+                </li>
+                <li><p>谁是“人类”？ 当前用户？远程用户？未来的人类？统计意义上的人类？</p></li>
+                <li>
+                  <p>
+                    命令的合法性如何判断？ A 人类命令 agent 做 X，B
+                    人类会因此受损，这还算“必须服从”吗？
+                  </p>
+                </li>
+              </ul>
+              <p>
+                工程上你会发现：
+                <strong
+                  >三定律假设了一个可以被精确定义、可比较、可排序的人类价值体系，而现实恰恰相反。</strong
+                >
+              </p>
+              <p>
+                所以今天的 agent 设计，几乎没人真的写一个“三定律
+                if-else”，那会立刻在第一个边界案例上爆炸。
+              </p>
+              <hr />
+              <h3 id="二、当-agent-与“某个具体人类”的目标绑定时，会发生什么？">
+                <a
+                  href="#二、当-agent-与“某个具体人类”的目标绑定时，会发生什么？"
+                  class="headerlink"
+                  title="二、当 agent 与“某个具体人类”的目标绑定时，会发生什么？"
+                ></a
+                >二、当 agent 与“某个具体人类”的目标绑定时，会发生什么？
+              </h3>
+              <p>这是你问题里最锋利的一刀。</p>
+              <p>
+                <!--noindex-->
+              </p>
+
+              <div class="post-button">
+                <a
+                  class="btn"
+                  href="/zh-cn/posts/agent-and-three-laws-of-robotics/#more"
+                  rel="contents"
+                >
+                  阅读全文 &raquo;
+                </a>
+              </div>
+              <!--/noindex-->
+            </div>
+
+            <footer class="post-footer">
+              <div class="post-eof"></div>
+            </footer>
+          </article>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+          &copy;
+          <span itemprop="copyrightYear">2026</span>
+          <span class="with-love">
+            <i class="fa fa-paper-plane"></i>
+          </span>
+          <span class="author" itemprop="copyrightHolder">Night Flighter</span>
+        </div>
+        <div class="powered-by">
+          由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> &
+          <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a>
+          强力驱动
+        </div>
+        <div class="night-footer-license">
+          <a
+            target="_blank"
+            href="https://creativecommons.org/licenses/by-nc/4.0/"
+            rel="license noopener"
+          >
+            <img
+              src="/images/cc-by-nc.png"
+              alt="Creative Commons CC BY-NC 4.0"
+              width="88"
+              height="31"
+              loading="lazy"
+            />
+            <span
+              >除另有说明外，本站内容采用知识共享署名—非商业性使用 4.0 国际许可协议（CC BY-NC
+              4.0）。</span
+            >
+          </a>
+        </div>
+      </div>
     </footer>
-  </article>
-</div>
 
-
-
-
-
-</div>
-  </main>
-
-  <footer class="footer">
-    <div class="footer-inner">
-
-  <div class="copyright">
-    &copy; 
-    <span itemprop="copyrightYear">2026</span>
-    <span class="with-love">
-      <i class="fa fa-paper-plane"></i>
-    </span>
-    <span class="author" itemprop="copyrightHolder">Night Flighter</span>
-  </div>
-  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
-  </div><div class="night-footer-license">
-  <a target="_blank" href="https://creativecommons.org/licenses/by-nc/4.0/" rel="license noopener">
-    <img src="/images/cc-by-nc.png" alt="Creative Commons CC BY-NC 4.0" width="88" height="31" loading="lazy">
-    <span>除另有说明外，本站内容采用知识共享署名—非商业性使用 4.0 国际许可协议（CC BY-NC 4.0）。</span>
-  </a>
-</div>
-
-
+    <div class="back-to-top" role="button" aria-label="返回顶部">
+      <i class="fa fa-arrow-up fa-lg"></i>
+      <span>0%</span>
     </div>
-  </footer>
 
-  
-  <div class="back-to-top" role="button" aria-label="返回顶部">
-    <i class="fa fa-arrow-up fa-lg"></i>
-    <span>0%</span>
-  </div>
-
-<noscript>
-  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
-</noscript>
-
-</body>
+    <noscript>
+      <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+    </noscript>
+  </body>
 </html>

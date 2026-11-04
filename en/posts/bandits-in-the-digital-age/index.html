@@ -1,486 +1,1355 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width">
-<meta name="theme-color" content="#0d1522"><meta name="generator" content="Hexo 8.1.2">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="theme-color" content="#0d1522" />
+    <meta name="generator" content="Hexo 8.1.2" />
 
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
-  <link rel="mask-icon" href="/images/logo.svg" color="#0d1522">
-  <meta name="google-site-verification" content="aCRle-V_orW-i7a_tUrqKkhtBeb3qX5H0MfK9_hcxas">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png" />
+    <link rel="mask-icon" href="/images/logo.svg" color="#0d1522" />
+    <meta name="google-site-verification" content="aCRle-V_orW-i7a_tUrqKkhtBeb3qX5H0MfK9_hcxas" />
 
-<link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/main.css" />
 
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+      integrity="sha256-VHqXKFhhMxcpubYf9xiWdCiojEbY9NexQ4jh8AxbvcM="
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css"
+      integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE="
+      crossorigin="anonymous"
+    />
 
+    <script class="next-config" data-name="main" type="application/json">
+      {
+        "hostname": "acyclic0725.github.io",
+        "root": "/",
+        "images": "/images",
+        "scheme": "Muse",
+        "darkmode": false,
+        "version": "8.29.0",
+        "exturl": false,
+        "sidebar": {
+          "position": "left",
+          "width_expanded": 320,
+          "width_dual_column": 240,
+          "display": "remove",
+          "padding": 18,
+          "offset": 12
+        },
+        "hljswrap": true,
+        "codeblock": {
+          "theme": { "light": "default", "dark": "stackoverflow-dark" },
+          "prism": { "light": "prism", "dark": "prism-dark" },
+          "copy_button": { "enable": false, "style": null },
+          "fold": { "enable": false, "height": 500 },
+          "language": false
+        },
+        "bookmark": { "enable": false, "color": "#222", "save": "auto" },
+        "mediumzoom": false,
+        "pangu": false,
+        "comments": {
+          "style": "tabs",
+          "active": null,
+          "storage": true,
+          "lazyload": false,
+          "nav": null
+        },
+        "stickytabs": false,
+        "motion": {
+          "enable": true,
+          "async": false,
+          "duration": 200,
+          "transition": {
+            "menu_item": "fadeInDown",
+            "post_block": "fadeIn",
+            "post_header": "fadeInDown",
+            "post_body": "fadeInDown",
+            "coll_header": "fadeInLeft",
+            "sidebar": "fadeInUp"
+          }
+        },
+        "i18n": {
+          "placeholder": "Searching...",
+          "empty": "We didn't find any results for the search: ${query}",
+          "hits_time": "${hits} results found in ${time} ms",
+          "hits": "${hits} results found"
+        }
+      }
+    </script>
+    <script src="/js/config.js" defer></script>
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha256-VHqXKFhhMxcpubYf9xiWdCiojEbY9NexQ4jh8AxbvcM=" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+    <meta
+      name="description"
+      content="This article contains AI-generated content and may contain factual errors, omissions, misinterpretations, or outdated information. For information that may affect important decisions, please verify i"
+    />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Bandits in the Digital Age" />
+    <meta
+      property="og:url"
+      content="https://acyclic0725.github.io/en/posts/bandits-in-the-digital-age/"
+    />
+    <meta property="og:site_name" content="Night Flighter" />
+    <meta
+      property="og:description"
+      content="This article contains AI-generated content and may contain factual errors, omissions, misinterpretations, or outdated information. For information that may affect important decisions, please verify i"
+    />
+    <meta property="og:locale" content="en_US" />
+    <meta property="article:published_time" content="2026-11-04T05:54:38.000Z" />
+    <meta property="article:modified_time" content="2026-11-04T12:31:39.717Z" />
+    <meta property="article:author" content="Eric Johnson" />
+    <meta name="twitter:card" content="summary" />
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"acyclic0725.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.29.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"remove","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js" defer></script>
+    <link
+      rel="canonical"
+      href="https://acyclic0725.github.io/en/posts/bandits-in-the-digital-age/"
+    />
 
-    <meta name="description" content="This article contains AI-generated content and may contain factual errors, omissions, misinterpretations, or outdated information. For information that may affect important decisions, please verify i">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Bandits in the Digital Age">
-<meta property="og:url" content="https://acyclic0725.github.io/en/posts/bandits-in-the-digital-age/">
-<meta property="og:site_name" content="Night Flighter">
-<meta property="og:description" content="This article contains AI-generated content and may contain factual errors, omissions, misinterpretations, or outdated information. For information that may affect important decisions, please verify i">
-<meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2026-11-04T05:54:38.000Z">
-<meta property="article:modified_time" content="2026-11-04T06:05:04.559Z">
-<meta property="article:author" content="Eric Johnson">
-<meta name="twitter:card" content="summary">
+    <script class="next-config" data-name="page" type="application/json">
+      {
+        "sidebar": "",
+        "isHome": false,
+        "isPost": true,
+        "lang": "en",
+        "comments": true,
+        "permalink": "https://acyclic0725.github.io/en/posts/bandits-in-the-digital-age/",
+        "path": "/en/posts/bandits-in-the-digital-age/",
+        "title": "Bandits in the Digital Age"
+      }
+    </script>
 
+    <script class="next-config" data-name="calendar" type="application/json">
+      ""
+    </script>
+    <title>Bandits in the Digital Age | Night Flighter</title>
 
-<link rel="canonical" href="https://acyclic0725.github.io/en/posts/bandits-in-the-digital-age/">
-
-
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://acyclic0725.github.io/en/posts/bandits-in-the-digital-age/","path":"/en/posts/bandits-in-the-digital-age/","title":"Bandits in the Digital Age"}</script>
-
-<script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>Bandits in the Digital Age | Night Flighter</title>
-  
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-579D5NTBWN"></script>
-  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-579D5NTBWN","only_pageview":false,"measure_protocol_api_secret":null}</script>
-  <script src="/js/third-party/analytics/google-analytics.js" defer></script>
+    <script class="next-config" data-name="google_analytics" type="application/json">
+      { "tracking_id": "G-579D5NTBWN", "only_pageview": false, "measure_protocol_api_secret": null }
+    </script>
+    <script src="/js/third-party/analytics/google-analytics.js" defer></script>
 
+    <script src="/js/utils.js" defer></script>
+    <script src="/js/motion.js" defer></script>
+    <script src="/js/next-boot.js" defer></script>
 
+    <link
+      rel="alternate"
+      hreflang="zh-CN"
+      href="https://acyclic0725.github.io/zh-cn/posts/bandits-in-the-digital-age/"
+    />
+    <link
+      rel="alternate"
+      hreflang="zh-TW"
+      href="https://acyclic0725.github.io/zh-tw/posts/bandits-in-the-digital-age/"
+    />
+    <link
+      rel="alternate"
+      hreflang="en"
+      href="https://acyclic0725.github.io/en/posts/bandits-in-the-digital-age/"
+    />
+    <link
+      rel="alternate"
+      hreflang="x-default"
+      href="https://acyclic0725.github.io/en/posts/bandits-in-the-digital-age/"
+    />
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
 
+    <noscript>
+      <link rel="stylesheet" href="/css/noscript.css" />
+    </noscript>
+    <link rel="alternate" href="/atom.xml" title="Night Flighter" type="application/atom+xml" />
+  </head>
 
+  <body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+    <div class="headband"></div>
 
+    <main class="main">
+      <div class="column">
+        <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+          <div class="site-brand-container">
+            <div class="site-nav-toggle">
+              <div class="toggle" aria-label="Toggle navigation bar" role="button">
+                <span class="toggle-line"></span>
+                <span class="toggle-line"></span>
+                <span class="toggle-line"></span>
+              </div>
+            </div>
 
+            <div class="site-meta">
+              <a href="/" class="brand" rel="start">
+                <i class="logo-line"></i>
+                <p class="site-title">Night Flighter</p>
+                <i class="logo-line"></i>
+              </a>
+            </div>
 
+            <div class="site-nav-right">
+              <div class="toggle popup-trigger" aria-label="Search" role="button"></div>
+            </div>
+          </div>
 
-  
-<script src="/js/utils.js" defer></script><script src="/js/motion.js" defer></script><script src="/js/next-boot.js" defer></script>
+          <nav class="site-nav">
+            <ul class="main-menu menu"></ul>
+          </nav>
 
-  
+          <nav class="night-nav" aria-label="Reading language">
+            <div class="night-nav-links">
+              <a href="/en/">Home</a>
+              <a href="/en/archives/">Archives</a>
+              <a href="/en/about/">About</a>
+            </div>
+            <details class="night-lang-menu">
+              <summary aria-label="Reading language">
+                <svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                  focusable="false"
+                >
+                  <circle cx="12" cy="12" r="9" />
+                  <ellipse cx="12" cy="12" rx="4" ry="9" />
+                  <path d="M3 12h18" />
+                </svg>
+                <small>EN</small>
+              </summary>
+              <div>
+                <a href="/zh-cn/posts/bandits-in-the-digital-age/" lang="zh-CN">
+                  <span>简体中文</span><small>简</small>
+                </a>
+                <a href="/zh-tw/posts/bandits-in-the-digital-age/" lang="zh-TW">
+                  <span>正體中文</span><small>正</small>
+                </a>
+                <a href="/en/posts/bandits-in-the-digital-age/" lang="en" aria-current="page">
+                  <span>English</span><small>EN</small>
+                </a>
+              </div>
+            </details>
+          </nav>
+        </header>
+      </div>
 
+      <div class="main-inner post posts-expand">
+        <div class="post-block">
+          <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+            <link
+              itemprop="mainEntityOfPage"
+              href="https://acyclic0725.github.io/en/posts/bandits-in-the-digital-age/"
+            />
 
+            <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+              <meta itemprop="image" content="/images/avatar.gif" />
+              <meta itemprop="name" content="Eric Johnson" />
+            </span>
 
+            <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+              <meta itemprop="name" content="Night Flighter" />
+              <meta itemprop="description" content="Thoughts from me and AI" />
+            </span>
 
+            <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+              <meta itemprop="name" content="Bandits in the Digital Age | Night Flighter" />
+              <meta itemprop="description" content="" />
+            </span>
+            <header class="post-header">
+              <h1 class="post-title" itemprop="name headline">Bandits in the Digital Age</h1>
 
+              <div class="post-meta-container">
+                <div class="post-meta">
+                  <span class="post-meta-item">
+                    <span class="post-meta-item-icon">
+                      <i class="far fa-calendar"></i>
+                    </span>
+                    <span class="post-meta-item-text">Posted on</span>
 
-  
+                    <time
+                      title="Created: 2026-11-04 13:54:38"
+                      itemprop="dateCreated datePublished"
+                      datetime="2026-11-04T13:54:38+08:00"
+                      >2026-11-04</time
+                    >
+                  </span>
+                </div>
+              </div>
+            </header>
 
+            <div class="post-body" itemprop="articleBody">
+              <blockquote>
+                <p>
+                  This article contains AI-generated content and may contain factual errors,
+                  omissions, misinterpretations, or outdated information. For information that may
+                  affect important decisions, please verify it against official materials, primary
+                  sources, or other reliable sources.
+                </p>
+              </blockquote>
+              <p>
+                Q: What place did thieves and bandits occupy in premodern economies and societies,
+                and what effects and roles did they have?
+              </p>
+              <p>
+                A: From the perspective of economic and social history, thieves and bandits were
+                more than criminals in premodern society. They were also part of the interplay
+                between wealth distribution, population movement, social order, and state power.
+              </p>
+              <p>
+                They generally did not create wealth directly, but they participated in its
+                involuntary transfer. They disrupted economic order, yet also indirectly encouraged
+                societies to develop policing, transport security, and systems for protecting
+                property. They could be products of social crises, or they could develop into armed
+                forces capable of influencing local politics.
+              </p>
+              <p>
+                Understanding premodern banditry therefore requires more than moral judgments about
+                good and evil. It also requires examining the actual place bandits occupied in the
+                economy and society of their time.
+              </p>
+              <h3 id="I-Where-did-they-fit-into-the-socioeconomic-structure">
+                <a
+                  href="#I-Where-did-they-fit-into-the-socioeconomic-structure"
+                  class="headerlink"
+                  title="I. Where did they fit into the socioeconomic structure?"
+                ></a
+                >I. Where did they fit into the socioeconomic structure?
+              </h3>
+              <p>We first need to distinguish three categories.</p>
+              <table>
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Main activities</th>
+                    <th>Socioeconomic position</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Ordinary thieves</td>
+                    <td>Stealing grain, money, livestock, and goods</td>
+                    <td>
+                      Often operated independently and might rely on theft as a temporary or
+                      long-term source of income
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Professional robbers</td>
+                    <td>Highway robbery, kidnapping for ransom, and group raids</td>
+                    <td>Earned income through violence; some formed stable gangs</td>
+                  </tr>
+                  <tr>
+                    <td>Organized bandits</td>
+                    <td>
+                      Controlling roads, villages, or local territories and extracting payments
+                    </td>
+                    <td>Could develop into local armed forces or informal power structures</td>
+                  </tr>
+                </tbody>
+              </table>
+              <p>
+                These people did not necessarily belong to a single, fixed social class.
+                Impoverished peasants, unemployed laborers, displaced people, and military deserters
+                might join bandit groups, while some wealthy local interests might finance or
+                exploit them.
+              </p>
+              <p>
+                Historian Robert J. Antony’s research on Qing-era Guangdong found that many bandits
+                were originally working people with families who engaged in theft intermittently
+                because of underemployment and hardship. They were not a separate group entirely
+                detached from ordinary society.
+                <a
+                  target="_blank"
+                  href="https://academic.oup.com/hong-kong-scholarship-online/book/30576/chapter-abstract/258210326"
+                  rel="noopener"
+                  >Oxford Academic</a
+                >
+              </p>
+              <p>
+                More importantly, the people whom premodern officials called “bandits” sometimes
+                included famine victims and local armed groups resisting the authorities. The term
+                was not fully equivalent to “thieves” as defined in criminal law today.
+                <a
+                  target="_blank"
+                  href="https://cssn.cn/lsx/lsx_zgs/202210/t20221024_5552492.shtml"
+                  rel="noopener"
+                  >Chinese Social Sciences Net</a
+                >
+              </p>
+              <h3 id="II-How-did-they-affect-premodern-economies">
+                <a
+                  href="#II-How-did-they-affect-premodern-economies"
+                  class="headerlink"
+                  title="II. How did they affect premodern economies?"
+                ></a
+                >II. How did they affect premodern economies?
+              </h3>
+              <h4 id="1-Redistributing-wealth-is-not-the-same-as-creating-it">
+                <a
+                  href="#1-Redistributing-wealth-is-not-the-same-as-creating-it"
+                  class="headerlink"
+                  title="1. Redistributing wealth is not the same as creating it"
+                ></a
+                >1. Redistributing wealth is not the same as creating it
+              </h4>
+              <p>
+                Theft and robbery essentially change who possesses wealth through an involuntary
+                transfer.
+              </p>
+              <p>
+                Suppose a robber takes one hundred taels of silver from a merchant, then spends it
+                on grain, alcohol, meat, or other necessities. Purchasing power that originally
+                belonged to the merchant passes to the robber and the people with whom the robber
+                trades.
+              </p>
+              <p><span id="more"></span></p>
+              <p>Economically, this has two effects:</p>
+              <p>
+                On the one hand, existing wealth is redistributed, and stolen goods reenter
+                circulation through markets for stolen property. On the other, theft itself does not
+                increase the total quantity of goods and may involve injury, death, destruction,
+                work stoppages, and interrupted transactions.
+              </p>
+              <p>
+                If robberies mainly target the rich, wealth may indeed pass to poorer people in some
+                local settings. But this does not mean bandits generally served to rob the rich and
+                help the poor. Poor people, isolated travelers, and unprotected households could
+                also become victims.
+              </p>
+              <h4 id="2-Raising-the-cost-of-economic-activity">
+                <a
+                  href="#2-Raising-the-cost-of-economic-activity"
+                  class="headerlink"
+                  title="2. Raising the cost of economic activity"
+                ></a
+                >2. Raising the cost of economic activity
+              </h4>
+              <p>
+                Imagine a trade route between two cities, with a shipment worth one thousand taels
+                of silver.
+              </p>
+              <p>
+                Without a serious threat of banditry, merchants might need to pay only for
+                transport. If robberies were frequent along the route, they would need more guards,
+                detours, travel companions, or even protection payments.
+              </p>
+              <p>None of these additional expenses was required to produce the goods themselves.</p>
+              <p>
+                Frequent banditry therefore raised the cost of transporting and exchanging goods,
+                made some long-distance trade less attractive, and weakened people’s willingness to
+                invest for the long term.
+              </p>
+              <p>
+                An interesting further consequence, however, was that the threat of banditry also
+                increased demand for security services.
+              </p>
+              <p>
+                For example, the armed escort agencies that developed during the Ming and Qing
+                dynasties escorted valuables and goods, managed transport risks, and agreed on
+                compensation if a shipment was lost. In a sense, they became a mechanism for
+                securing commercial transport.
+                <a
+                  target="_blank"
+                  href="https://paper.people.com.cn/rmrb/pc/content/202606/15/content_30163037.html"
+                  rel="noopener"
+                  >People’s Daily</a
+                >
+              </p>
+              <p>
+                This does not mean banditry created economic prosperity. It means society had to
+                develop protective services to cope with the risks.
+              </p>
+              <h4 id="3-Forming-part-of-the-underground-economy">
+                <a
+                  href="#3-Forming-part-of-the-underground-economy"
+                  class="headerlink"
+                  title="3. Forming part of the underground economy"
+                ></a
+                >3. Forming part of the underground economy
+              </h4>
+              <p>Organized bandits generally did more than simply rob and spend.</p>
+              <p>
+                They might maintain networks of fences, informants, transporters, people who
+                sheltered them, and corrupt officials.
+              </p>
+              <p>
+                Antony’s research on Qing-era Guangdong shows complex links between bandits and
+                local society, involving ordinary residents, local government runners, gentry,
+                soldiers, and others. Some gangs also participated in smuggling, gambling, and other
+                illegal businesses.
+                <a
+                  target="_blank"
+                  href="https://academic.oup.com/hong-kong-scholarship-online/book/30576/chapter-abstract/258211646"
+                  rel="noopener"
+                  >Oxford Academic</a
+                >
+                <a
+                  target="_blank"
+                  href="https://academic.oup.com/hong-kong-scholarship-online/book/30576/chapter-abstract/258210972"
+                  rel="noopener"
+                  >Oxford Academic</a
+                >
+              </p>
+              <p>
+                There was therefore no clear-cut separation between the underground and mainstream
+                economies of premodern society.
+              </p>
+              <h3 id="III-What-roles-did-they-play-in-governance-and-political-structures">
+                <a
+                  href="#III-What-roles-did-they-play-in-governance-and-political-structures"
+                  class="headerlink"
+                  title="III. What roles did they play in governance and political structures?"
+                ></a
+                >III. What roles did they play in governance and political structures?
+              </h3>
+              <p>
+                These effects may have been more far-reaching than their direct economic impact.
+              </p>
+              <h4 id="1-Revealing-imbalances-in-the-socioeconomic-system">
+                <a
+                  href="#1-Revealing-imbalances-in-the-socioeconomic-system"
+                  class="headerlink"
+                  title="1. Revealing imbalances in the socioeconomic system"
+                ></a
+                >1. Revealing imbalances in the socioeconomic system
+              </h4>
+              <p>
+                Famine, war, heavy taxation and labor obligations, and a shortage of jobs could all
+                deprive people of ordinary ways to earn a living.
+              </p>
+              <p>
+                During the reign of Emperor Xuan of the Western Han dynasty, repeated famines led to
+                widespread banditry in the Bohai region. The governor, Gong Sui, did not rely solely
+                on military suppression. He called for leniency toward those willing to lay down
+                their weapons and return to farming, and sought to restore livelihoods through
+                measures such as opening granaries to relieve the poor.
+              </p>
+              <p>
+                The “Biographies of Upright Officials” in the <em>Book of Han</em> records that
+                people gradually abandoned their weapons and resumed farming.
+                <a target="_blank" href="https://ctext.org/han-shu/xun-li-zhuan/ens" rel="noopener"
+                  >Chinese Text Project</a
+                >
+              </p>
+              <p>
+                This case illustrates how some banditry arose from economic hardship. Improving
+                living conditions could sometimes do more to remove its foundations than simply
+                increasing punishments.
+              </p>
+              <p>
+                But this explanation does not cover all bandits, particularly organizations that
+                made sustained violent predation their profession.
+              </p>
+              <h4 id="2-Establishing-informal-power-where-state-authority-was-weak">
+                <a
+                  href="#2-Establishing-informal-power-where-state-authority-was-weak"
+                  class="headerlink"
+                  title="2. Establishing informal power where state authority was weak"
+                ></a
+                >2. Establishing informal power where state authority was weak
+              </h4>
+              <p>
+                When the authorities could not effectively protect trade routes, villages, and
+                markets, some armed groups might take effective control of roads and local
+                resources.
+              </p>
+              <p>
+                They could extract payments from residents, set conditions for passage, and even
+                determine who could do business in an area.
+              </p>
+              <p>
+                At that point, bandits were no longer merely people who occasionally committed
+                robbery. They had acquired some of the characteristics of local rulers.
+              </p>
+              <p>Economist Mancur Olson proposed an illuminating theoretical model:</p>
+              <ul>
+                <li>
+                  Roving bandits continually move from place to place and tend to seize as much
+                  wealth as quickly as possible.
+                </li>
+                <li>
+                  Stationary bandits control a territory over time. To maintain a continuing income,
+                  they may actually have an incentive to restrain other predators and preserve a
+                  degree of order.
+                </li>
+              </ul>
+              <p>
+                Olson argued that, on purely economic incentives, the latter might gradually develop
+                mechanisms for collecting taxes and fees and providing public order.
+                <a
+                  target="_blank"
+                  href="https://www.cambridge.org/core/journals/american-political-science-review/article/abs/dictatorship-democracy-and-development/2776079374BF1E318DF928EA79EF2294"
+                  rel="noopener"
+                  >Cambridge Core</a
+                >
+              </p>
+              <p>
+                This is one theory for understanding the relationship between violence and state
+                formation. It does not mean all premodern states were founded by bandits, still less
+                that collecting protection money through force is legitimate.
+              </p>
+              <h4 id="3-Driving-changes-in-law-and-local-policing">
+                <a
+                  href="#3-Driving-changes-in-law-and-local-policing"
+                  class="headerlink"
+                  title="3. Driving changes in law and local policing"
+                ></a
+                >3. Driving changes in law and local policing
+              </h4>
+              <p>
+                The existence of bandits forced states to consider two questions: how to protect
+                property, and how to prevent people from turning to crime and rebellion.
+              </p>
+              <p>
+                In premodern China, counts of bandits were once part of the assessment of local
+                officials’ performance. Qing local governments also protected trade by restoring
+                order in commerce, combating extortion, and curbing abusive local power groups.
+                <a
+                  target="_blank"
+                  href="https://cssn.cn/lsx/lsx_zgs/202210/t20221024_5552492.shtml"
+                  rel="noopener"
+                  >Chinese Social Sciences Net</a
+                >
+                <a
+                  target="_blank"
+                  href="https://iqh.ruc.edu.cn/old/qdshsyj/shyjj/cd8096cab6d24a07a7e27be5ea7ac909.htm"
+                  rel="noopener"
+                  >Institute of Qing History, Renmin University of China</a
+                >
+              </p>
+              <p>
+                The relationship between bandits and the state thus involved both confrontation and
+                an indirect institutional interaction: banditry exposed failures of governance,
+                prompting governments and local communities to seek new ways of providing security.
+              </p>
+              <h3 id="IV-Could-bandits-also-serve-as-a-form-of-social-resistance-or-redress">
+                <a
+                  href="#IV-Could-bandits-also-serve-as-a-form-of-social-resistance-or-redress"
+                  class="headerlink"
+                  title="IV. Could bandits also serve as a form of social resistance or redress?"
+                ></a
+                >IV. Could bandits also serve as a form of social resistance or redress?
+              </h3>
+              <p>Historians have long debated this question.</p>
+              <p>Historian Eric Hobsbawm introduced the concept of “social banditry.”</p>
+              <p>
+                In this theory, some people branded criminals by the state might be seen by local
+                communities as heroes who resisted oppression and upheld justice.
+              </p>
+              <p>
+                The European legend of Robin Hood and the outlaws of Liangshan in Chinese literature
+                both express this cultural imagination.
+              </p>
+              <p>
+                But being made into a popular hero and actually helping the poor are two different
+                things.
+              </p>
+              <p>
+                Researchers including Kim A. Wagner have criticized the theory of social banditry,
+                pointing to the often substantial differences between legends about bandits,
+                official accounts, and their actual conduct.
+                <a
+                  target="_blank"
+                  href="https://www.cambridge.org/core/services/aop-cambridge-core/content/view/F4AFDA95450FCDED1685C3D21AC3C5C8/S0018246X07006103a.pdf/thuggee_and_social_banditry_reconsidered.pdf"
+                  rel="noopener"
+                  >Cambridge Core</a
+                >
+              </p>
+              <p>
+                Bandits could therefore sometimes provide an organizational basis for social
+                resistance. But ordinary acts of predation cannot all be understood as attempts to
+                correct inequality.
+              </p>
+              <h3 id="V-What-role-did-they-ultimately-play-in-the-economy-and-society-as-a-whole">
+                <a
+                  href="#V-What-role-did-they-ultimately-play-in-the-economy-and-society-as-a-whole"
+                  class="headerlink"
+                  title="V. What role did they ultimately play in the economy and society as a whole?"
+                ></a
+                >V. What role did they ultimately play in the economy and society as a whole?
+              </h3>
+              <p>Their effects can be grouped into several interconnected areas.</p>
+              <table>
+                <thead>
+                  <tr>
+                    <th>Area of impact</th>
+                    <th>Specific effects</th>
+                    <th>Overall character</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Wealth distribution</td>
+                    <td>Involuntary transfers of wealth; recirculation of stolen goods</td>
+                    <td>Redistributive effects, but usually at the expense of property rights</td>
+                  </tr>
+                  <tr>
+                    <td>Production and trade</td>
+                    <td>
+                      Greater risks and costs; disruption of production and investment expectations
+                    </td>
+                    <td>Mainly negative</td>
+                  </tr>
+                  <tr>
+                    <td>Labor and livelihoods</td>
+                    <td>Illegal sources of income for some unemployed and mobile populations</td>
+                    <td>Reflected vulnerabilities in the economic structure</td>
+                  </tr>
+                  <tr>
+                    <td>Social organization</td>
+                    <td>
+                      Formation of gangs, underground trading networks, and informal relationships
+                    </td>
+                    <td>Affected the structure of local society</td>
+                  </tr>
+                  <tr>
+                    <td>State governance</td>
+                    <td>Encouraged policing, relief, legal measures, and commercial safeguards</td>
+                    <td>Indirectly promoted institutional adjustments</td>
+                  </tr>
+                  <tr>
+                    <td>Political change</td>
+                    <td>Some armed groups became rebel forces or local powers</td>
+                    <td>Depended on the historical context</td>
+                  </tr>
+                </tbody>
+              </table>
+              <p>
+                The most important distinction here is between an economic function and an economic
+                contribution.
+              </p>
+              <p>
+                An activity may perform functions such as transferring wealth, distributing risk, or
+                organizing people without producing a net benefit for society as a whole.
+              </p>
+              <p>
+                Likewise, the fact that some bandits later took part in political change does not
+                mean their earlier acts of plunder were themselves beneficial.
+              </p>
+              <hr />
+              <p>
+                Q: In modern society, people widely use bank deposits and digital assets, making
+                physical theft and robbery more difficult. Do telecom fraud and ransomware
+                organizations occupy the same niche as thieves and bandits in another form? What are
+                the underlying reasons this group exists?
+              </p>
+              <p>
+                A: In the sense of “exploiting other people’s vulnerabilities to acquire wealth
+                through theft, deception, or coercion,” yes: telecom fraud, account theft, and
+                ransomware organizations carry on some of the economic roles of traditional thieves,
+                swindlers, robbers, and kidnappers. But this continuity does not mean that
+                “yesterday’s pickpockets have all become hackers,” or that society always contains a
+                fixed number of criminals who merely change their tools.
+              </p>
+              <p>
+                The greatest value of the “niche” metaphor lies in asking:
+                <strong
+                  >What resources sustain these organizations, which institutional gaps do they
+                  exploit for profit, and why can they keep recruiting people and reproducing
+                  themselves?</strong
+                >
+                Seen this way, the question goes deeper than “some people are greedy, so some people
+                commit crimes.”
+              </p>
+              <h3 id="I-As-wealth-becomes-digital-the-struggle-shifts-toward-control">
+                <a
+                  href="#I-As-wealth-becomes-digital-the-struggle-shifts-toward-control"
+                  class="headerlink"
+                  title="I. As wealth becomes digital, the struggle shifts toward control"
+                ></a
+                >I. As wealth becomes digital, the struggle shifts toward control
+              </h3>
+              <p>
+                There is some basis for your premise: a decline in cash can indeed reduce
+                opportunities for certain traditional crimes. For example, a study used differences
+                in the timing of the rollout of electronic welfare payments across counties in
+                Missouri, United States, and found an association between reduced cash circulation
+                and declines in crimes such as burglary and larceny. But that finding alone does not
+                establish that the crimes prevented subsequently turned into online fraud.
+                <a
+                  target="_blank"
+                  href="https://www.iza.org/index.php/en/publications/dp/8402/less-cash-less-crime-evidence-from-the-electronic-benefit-transfer-program"
+                  rel="noopener"
+                  >IZA</a
+                >
+              </p>
+              <p>
+                Modern property protection can be divided into three questions:
+                <strong
+                  >Where is the money kept, who has authority to use it, and what information do
+                  those authorized people rely on when making decisions?</strong
+                >
+                Bank custody addresses some physical security concerns, and identity authentication
+                protects some permissions to act. Yet “the account holder performed the transaction”
+                and “the decision was based on truthful information” remain different things. In
+                what the UK Payment Systems Regulator calls “authorized push payment scams,” victims
+                are deceived into transferring money to fraudsters themselves.
+                <a target="_blank" href="https://www.psr.org.uk/our-work/app-scams/" rel="noopener"
+                  >PSR</a
+                >
+              </p>
+              <p>
+                Comparing the mechanisms by which wealth is acquired reveals three distinct
+                positions:
+              </p>
+              <table>
+                <thead>
+                  <tr>
+                    <th>Modern form of crime</th>
+                    <th>Approximate traditional counterpart</th>
+                    <th>What it primarily compromises</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Theft of accounts or payment credentials</td>
+                    <td>Thieves stealing property or keys</td>
+                    <td>Rights to access and use assets</td>
+                  </tr>
+                  <tr>
+                    <td>Telecom fraud and online fraud</td>
+                    <td>
+                      Swindlers impersonating acquaintances, merchants, or officials to obtain
+                      property
+                    </td>
+                    <td>The information and trust on which decisions about assets depend</td>
+                  </tr>
+                  <tr>
+                    <td>Ransomware and data extortion</td>
+                    <td>Kidnapping, extortion, and threats to destroy property</td>
+                    <td>
+                      Data confidentiality, system availability, and the ability to operate normally
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <p>
+                These are parallels between economic mechanisms, not one-to-one mappings between
+                legal offenses across jurisdictions. In practice, cybercrime also frequently
+                combines data theft, impersonation, fraud, and extortion.
+                <a
+                  target="_blank"
+                  href="https://www.europol.europa.eu/media-press/newsroom/news/steal-deal-repeat-cybercriminals-cash-in-your-data"
+                  rel="noopener"
+                  >Europol</a
+                >
+              </p>
+              <p>Two changes are especially important.</p>
+              <p>
+                <strong>Fraud can succeed while the banking system is working normally.</strong> A
+                bank may correctly identify the payer and accurately execute the instruction, while
+                the payer’s belief that “a family member urgently needs money,” “a supplier has
+                changed bank accounts,” or “this is a safe investment opportunity” is false. From
+                this perspective, fraud attacks the process by which a payment decision is formed.
+                <a
+                  target="_blank"
+                  href="https://www.fca.org.uk/consumers/fraudulent-payments"
+                  rel="noopener"
+                  >FCA</a
+                >
+              </p>
+              <p>
+                <strong>Extortionists do not even need to reach your money first.</strong> They can
+                prevent a business from using its systems or threaten to publish sensitive data,
+                then force the victim to draw on funds that were otherwise safely held. The
+                ransomware prevention guide issued by the US National Security Agency and its
+                partners explicitly notes that attackers both encrypt files and steal data under
+                threat of disclosure.
+                <a
+                  target="_blank"
+                  href="https://www.nsa.gov/Press-Room/Press-Releases-Statements/Press-Release-View/Article/3403814/stopransomware-guide-released-by-nsa-and-partners/"
+                  rel="noopener"
+                  >National Security Agency</a
+                >
+              </p>
+              <p>
+                In one sentence, this shift can be described as
+                <strong
+                  >an expansion from seizing the physical carriers of wealth to taking control over
+                  wealth, trust, and the ability to live normally.</strong
+                >
+              </p>
+              <h3 id="II-Similar-economic-roles-but-different-scales-and-forms-of-organization">
+                <a
+                  href="#II-Similar-economic-roles-but-different-scales-and-forms-of-organization"
+                  class="headerlink"
+                  title="II. Similar economic roles, but different scales and forms of organization"
+                ></a
+                >II. Similar economic roles, but different scales and forms of organization
+              </h3>
+              <p>
+                Digital crime does more than reenact street crime on a screen. It changes how
+                operations can scale and how criminals divide their work.
+              </p>
+              <p>
+                Traditional highway robbery usually requires perpetrators to approach their victims,
+                risking identification, resistance, and arrest at the scene. Cybercrime can reach
+                targets across regions, separating the location of the operation, the victim, and
+                the places through which money flows. Research on the economics of cybercrime has
+                long identified this ability to shift across borders and the difficulty of
+                coordinating law enforcement as central issues.
+                <a
+                  target="_blank"
+                  href="https://www.aeaweb.org/articles?id=10.1257/jep.23.3.3"
+                  rel="noopener"
+                  >American Economic Association</a
+                >
+              </p>
+              <p>
+                An economic inference follows:
+                <strong
+                  >Even if each attempt has a low probability of success, the overall operation may
+                  remain profitable if reaching large numbers of targets is cheap enough.</strong
+                >
+                Digitization therefore does more than relocate existing opportunities. It may also
+                create opportunities for crimes that were previously too costly to be worthwhile.
+              </p>
+              <p>
+                Crime can also develop a specialized division of labor. Those who obtain data,
+                develop tools, carry out deception, and move criminal proceeds need not belong to
+                one tightly knit gang. INTERPOL’s 2026 financial fraud assessment notes that
+                criminal networks are working with specialized money-laundering groups and expanding
+                their activities by sharing technology and expertise.
+                <a
+                  target="_blank"
+                  href="https://www.interpol.int/News-and-Events/News/2026/INTERPOL-report-warns-of-increasingly-sophisticated-global-financial-fraud-threat?trk=public_post_comment-text&amp;utm_source=chatgpt.com"
+                  rel="noopener"
+                  >Interpol</a
+                >
+              </p>
+              <p>
+                Ransomware has a similar service-based structure: tool developers provide services
+                to other perpetrators, and access to compromised systems may be supplied by
+                different participants. This lowers the barrier for some participants who would
+                otherwise need to master the full range of technical skills.
+                <a
+                  target="_blank"
+                  href="https://www.cyber.gc.ca/en/guidance/ransomware-threat-outlook-2025-2027"
+                  rel="noopener"
+                  >Canadian Centre for Cyber Security</a
+                >
+              </p>
+              <p>
+                The modern “niche” thus looks more like
+                <strong>an interconnected criminal supply chain</strong>. Explaining why it exists
+                requires explaining why perpetrators, organizers, and supporting services can all
+                profit.
+              </p>
+              <h3
+                id="III-The-underlying-reason-violating-others’-rights-can-yield-high-private-returns-without-perpetrators-bearing-the-full-cost"
+              >
+                <a
+                  href="#III-The-underlying-reason-violating-others’-rights-can-yield-high-private-returns-without-perpetrators-bearing-the-full-cost"
+                  class="headerlink"
+                  title="III. The underlying reason: violating others’ rights can yield high private returns without perpetrators bearing the full cost"
+                ></a
+                >III. The underlying reason: violating others’ rights can yield high private returns
+                without perpetrators bearing the full cost
+              </h3>
+              <p>I find the following the most useful explanation:</p>
+              <blockquote>
+                <p>
+                  <strong
+                    >When the expected private returns from taking other people’s resources exceed
+                    the costs of carrying out the crime, the risk of being held accountable, and the
+                    cost of forgoing legitimate opportunities, some people have an incentive to
+                    enter. When such opportunities can be replicated through organized activity,
+                    they can become a lasting industry.</strong
+                  >
+                </p>
+              </blockquote>
+              <p>
+                This is a simplified model of incentives, not a complete account of every offender’s
+                psychology. It can be expressed as:
+              </p>
+              <blockquote>
+                <p>
+                  Expected net return from crime ≈ probability of success × realizable proceeds −
+                  cost of carrying out the crime − probability of being held accountable × cost of
+                  accountability
+                </p>
+              </blockquote>
+              <p>
+                We must also consider alternative opportunities for legitimate income, moral
+                restraints, social relationships, and the fact that some participants do not act
+                voluntarily. The model helps distinguish “why people have a motive” from “why that
+                motive can translate into stable organizations.”
+              </p>
+              <p>Four mechanisms are particularly important.</p>
+              <h4 id="1-The-cost-of-creating-wealth-differs-from-the-cost-of-seizing-control-of-it">
+                <a
+                  href="#1-The-cost-of-creating-wealth-differs-from-the-cost-of-seizing-control-of-it"
+                  class="headerlink"
+                  title="1. The cost of creating wealth differs from the cost of seizing control of it"
+                ></a
+                >1. The cost of creating wealth differs from the cost of seizing control of it
+              </h4>
+              <p>
+                This is a basic economic issue: accumulating savings may take someone years of work,
+                but changing who controls those savings does not require repeating that work.
+                Legitimate payment systems are designed to make transfers of property convenient,
+                and criminals try to exploit the same transfer capabilities.
+              </p>
+              <p>
+                Likewise, the value of a business’s operations comes from the long-term accumulation
+                of people, equipment, knowledge, and customer relationships. Extortionists do not
+                have to create that value. Disrupting a critical dependency may be enough to gain
+                coercive power. The Canadian Centre for Cyber Security’s assessment explicitly
+                identifies operational disruption, supply-chain delays, and recovery costs among the
+                impacts of ransomware attacks, extending far beyond the ransom itself.
+                <a
+                  target="_blank"
+                  href="https://www.cyber.gc.ca/en/guidance/ransomware-threat-outlook-2025-2027"
+                  rel="noopener"
+                  >Canadian Centre for Cyber Security</a
+                >
+              </p>
+              <p>
+                It follows that
+                <strong
+                  >the more wealth depends on complex systems of cooperation, the less adequate it
+                  is to think of protecting wealth simply as “keeping the money safely
+                  hidden.”</strong
+                >
+              </p>
+              <h4 id="2-Society-depends-on-trust-while-verifying-information-always-has-a-cost">
+                <a
+                  href="#2-Society-depends-on-trust-while-verifying-information-always-has-a-cost"
+                  class="headerlink"
+                  title="2. Society depends on trust, while verifying information always has a cost"
+                ></a
+                >2. Society depends on trust, while verifying information always has a cost
+              </h4>
+              <p>
+                Imagine a society in which no one trusts anyone: every call from a customer, request
+                from a colleague, and purchase requires an independent check of the other party’s
+                identity, entire background, and every promise. Such a society would struggle to
+                function.
+              </p>
+              <p>
+                Cooperation in the real world therefore relies on limited information, reputation,
+                and existing relationships. Fraudsters exploit the very mechanisms that make
+                cooperation possible. INTERPOL describes social engineering fraud as exploiting
+                people’s trust to obtain money or confidential information.
+                <a
+                  target="_blank"
+                  href="https://www.interpol.int/News-and-Events/News/2026/Over-5-800-arrests-USD-293-million-intercepted-in-global-fraud-bust"
+                  rel="noopener"
+                  >Interpol</a
+                >
+              </p>
+              <p>
+                Attributing all victimization to “greed” or “stupidity” therefore misses important
+                mechanisms. Some people seek financial returns; others simply trust an acquaintance,
+                fulfill their work duties, look for a job, or try to protect their accounts. False
+                information can exploit all of these ordinary needs. Official investigations have
+                documented impersonation scams, romance scams, and deception involving fake job
+                opportunities.
+                <a target="_blank" href="https://www.psr.org.uk/our-work/app-scams/" rel="noopener"
+                  >PSR</a
+                >
+              </p>
+              <p>
+                This also shows why asking everyone to “stay vigilant at all times” cannot easily
+                carry the entire burden of protection.
+              </p>
+              <h4
+                id="3-Criminal-operations-can-span-borders-while-governance-has-boundaries-and-uneven-capabilities"
+              >
+                <a
+                  href="#3-Criminal-operations-can-span-borders-while-governance-has-boundaries-and-uneven-capabilities"
+                  class="headerlink"
+                  title="3. Criminal operations can span borders, while governance has boundaries and uneven capabilities"
+                ></a
+                >3. Criminal operations can span borders, while governance has boundaries and uneven
+                capabilities
+              </h4>
+              <p>
+                Imagine that the victim is in one jurisdiction, the perpetrator in another, the
+                server in a third, and the money passes through several more. Even if every
+                jurisdiction prohibits fraud, investigation, evidence collection, asset freezes, and
+                arrests still require coordination among different agencies. Research on the
+                economics of cybercrime treats this cross-border character as a major challenge for
+                law enforcement and collective action.
+                <a
+                  target="_blank"
+                  href="https://www.aeaweb.org/articles?id=10.1257/jep.23.3.3"
+                  rel="noopener"
+                  >American Economic Association</a
+                >
+              </p>
+              <p>
+                Some regions also face weak regulation, inconsistent enforcement, and mutually
+                reinforcing money laundering, corruption, and illegal business activities. A 2026
+                analysis of scams by the United Nations Office on Drugs and Crime notes that
+                criminal networks may exploit conditions such as digital industries expanding faster
+                than regulation and inadequate oversight.
+                <a
+                  target="_blank"
+                  href="https://www.unodc.org/southasia/en/frontpage/2026/September/south-asia_-trafficked-to-scam-an-emerging-threat.html"
+                  rel="noopener"
+                  >UNODC</a
+                >
+              </p>
+              <p>
+                We can infer that
+                <strong
+                  >reducing crime opportunities within a society does not automatically protect its
+                  residents from criminals elsewhere.</strong
+                >
+                Security becomes a matter of both local governance and cross-border coordination.
+              </p>
+              <h4 id="4-Those-able-to-reduce-risk-do-not-necessarily-bear-the-greatest-losses">
+                <a
+                  href="#4-Those-able-to-reduce-risk-do-not-necessarily-bear-the-greatest-losses"
+                  class="headerlink"
+                  title="4. Those able to reduce risk do not necessarily bear the greatest losses"
+                ></a
+                >4. Those able to reduce risk do not necessarily bear the greatest losses
+              </h4>
+              <p>This often goes deeper than a technical vulnerability alone.</p>
+              <p>
+                Suppose a platform must pay to strengthen identity checks, while users bear most of
+                the fraud losses caused by inadequate checks. Viewed solely through short-term
+                financial incentives, the platform may lack sufficient motivation to invest.
+                Similarly, the parties that design payment systems, hold personal data, and process
+                suspicious transactions may bear different costs and risks.
+              </p>
+              <p>
+                This example is hypothetical, but the mechanism it illustrates has long been central
+                to the economics of information security:
+                <strong
+                  >security depends both on technical design and on whether participants’ interests
+                  are aligned.</strong
+                >
+                <a target="_blank" href="https://pubmed.ncbi.nlm.nih.gov/17068253/" rel="noopener"
+                  >PubMed</a
+                >
+              </p>
+              <p>
+                Asking “why does the system still have vulnerabilities?” therefore sometimes
+                requires further questions: Who can fix them? Who pays? Who ultimately bears the
+                losses? Not every failure can be blamed on a user clicking the wrong button once.
+              </p>
+              <h3
+                id="IV-Poverty-and-inequality-explain-part-of-the-picture-but-not-the-entire-group"
+              >
+                <a
+                  href="#IV-Poverty-and-inequality-explain-part-of-the-picture-but-not-the-entire-group"
+                  class="headerlink"
+                  title="IV. Poverty and inequality explain part of the picture, but not the entire group"
+                ></a
+                >IV. Poverty and inequality explain part of the picture, but not the entire group
+              </h3>
+              <p>
+                Poverty, debt, and a lack of legitimate opportunities offer clues as to why some
+                people are more vulnerable to recruitment or deception. But even providing a basic
+                standard of living does not logically guarantee that all profit-driven crime will
+                disappear: as long as opportunities to acquire more wealth remain, some people may
+                be willing to violate others’ rights. Conversely, hardship alone does not imply that
+                a person will commit crimes.
+              </p>
+              <p>
+                More importantly,
+                <strong
+                  >organizers and frontline operators do not necessarily share the same motives and
+                  cannot automatically be treated as the same kind of participant.</strong
+                >
+              </p>
+              <p>
+                Scam compounds do include people deceived by fake job offers, deprived of their
+                freedom, subjected to violence, and forced to carry out fraud. INTERPOL explicitly
+                distinguishes two groups of victims: those forced to commit the crimes, and those
+                they contact and defraud. It also emphasizes that not everyone carrying out scams in
+                these compounds is a victim of human trafficking.
+                <a
+                  target="_blank"
+                  href="https://www.interpol.int/News-and-Events/News/2025/INTERPOL-releases-new-information-on-globalization-of-scam-centres"
+                  rel="noopener"
+                  >Interpol</a
+                >
+              </p>
+              <p>
+                The same criminal organization may therefore contain profit-seeking organizers,
+                willing participants, and coerced operators. Describing them all as “poor people
+                with nowhere else to turn” or as “born bad” obstructs both understanding and the
+                accurate assignment of responsibility.
+              </p>
+              <p>
+                Your question about “why this group persists over time” must therefore be
+                distinguished from “why a particular person participates in crime”:
+              </p>
+              <p>
+                <strong
+                  >The former concerns opportunities, profits, supporting networks, and conditions
+                  of governance. The latter also involves personal choices, experiences, social
+                  relationships, and whether coercion is involved.</strong
+                >
+              </p>
+              <h3
+                id="V-The-existence-of-a-niche-does-not-make-it-indispensable-nor-does-it-imply-that-the-total-amount-of-crime-is-fixed"
+              >
+                <a
+                  href="#V-The-existence-of-a-niche-does-not-make-it-indispensable-nor-does-it-imply-that-the-total-amount-of-crime-is-fixed"
+                  class="headerlink"
+                  title="V. The existence of a niche does not make it indispensable, nor does it imply that the total amount of crime is fixed"
+                ></a
+                >V. The existence of a niche does not make it indispensable, nor does it imply that
+                the total amount of crime is fixed
+              </h3>
+              <p>
+                The most tempting misconception in this metaphor is that, because society has
+                wealth, it must require a certain number of predators; if one form of crime is
+                suppressed, another must increase by the same amount.
+              </p>
+              <p>
+                Existing research on crime displacement does not support this simple idea of
+                “conservation.” Relevant reviews have found that preventive measures do not
+                necessarily push crime elsewhere and can sometimes benefit neighboring areas as
+                well. However, these studies do not cover every form of displacement
+                comprehensively, so they cannot establish that cybercrime will not be displaced.
+                <a
+                  target="_blank"
+                  href="https://link.springer.com/article/10.1007/s11292-014-9209-4"
+                  rel="noopener"
+                  >Springer</a
+                >
+              </p>
+              <p>The analysis above lets us understand two situations more precisely.</p>
+              <p>
+                When criminal proceeds, money-transfer networks, and organizational capacity remain
+                largely intact, removing only some operators may still leave new participants
+                attracted or forced into the activity.
+                <strong
+                  >This helps explain how an organization might “replace its people and carry on,”
+                  but it does not mean it can never be eliminated.</strong
+                >
+              </p>
+              <p>
+                Conversely, reducing the proceeds that can be realized after success, increasing the
+                likelihood of identification and accountability, reducing vulnerabilities in
+                critical systems, and assigning appropriate responsibility to institutions capable
+                of prevention can all change the conditions that sustain these activities. For
+                example, the UK payments regulator requires sending and receiving payment service
+                providers to share liability for reimbursing qualifying scam losses. One of its
+                explicit aims is to strengthen both sides’ incentives to prevent fraud.
+                <a target="_blank" href="https://www.psr.org.uk/our-work/app-scams/" rel="noopener"
+                  >PSR</a
+                >
+              </p>
+              <p>
+                We also need to distinguish the <strong>certainty</strong> of accountability from
+                the <strong>severity</strong> of punishment. The US National Institute of Justice’s
+                summary of deterrence research concludes that the likelihood of being caught
+                generally has a stronger deterrent effect than simply making penalties harsher. This
+                general finding is useful, but it cannot be treated as a precise estimate of effects
+                across all forms of cross-border cybercrime.
+                <a
+                  target="_blank"
+                  href="https://nij.ojp.gov/topics/articles/five-things-about-deterrence"
+                  rel="noopener"
+                  >National Institute of Justice</a
+                >
+              </p>
+              <p>
+                Finally, returning to the previous question, we should distinguish “having social
+                effects” from “being socially necessary.” Crime may stimulate improvements in
+                security technology and institutions, but that does not mean society needs it.
+                Repairing damage creates jobs, but that does not establish that the damage itself
+                increased social welfare.
+              </p>
+              <p>
+                <strong
+                  >My final assessment, then, is that these organizations do occupy predatory
+                  positions closely resembling those of traditional thieves and bandits, while
+                  digitization has also changed their targets, scale, and forms of organization. The
+                  deeper condition behind their persistence is that violating others’ rights can
+                  still yield realizable private returns, while protection, accountability, and the
+                  allocation of losses fail to constrain those returns sufficiently.</strong
+                >
+              </p>
+            </div>
 
-
-
-
-<link rel="alternate" hreflang="zh-CN" href="https://acyclic0725.github.io/zh-cn/posts/bandits-in-the-digital-age/">
-<link rel="alternate" hreflang="zh-TW" href="https://acyclic0725.github.io/zh-tw/posts/bandits-in-the-digital-age/">
-<link rel="alternate" hreflang="en" href="https://acyclic0725.github.io/en/posts/bandits-in-the-digital-age/">
-<link rel="alternate" hreflang="x-default" href="https://acyclic0725.github.io/en/posts/bandits-in-the-digital-age/">
-
-  <noscript>
-    <link rel="stylesheet" href="/css/noscript.css">
-  </noscript>
-<link rel="alternate" href="/atom.xml" title="Night Flighter" type="application/atom+xml">
-</head>
-
-<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
-  <div class="headband"></div>
-
-  <main class="main">
-    <div class="column">
-      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
-  <div class="site-nav-toggle">
-    <div class="toggle" aria-label="Toggle navigation bar" role="button">
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
-    </div>
-  </div>
-
-  <div class="site-meta">
-
-    <a href="/" class="brand" rel="start">
-      <i class="logo-line"></i>
-      <p class="site-title">Night Flighter</p>
-      <i class="logo-line"></i>
-    </a>
-  </div>
-
-  <div class="site-nav-right">
-    <div class="toggle popup-trigger" aria-label="Search" role="button">
-    </div>
-  </div>
-</div>
-
-
-
-<nav class="site-nav">
-  <ul class="main-menu menu">
-  </ul>
-</nav>
-
-
-
-
-<nav class="night-nav" aria-label="Reading language">
-  <div class="night-nav-links">
-    <a href="/en/">Home</a>
-    <a href="/en/archives/">Archives</a>
-    <a href="/en/about/">About</a>
-  </div>
-  <details class="night-lang-menu">
-    <summary aria-label="Reading language">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
-        <circle cx="12" cy="12" r="9" />
-        <ellipse cx="12" cy="12" rx="4" ry="9" />
-        <path d="M3 12h18" />
-      </svg>
-      <small>EN</small>
-    </summary>
-    <div>
-      <a href="/zh-cn/posts/bandits-in-the-digital-age/" lang="zh-CN">
-        <span>简体中文</span><small>简</small>
-      </a>
-      <a href="/zh-tw/posts/bandits-in-the-digital-age/" lang="zh-TW">
-        <span>正體中文</span><small>正</small>
-      </a>
-      <a href="/en/posts/bandits-in-the-digital-age/" lang="en" aria-current="page">
-        <span>English</span><small>EN</small>
-      </a>
-    </div>
-  </details>
-</nav>
-
-</header>
-    </div>
-
-    <div class="main-inner post posts-expand">
-
-
-  
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://acyclic0725.github.io/en/posts/bandits-in-the-digital-age/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Eric Johnson">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Night Flighter">
-      <meta itemprop="description" content="Thoughts at Night">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="Bandits in the Digital Age | Night Flighter">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          Bandits in the Digital Age
-        </h1>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2026-11-04 13:54:38" itemprop="dateCreated datePublished" datetime="2026-11-04T13:54:38+08:00">2026-11-04</time>
-    </span>
-
-  
-</div>
-
+            <footer class="post-footer"></footer>
+          </article>
         </div>
-      </header>
 
-    
-    
-    
-    <div class="post-body" itemprop="articleBody"><blockquote>
-<p>This article contains AI-generated content and may contain factual errors, omissions, misinterpretations, or outdated information. For information that may affect important decisions, please verify it against official materials, primary sources, or other reliable sources.</p>
-</blockquote>
-<p>Q: What place did thieves and bandits occupy in premodern economies and societies, and what effects and roles did they have?</p>
-<p>A: From the perspective of economic and social history, thieves and bandits were more than criminals in premodern society. They were also part of the interplay between wealth distribution, population movement, social order, and state power.</p>
-<p>They generally did not create wealth directly, but they participated in its involuntary transfer. They disrupted economic order, yet also indirectly encouraged societies to develop policing, transport security, and systems for protecting property. They could be products of social crises, or they could develop into armed forces capable of influencing local politics.</p>
-<p>Understanding premodern banditry therefore requires more than moral judgments about good and evil. It also requires examining the actual place bandits occupied in the economy and society of their time.</p>
-<h3 id="I-Where-did-they-fit-into-the-socioeconomic-structure"><a href="#I-Where-did-they-fit-into-the-socioeconomic-structure" class="headerlink" title="I. Where did they fit into the socioeconomic structure?"></a>I. Where did they fit into the socioeconomic structure?</h3><p>We first need to distinguish three categories.</p>
-<table>
-<thead>
-<tr>
-<th>Type</th>
-<th>Main activities</th>
-<th>Socioeconomic position</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>Ordinary thieves</td>
-<td>Stealing grain, money, livestock, and goods</td>
-<td>Often operated independently and might rely on theft as a temporary or long-term source of income</td>
-</tr>
-<tr>
-<td>Professional robbers</td>
-<td>Highway robbery, kidnapping for ransom, and group raids</td>
-<td>Earned income through violence; some formed stable gangs</td>
-</tr>
-<tr>
-<td>Organized bandits</td>
-<td>Controlling roads, villages, or local territories and extracting payments</td>
-<td>Could develop into local armed forces or informal power structures</td>
-</tr>
-</tbody></table>
-<p>These people did not necessarily belong to a single, fixed social class. Impoverished peasants, unemployed laborers, displaced people, and military deserters might join bandit groups, while some wealthy local interests might finance or exploit them.</p>
-<p>Historian Robert J. Antony’s research on Qing-era Guangdong found that many bandits were originally working people with families who engaged in theft intermittently because of underemployment and hardship. They were not a separate group entirely detached from ordinary society. <a target="_blank" href="https://academic.oup.com/hong-kong-scholarship-online/book/30576/chapter-abstract/258210326" rel="noopener">Oxford Academic</a></p>
-<p>More importantly, the people whom premodern officials called “bandits” sometimes included famine victims and local armed groups resisting the authorities. The term was not fully equivalent to “thieves” as defined in criminal law today. <a target="_blank" href="https://cssn.cn/lsx/lsx_zgs/202210/t20221024_5552492.shtml" rel="noopener">Chinese Social Sciences Net</a></p>
-<h3 id="II-How-did-they-affect-premodern-economies"><a href="#II-How-did-they-affect-premodern-economies" class="headerlink" title="II. How did they affect premodern economies?"></a>II. How did they affect premodern economies?</h3><h4 id="1-Redistributing-wealth-is-not-the-same-as-creating-it"><a href="#1-Redistributing-wealth-is-not-the-same-as-creating-it" class="headerlink" title="1. Redistributing wealth is not the same as creating it"></a>1. Redistributing wealth is not the same as creating it</h4><p>Theft and robbery essentially change who possesses wealth through an involuntary transfer.</p>
-<p>Suppose a robber takes one hundred taels of silver from a merchant, then spends it on grain, alcohol, meat, or other necessities. Purchasing power that originally belonged to the merchant passes to the robber and the people with whom the robber trades.</p>
-<p><span id="more"></span></p>
-<p>Economically, this has two effects:</p>
-<p>On the one hand, existing wealth is redistributed, and stolen goods reenter circulation through markets for stolen property. On the other, theft itself does not increase the total quantity of goods and may involve injury, death, destruction, work stoppages, and interrupted transactions.</p>
-<p>If robberies mainly target the rich, wealth may indeed pass to poorer people in some local settings. But this does not mean bandits generally served to rob the rich and help the poor. Poor people, isolated travelers, and unprotected households could also become victims.</p>
-<h4 id="2-Raising-the-cost-of-economic-activity"><a href="#2-Raising-the-cost-of-economic-activity" class="headerlink" title="2. Raising the cost of economic activity"></a>2. Raising the cost of economic activity</h4><p>Imagine a trade route between two cities, with a shipment worth one thousand taels of silver.</p>
-<p>Without a serious threat of banditry, merchants might need to pay only for transport. If robberies were frequent along the route, they would need more guards, detours, travel companions, or even protection payments.</p>
-<p>None of these additional expenses was required to produce the goods themselves.</p>
-<p>Frequent banditry therefore raised the cost of transporting and exchanging goods, made some long-distance trade less attractive, and weakened people’s willingness to invest for the long term.</p>
-<p>An interesting further consequence, however, was that the threat of banditry also increased demand for security services.</p>
-<p>For example, the armed escort agencies that developed during the Ming and Qing dynasties escorted valuables and goods, managed transport risks, and agreed on compensation if a shipment was lost. In a sense, they became a mechanism for securing commercial transport. <a target="_blank" href="https://paper.people.com.cn/rmrb/pc/content/202606/15/content_30163037.html" rel="noopener">People’s Daily</a></p>
-<p>This does not mean banditry created economic prosperity. It means society had to develop protective services to cope with the risks.</p>
-<h4 id="3-Forming-part-of-the-underground-economy"><a href="#3-Forming-part-of-the-underground-economy" class="headerlink" title="3. Forming part of the underground economy"></a>3. Forming part of the underground economy</h4><p>Organized bandits generally did more than simply rob and spend.</p>
-<p>They might maintain networks of fences, informants, transporters, people who sheltered them, and corrupt officials.</p>
-<p>Antony’s research on Qing-era Guangdong shows complex links between bandits and local society, involving ordinary residents, local government runners, gentry, soldiers, and others. Some gangs also participated in smuggling, gambling, and other illegal businesses. <a target="_blank" href="https://academic.oup.com/hong-kong-scholarship-online/book/30576/chapter-abstract/258211646" rel="noopener">Oxford Academic</a> <a target="_blank" href="https://academic.oup.com/hong-kong-scholarship-online/book/30576/chapter-abstract/258210972" rel="noopener">Oxford Academic</a></p>
-<p>There was therefore no clear-cut separation between the underground and mainstream economies of premodern society.</p>
-<h3 id="III-What-roles-did-they-play-in-governance-and-political-structures"><a href="#III-What-roles-did-they-play-in-governance-and-political-structures" class="headerlink" title="III. What roles did they play in governance and political structures?"></a>III. What roles did they play in governance and political structures?</h3><p>These effects may have been more far-reaching than their direct economic impact.</p>
-<h4 id="1-Revealing-imbalances-in-the-socioeconomic-system"><a href="#1-Revealing-imbalances-in-the-socioeconomic-system" class="headerlink" title="1. Revealing imbalances in the socioeconomic system"></a>1. Revealing imbalances in the socioeconomic system</h4><p>Famine, war, heavy taxation and labor obligations, and a shortage of jobs could all deprive people of ordinary ways to earn a living.</p>
-<p>During the reign of Emperor Xuan of the Western Han dynasty, repeated famines led to widespread banditry in the Bohai region. The governor, Gong Sui, did not rely solely on military suppression. He called for leniency toward those willing to lay down their weapons and return to farming, and sought to restore livelihoods through measures such as opening granaries to relieve the poor.</p>
-<p>The “Biographies of Upright Officials” in the <em>Book of Han</em> records that people gradually abandoned their weapons and resumed farming. <a target="_blank" href="https://ctext.org/han-shu/xun-li-zhuan/ens" rel="noopener">Chinese Text Project</a></p>
-<p>This case illustrates how some banditry arose from economic hardship. Improving living conditions could sometimes do more to remove its foundations than simply increasing punishments.</p>
-<p>But this explanation does not cover all bandits, particularly organizations that made sustained violent predation their profession.</p>
-<h4 id="2-Establishing-informal-power-where-state-authority-was-weak"><a href="#2-Establishing-informal-power-where-state-authority-was-weak" class="headerlink" title="2. Establishing informal power where state authority was weak"></a>2. Establishing informal power where state authority was weak</h4><p>When the authorities could not effectively protect trade routes, villages, and markets, some armed groups might take effective control of roads and local resources.</p>
-<p>They could extract payments from residents, set conditions for passage, and even determine who could do business in an area.</p>
-<p>At that point, bandits were no longer merely people who occasionally committed robbery. They had acquired some of the characteristics of local rulers.</p>
-<p>Economist Mancur Olson proposed an illuminating theoretical model:</p>
-<ul>
-<li>Roving bandits continually move from place to place and tend to seize as much wealth as quickly as possible.</li>
-<li>Stationary bandits control a territory over time. To maintain a continuing income, they may actually have an incentive to restrain other predators and preserve a degree of order.</li>
-</ul>
-<p>Olson argued that, on purely economic incentives, the latter might gradually develop mechanisms for collecting taxes and fees and providing public order. <a target="_blank" href="https://www.cambridge.org/core/journals/american-political-science-review/article/abs/dictatorship-democracy-and-development/2776079374BF1E318DF928EA79EF2294" rel="noopener">Cambridge Core</a></p>
-<p>This is one theory for understanding the relationship between violence and state formation. It does not mean all premodern states were founded by bandits, still less that collecting protection money through force is legitimate.</p>
-<h4 id="3-Driving-changes-in-law-and-local-policing"><a href="#3-Driving-changes-in-law-and-local-policing" class="headerlink" title="3. Driving changes in law and local policing"></a>3. Driving changes in law and local policing</h4><p>The existence of bandits forced states to consider two questions: how to protect property, and how to prevent people from turning to crime and rebellion.</p>
-<p>In premodern China, counts of bandits were once part of the assessment of local officials’ performance. Qing local governments also protected trade by restoring order in commerce, combating extortion, and curbing abusive local power groups. <a target="_blank" href="https://cssn.cn/lsx/lsx_zgs/202210/t20221024_5552492.shtml" rel="noopener">Chinese Social Sciences Net</a> <a target="_blank" href="https://iqh.ruc.edu.cn/old/qdshsyj/shyjj/cd8096cab6d24a07a7e27be5ea7ac909.htm" rel="noopener">Institute of Qing History, Renmin University of China</a></p>
-<p>The relationship between bandits and the state thus involved both confrontation and an indirect institutional interaction: banditry exposed failures of governance, prompting governments and local communities to seek new ways of providing security.</p>
-<h3 id="IV-Could-bandits-also-serve-as-a-form-of-social-resistance-or-redress"><a href="#IV-Could-bandits-also-serve-as-a-form-of-social-resistance-or-redress" class="headerlink" title="IV. Could bandits also serve as a form of social resistance or redress?"></a>IV. Could bandits also serve as a form of social resistance or redress?</h3><p>Historians have long debated this question.</p>
-<p>Historian Eric Hobsbawm introduced the concept of “social banditry.”</p>
-<p>In this theory, some people branded criminals by the state might be seen by local communities as heroes who resisted oppression and upheld justice.</p>
-<p>The European legend of Robin Hood and the outlaws of Liangshan in Chinese literature both express this cultural imagination.</p>
-<p>But being made into a popular hero and actually helping the poor are two different things.</p>
-<p>Researchers including Kim A. Wagner have criticized the theory of social banditry, pointing to the often substantial differences between legends about bandits, official accounts, and their actual conduct. <a target="_blank" href="https://www.cambridge.org/core/services/aop-cambridge-core/content/view/F4AFDA95450FCDED1685C3D21AC3C5C8/S0018246X07006103a.pdf/thuggee_and_social_banditry_reconsidered.pdf" rel="noopener">Cambridge Core</a></p>
-<p>Bandits could therefore sometimes provide an organizational basis for social resistance. But ordinary acts of predation cannot all be understood as attempts to correct inequality.</p>
-<h3 id="V-What-role-did-they-ultimately-play-in-the-economy-and-society-as-a-whole"><a href="#V-What-role-did-they-ultimately-play-in-the-economy-and-society-as-a-whole" class="headerlink" title="V. What role did they ultimately play in the economy and society as a whole?"></a>V. What role did they ultimately play in the economy and society as a whole?</h3><p>Their effects can be grouped into several interconnected areas.</p>
-<table>
-<thead>
-<tr>
-<th>Area of impact</th>
-<th>Specific effects</th>
-<th>Overall character</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>Wealth distribution</td>
-<td>Involuntary transfers of wealth; recirculation of stolen goods</td>
-<td>Redistributive effects, but usually at the expense of property rights</td>
-</tr>
-<tr>
-<td>Production and trade</td>
-<td>Greater risks and costs; disruption of production and investment expectations</td>
-<td>Mainly negative</td>
-</tr>
-<tr>
-<td>Labor and livelihoods</td>
-<td>Illegal sources of income for some unemployed and mobile populations</td>
-<td>Reflected vulnerabilities in the economic structure</td>
-</tr>
-<tr>
-<td>Social organization</td>
-<td>Formation of gangs, underground trading networks, and informal relationships</td>
-<td>Affected the structure of local society</td>
-</tr>
-<tr>
-<td>State governance</td>
-<td>Encouraged policing, relief, legal measures, and commercial safeguards</td>
-<td>Indirectly promoted institutional adjustments</td>
-</tr>
-<tr>
-<td>Political change</td>
-<td>Some armed groups became rebel forces or local powers</td>
-<td>Depended on the historical context</td>
-</tr>
-</tbody></table>
-<p>The most important distinction here is between an economic function and an economic contribution.</p>
-<p>An activity may perform functions such as transferring wealth, distributing risk, or organizing people without producing a net benefit for society as a whole.</p>
-<p>Likewise, the fact that some bandits later took part in political change does not mean their earlier acts of plunder were themselves beneficial.</p>
-<hr>
-<p>Q: In modern society, people widely use bank deposits and digital assets, making physical theft and robbery more difficult. Do telecom fraud and ransomware organizations occupy the same niche as thieves and bandits in another form? What are the underlying reasons this group exists?</p>
-<p>A: In the sense of “exploiting other people’s vulnerabilities to acquire wealth through theft, deception, or coercion,” yes: telecom fraud, account theft, and ransomware organizations carry on some of the economic roles of traditional thieves, swindlers, robbers, and kidnappers. But this continuity does not mean that “yesterday’s pickpockets have all become hackers,” or that society always contains a fixed number of criminals who merely change their tools.</p>
-<p>The greatest value of the “niche” metaphor lies in asking: <strong>What resources sustain these organizations, which institutional gaps do they exploit for profit, and why can they keep recruiting people and reproducing themselves?</strong> Seen this way, the question goes deeper than “some people are greedy, so some people commit crimes.”</p>
-<h3 id="I-As-wealth-becomes-digital-the-struggle-shifts-toward-control"><a href="#I-As-wealth-becomes-digital-the-struggle-shifts-toward-control" class="headerlink" title="I. As wealth becomes digital, the struggle shifts toward control"></a>I. As wealth becomes digital, the struggle shifts toward control</h3><p>There is some basis for your premise: a decline in cash can indeed reduce opportunities for certain traditional crimes. For example, a study used differences in the timing of the rollout of electronic welfare payments across counties in Missouri, United States, and found an association between reduced cash circulation and declines in crimes such as burglary and larceny. But that finding alone does not establish that the crimes prevented subsequently turned into online fraud. <a target="_blank" href="https://www.iza.org/index.php/en/publications/dp/8402/less-cash-less-crime-evidence-from-the-electronic-benefit-transfer-program" rel="noopener">IZA</a></p>
-<p>Modern property protection can be divided into three questions: <strong>Where is the money kept, who has authority to use it, and what information do those authorized people rely on when making decisions?</strong> Bank custody addresses some physical security concerns, and identity authentication protects some permissions to act. Yet “the account holder performed the transaction” and “the decision was based on truthful information” remain different things. In what the UK Payment Systems Regulator calls “authorized push payment scams,” victims are deceived into transferring money to fraudsters themselves. <a target="_blank" href="https://www.psr.org.uk/our-work/app-scams/" rel="noopener">PSR</a></p>
-<p>Comparing the mechanisms by which wealth is acquired reveals three distinct positions:</p>
-<table>
-<thead>
-<tr>
-<th>Modern form of crime</th>
-<th>Approximate traditional counterpart</th>
-<th>What it primarily compromises</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>Theft of accounts or payment credentials</td>
-<td>Thieves stealing property or keys</td>
-<td>Rights to access and use assets</td>
-</tr>
-<tr>
-<td>Telecom fraud and online fraud</td>
-<td>Swindlers impersonating acquaintances, merchants, or officials to obtain property</td>
-<td>The information and trust on which decisions about assets depend</td>
-</tr>
-<tr>
-<td>Ransomware and data extortion</td>
-<td>Kidnapping, extortion, and threats to destroy property</td>
-<td>Data confidentiality, system availability, and the ability to operate normally</td>
-</tr>
-</tbody></table>
-<p>These are parallels between economic mechanisms, not one-to-one mappings between legal offenses across jurisdictions. In practice, cybercrime also frequently combines data theft, impersonation, fraud, and extortion. <a target="_blank" href="https://www.europol.europa.eu/media-press/newsroom/news/steal-deal-repeat-cybercriminals-cash-in-your-data" rel="noopener">Europol</a></p>
-<p>Two changes are especially important.</p>
-<p><strong>Fraud can succeed while the banking system is working normally.</strong> A bank may correctly identify the payer and accurately execute the instruction, while the payer’s belief that “a family member urgently needs money,” “a supplier has changed bank accounts,” or “this is a safe investment opportunity” is false. From this perspective, fraud attacks the process by which a payment decision is formed. <a target="_blank" href="https://www.fca.org.uk/consumers/fraudulent-payments" rel="noopener">FCA</a></p>
-<p><strong>Extortionists do not even need to reach your money first.</strong> They can prevent a business from using its systems or threaten to publish sensitive data, then force the victim to draw on funds that were otherwise safely held. The ransomware prevention guide issued by the US National Security Agency and its partners explicitly notes that attackers both encrypt files and steal data under threat of disclosure. <a target="_blank" href="https://www.nsa.gov/Press-Room/Press-Releases-Statements/Press-Release-View/Article/3403814/stopransomware-guide-released-by-nsa-and-partners/" rel="noopener">National Security Agency</a></p>
-<p>In one sentence, this shift can be described as <strong>an expansion from seizing the physical carriers of wealth to taking control over wealth, trust, and the ability to live normally.</strong></p>
-<h3 id="II-Similar-economic-roles-but-different-scales-and-forms-of-organization"><a href="#II-Similar-economic-roles-but-different-scales-and-forms-of-organization" class="headerlink" title="II. Similar economic roles, but different scales and forms of organization"></a>II. Similar economic roles, but different scales and forms of organization</h3><p>Digital crime does more than reenact street crime on a screen. It changes how operations can scale and how criminals divide their work.</p>
-<p>Traditional highway robbery usually requires perpetrators to approach their victims, risking identification, resistance, and arrest at the scene. Cybercrime can reach targets across regions, separating the location of the operation, the victim, and the places through which money flows. Research on the economics of cybercrime has long identified this ability to shift across borders and the difficulty of coordinating law enforcement as central issues. <a target="_blank" href="https://www.aeaweb.org/articles?id=10.1257/jep.23.3.3" rel="noopener">American Economic Association</a></p>
-<p>An economic inference follows: <strong>Even if each attempt has a low probability of success, the overall operation may remain profitable if reaching large numbers of targets is cheap enough.</strong> Digitization therefore does more than relocate existing opportunities. It may also create opportunities for crimes that were previously too costly to be worthwhile.</p>
-<p>Crime can also develop a specialized division of labor. Those who obtain data, develop tools, carry out deception, and move criminal proceeds need not belong to one tightly knit gang. INTERPOL’s 2026 financial fraud assessment notes that criminal networks are working with specialized money-laundering groups and expanding their activities by sharing technology and expertise. <a target="_blank" href="https://www.interpol.int/News-and-Events/News/2026/INTERPOL-report-warns-of-increasingly-sophisticated-global-financial-fraud-threat?trk=public_post_comment-text&amp;utm_source=chatgpt.com" rel="noopener">Interpol</a></p>
-<p>Ransomware has a similar service-based structure: tool developers provide services to other perpetrators, and access to compromised systems may be supplied by different participants. This lowers the barrier for some participants who would otherwise need to master the full range of technical skills. <a target="_blank" href="https://www.cyber.gc.ca/en/guidance/ransomware-threat-outlook-2025-2027" rel="noopener">Canadian Centre for Cyber Security</a></p>
-<p>The modern “niche” thus looks more like <strong>an interconnected criminal supply chain</strong>. Explaining why it exists requires explaining why perpetrators, organizers, and supporting services can all profit.</p>
-<h3 id="III-The-underlying-reason-violating-others’-rights-can-yield-high-private-returns-without-perpetrators-bearing-the-full-cost"><a href="#III-The-underlying-reason-violating-others’-rights-can-yield-high-private-returns-without-perpetrators-bearing-the-full-cost" class="headerlink" title="III. The underlying reason: violating others’ rights can yield high private returns without perpetrators bearing the full cost"></a>III. The underlying reason: violating others’ rights can yield high private returns without perpetrators bearing the full cost</h3><p>I find the following the most useful explanation:</p>
-<blockquote>
-<p><strong>When the expected private returns from taking other people’s resources exceed the costs of carrying out the crime, the risk of being held accountable, and the cost of forgoing legitimate opportunities, some people have an incentive to enter. When such opportunities can be replicated through organized activity, they can become a lasting industry.</strong></p>
-</blockquote>
-<p>This is a simplified model of incentives, not a complete account of every offender’s psychology. It can be expressed as:</p>
-<blockquote>
-<p>Expected net return from crime ≈ probability of success × realizable proceeds − cost of carrying out the crime − probability of being held accountable × cost of accountability</p>
-</blockquote>
-<p>We must also consider alternative opportunities for legitimate income, moral restraints, social relationships, and the fact that some participants do not act voluntarily. The model helps distinguish “why people have a motive” from “why that motive can translate into stable organizations.”</p>
-<p>Four mechanisms are particularly important.</p>
-<h4 id="1-The-cost-of-creating-wealth-differs-from-the-cost-of-seizing-control-of-it"><a href="#1-The-cost-of-creating-wealth-differs-from-the-cost-of-seizing-control-of-it" class="headerlink" title="1. The cost of creating wealth differs from the cost of seizing control of it"></a>1. The cost of creating wealth differs from the cost of seizing control of it</h4><p>This is a basic economic issue: accumulating savings may take someone years of work, but changing who controls those savings does not require repeating that work. Legitimate payment systems are designed to make transfers of property convenient, and criminals try to exploit the same transfer capabilities.</p>
-<p>Likewise, the value of a business’s operations comes from the long-term accumulation of people, equipment, knowledge, and customer relationships. Extortionists do not have to create that value. Disrupting a critical dependency may be enough to gain coercive power. The Canadian Centre for Cyber Security’s assessment explicitly identifies operational disruption, supply-chain delays, and recovery costs among the impacts of ransomware attacks, extending far beyond the ransom itself. <a target="_blank" href="https://www.cyber.gc.ca/en/guidance/ransomware-threat-outlook-2025-2027" rel="noopener">Canadian Centre for Cyber Security</a></p>
-<p>It follows that <strong>the more wealth depends on complex systems of cooperation, the less adequate it is to think of protecting wealth simply as “keeping the money safely hidden.”</strong></p>
-<h4 id="2-Society-depends-on-trust-while-verifying-information-always-has-a-cost"><a href="#2-Society-depends-on-trust-while-verifying-information-always-has-a-cost" class="headerlink" title="2. Society depends on trust, while verifying information always has a cost"></a>2. Society depends on trust, while verifying information always has a cost</h4><p>Imagine a society in which no one trusts anyone: every call from a customer, request from a colleague, and purchase requires an independent check of the other party’s identity, entire background, and every promise. Such a society would struggle to function.</p>
-<p>Cooperation in the real world therefore relies on limited information, reputation, and existing relationships. Fraudsters exploit the very mechanisms that make cooperation possible. INTERPOL describes social engineering fraud as exploiting people’s trust to obtain money or confidential information. <a target="_blank" href="https://www.interpol.int/News-and-Events/News/2026/Over-5-800-arrests-USD-293-million-intercepted-in-global-fraud-bust" rel="noopener">Interpol</a></p>
-<p>Attributing all victimization to “greed” or “stupidity” therefore misses important mechanisms. Some people seek financial returns; others simply trust an acquaintance, fulfill their work duties, look for a job, or try to protect their accounts. False information can exploit all of these ordinary needs. Official investigations have documented impersonation scams, romance scams, and deception involving fake job opportunities. <a target="_blank" href="https://www.psr.org.uk/our-work/app-scams/" rel="noopener">PSR</a></p>
-<p>This also shows why asking everyone to “stay vigilant at all times” cannot easily carry the entire burden of protection.</p>
-<h4 id="3-Criminal-operations-can-span-borders-while-governance-has-boundaries-and-uneven-capabilities"><a href="#3-Criminal-operations-can-span-borders-while-governance-has-boundaries-and-uneven-capabilities" class="headerlink" title="3. Criminal operations can span borders, while governance has boundaries and uneven capabilities"></a>3. Criminal operations can span borders, while governance has boundaries and uneven capabilities</h4><p>Imagine that the victim is in one jurisdiction, the perpetrator in another, the server in a third, and the money passes through several more. Even if every jurisdiction prohibits fraud, investigation, evidence collection, asset freezes, and arrests still require coordination among different agencies. Research on the economics of cybercrime treats this cross-border character as a major challenge for law enforcement and collective action. <a target="_blank" href="https://www.aeaweb.org/articles?id=10.1257/jep.23.3.3" rel="noopener">American Economic Association</a></p>
-<p>Some regions also face weak regulation, inconsistent enforcement, and mutually reinforcing money laundering, corruption, and illegal business activities. A 2026 analysis of scams by the United Nations Office on Drugs and Crime notes that criminal networks may exploit conditions such as digital industries expanding faster than regulation and inadequate oversight. <a target="_blank" href="https://www.unodc.org/southasia/en/frontpage/2026/September/south-asia_-trafficked-to-scam-an-emerging-threat.html" rel="noopener">UNODC</a></p>
-<p>We can infer that <strong>reducing crime opportunities within a society does not automatically protect its residents from criminals elsewhere.</strong> Security becomes a matter of both local governance and cross-border coordination.</p>
-<h4 id="4-Those-able-to-reduce-risk-do-not-necessarily-bear-the-greatest-losses"><a href="#4-Those-able-to-reduce-risk-do-not-necessarily-bear-the-greatest-losses" class="headerlink" title="4. Those able to reduce risk do not necessarily bear the greatest losses"></a>4. Those able to reduce risk do not necessarily bear the greatest losses</h4><p>This often goes deeper than a technical vulnerability alone.</p>
-<p>Suppose a platform must pay to strengthen identity checks, while users bear most of the fraud losses caused by inadequate checks. Viewed solely through short-term financial incentives, the platform may lack sufficient motivation to invest. Similarly, the parties that design payment systems, hold personal data, and process suspicious transactions may bear different costs and risks.</p>
-<p>This example is hypothetical, but the mechanism it illustrates has long been central to the economics of information security: <strong>security depends both on technical design and on whether participants’ interests are aligned.</strong> <a target="_blank" href="https://pubmed.ncbi.nlm.nih.gov/17068253/" rel="noopener">PubMed</a></p>
-<p>Asking “why does the system still have vulnerabilities?” therefore sometimes requires further questions: Who can fix them? Who pays? Who ultimately bears the losses? Not every failure can be blamed on a user clicking the wrong button once.</p>
-<h3 id="IV-Poverty-and-inequality-explain-part-of-the-picture-but-not-the-entire-group"><a href="#IV-Poverty-and-inequality-explain-part-of-the-picture-but-not-the-entire-group" class="headerlink" title="IV. Poverty and inequality explain part of the picture, but not the entire group"></a>IV. Poverty and inequality explain part of the picture, but not the entire group</h3><p>Poverty, debt, and a lack of legitimate opportunities offer clues as to why some people are more vulnerable to recruitment or deception. But even providing a basic standard of living does not logically guarantee that all profit-driven crime will disappear: as long as opportunities to acquire more wealth remain, some people may be willing to violate others’ rights. Conversely, hardship alone does not imply that a person will commit crimes.</p>
-<p>More importantly, <strong>organizers and frontline operators do not necessarily share the same motives and cannot automatically be treated as the same kind of participant.</strong></p>
-<p>Scam compounds do include people deceived by fake job offers, deprived of their freedom, subjected to violence, and forced to carry out fraud. INTERPOL explicitly distinguishes two groups of victims: those forced to commit the crimes, and those they contact and defraud. It also emphasizes that not everyone carrying out scams in these compounds is a victim of human trafficking. <a target="_blank" href="https://www.interpol.int/News-and-Events/News/2025/INTERPOL-releases-new-information-on-globalization-of-scam-centres" rel="noopener">Interpol</a></p>
-<p>The same criminal organization may therefore contain profit-seeking organizers, willing participants, and coerced operators. Describing them all as “poor people with nowhere else to turn” or as “born bad” obstructs both understanding and the accurate assignment of responsibility.</p>
-<p>Your question about “why this group persists over time” must therefore be distinguished from “why a particular person participates in crime”:</p>
-<p><strong>The former concerns opportunities, profits, supporting networks, and conditions of governance. The latter also involves personal choices, experiences, social relationships, and whether coercion is involved.</strong></p>
-<h3 id="V-The-existence-of-a-niche-does-not-make-it-indispensable-nor-does-it-imply-that-the-total-amount-of-crime-is-fixed"><a href="#V-The-existence-of-a-niche-does-not-make-it-indispensable-nor-does-it-imply-that-the-total-amount-of-crime-is-fixed" class="headerlink" title="V. The existence of a niche does not make it indispensable, nor does it imply that the total amount of crime is fixed"></a>V. The existence of a niche does not make it indispensable, nor does it imply that the total amount of crime is fixed</h3><p>The most tempting misconception in this metaphor is that, because society has wealth, it must require a certain number of predators; if one form of crime is suppressed, another must increase by the same amount.</p>
-<p>Existing research on crime displacement does not support this simple idea of “conservation.” Relevant reviews have found that preventive measures do not necessarily push crime elsewhere and can sometimes benefit neighboring areas as well. However, these studies do not cover every form of displacement comprehensively, so they cannot establish that cybercrime will not be displaced. <a target="_blank" href="https://link.springer.com/article/10.1007/s11292-014-9209-4" rel="noopener">Springer</a></p>
-<p>The analysis above lets us understand two situations more precisely.</p>
-<p>When criminal proceeds, money-transfer networks, and organizational capacity remain largely intact, removing only some operators may still leave new participants attracted or forced into the activity. <strong>This helps explain how an organization might “replace its people and carry on,” but it does not mean it can never be eliminated.</strong></p>
-<p>Conversely, reducing the proceeds that can be realized after success, increasing the likelihood of identification and accountability, reducing vulnerabilities in critical systems, and assigning appropriate responsibility to institutions capable of prevention can all change the conditions that sustain these activities. For example, the UK payments regulator requires sending and receiving payment service providers to share liability for reimbursing qualifying scam losses. One of its explicit aims is to strengthen both sides’ incentives to prevent fraud. <a target="_blank" href="https://www.psr.org.uk/our-work/app-scams/" rel="noopener">PSR</a></p>
-<p>We also need to distinguish the <strong>certainty</strong> of accountability from the <strong>severity</strong> of punishment. The US National Institute of Justice’s summary of deterrence research concludes that the likelihood of being caught generally has a stronger deterrent effect than simply making penalties harsher. This general finding is useful, but it cannot be treated as a precise estimate of effects across all forms of cross-border cybercrime. <a target="_blank" href="https://nij.ojp.gov/topics/articles/five-things-about-deterrence" rel="noopener">National Institute of Justice</a></p>
-<p>Finally, returning to the previous question, we should distinguish “having social effects” from “being socially necessary.” Crime may stimulate improvements in security technology and institutions, but that does not mean society needs it. Repairing damage creates jobs, but that does not establish that the damage itself increased social welfare.</p>
-<p><strong>My final assessment, then, is that these organizations do occupy predatory positions closely resembling those of traditional thieves and bandits, while digitization has also changed their targets, scale, and forms of organization. The deeper condition behind their persistence is that violating others’ rights can still yield realizable private returns, while protection, accountability, and the allocation of losses fail to constrain those returns sufficiently.</strong></p>
+        <section class="night-comments" aria-labelledby="night-comments-title">
+          <h2 id="night-comments-title">Comments</h2>
+          <div class="giscus"></div>
+          <script
+            src="https://giscus.app/client.js"
+            data-repo="acyclic0725/acyclic0725.github.io"
+            data-repo-id="R_kgDOLQEIDA"
+            data-category="Announcements"
+            data-category-id="DIC_kwDOLQEIDM4DFwDj"
+            data-mapping="pathname"
+            data-strict="1"
+            data-reactions-enabled="1"
+            data-emit-metadata="0"
+            data-input-position="top"
+            data-theme="dark"
+            data-lang="en"
+            data-loading="lazy"
+            crossorigin="anonymous"
+            async
+          ></script>
+        </section>
+      </div>
+    </main>
 
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-
-        
-
+    <footer class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+          &copy;
+          <span itemprop="copyrightYear">2026</span>
+          <span class="with-love">
+            <i class="fa fa-paper-plane"></i>
+          </span>
+          <span class="author" itemprop="copyrightHolder">Night Flighter</span>
+        </div>
+        <div class="powered-by">
+          Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> &
+          <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a>
+        </div>
+        <div class="night-footer-license">
+          <a
+            target="_blank"
+            href="https://creativecommons.org/licenses/by-nc/4.0/"
+            rel="license noopener"
+          >
+            <img
+              src="/images/cc-by-nc.png"
+              alt="Creative Commons CC BY-NC 4.0"
+              width="88"
+              height="31"
+              loading="lazy"
+            />
+            <span
+              >Unless otherwise noted, content on this site is licensed under Creative Commons
+              Attribution-NonCommercial 4.0 International (CC BY-NC 4.0).</span
+            >
+          </a>
+        </div>
+      </div>
     </footer>
-  </article>
-</div>
 
-
-
-
-
-
-    
-<section class="night-comments" aria-labelledby="night-comments-title">
-  <h2 id="night-comments-title">Comments</h2>
-  <div class="giscus"></div>
-  <script
-    src="https://giscus.app/client.js"
-    data-repo="acyclic0725/acyclic0725.github.io"
-    data-repo-id="R_kgDOLQEIDA"
-    data-category="Announcements"
-    data-category-id="DIC_kwDOLQEIDM4DFwDj"
-    data-mapping="pathname"
-    data-strict="1"
-    data-reactions-enabled="1"
-    data-emit-metadata="0"
-    data-input-position="top"
-    data-theme="dark"
-    data-lang="en"
-    data-loading="lazy"
-    crossorigin="anonymous"
-    async>
-  </script>
-</section>
-
-</div>
-  </main>
-
-  <footer class="footer">
-    <div class="footer-inner">
-
-  <div class="copyright">
-    &copy; 
-    <span itemprop="copyrightYear">2026</span>
-    <span class="with-love">
-      <i class="fa fa-paper-plane"></i>
-    </span>
-    <span class="author" itemprop="copyrightHolder">Night Flighter</span>
-  </div>
-  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a>
-  </div><div class="night-footer-license">
-  <a target="_blank" href="https://creativecommons.org/licenses/by-nc/4.0/" rel="license noopener">
-    <img src="/images/cc-by-nc.png" alt="Creative Commons CC BY-NC 4.0" width="88" height="31" loading="lazy">
-    <span>Unless otherwise noted, content on this site is licensed under Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0).</span>
-  </a>
-</div>
-
-
+    <div class="back-to-top" role="button" aria-label="Back to top">
+      <i class="fa fa-arrow-up fa-lg"></i>
+      <span>0%</span>
     </div>
-  </footer>
 
-  
-  <div class="back-to-top" role="button" aria-label="Back to top">
-    <i class="fa fa-arrow-up fa-lg"></i>
-    <span>0%</span>
-  </div>
-
-<noscript>
-  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
-</noscript>
-
-</body>
+    <noscript>
+      <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+    </noscript>
+  </body>
 </html>
