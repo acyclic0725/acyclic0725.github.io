@@ -1221,7 +1221,7 @@ pre code {
   vertical-align: middle;
 }
 .links-of-author a::before {
-  background: #22ff0d;
+  background: #b45e54;
   display: inline-block;
   margin-right: 3px;
   transform: translateY(-2px);
@@ -2637,7 +2637,8 @@ header.header {
   margin-bottom: 0;
   padding-bottom: 58px;
 }
-.index.posts-expand .post-block {
+.index.posts-expand .post-block,
+.page.posts-expand .post-block {
   border-bottom: 0;
 }
 .index.posts-expand .post-block:last-of-type,
@@ -2658,8 +2659,9 @@ header.header {
 .post.posts-expand .post-title {
   text-align: center;
 }
-.index .post-title {
-  font-size: clamp(1.65rem, 3.5vw, 2.15rem);
+.index.posts-expand .post-title,
+.post.posts-expand .post-title {
+  font-size: 26px;
 }
 .posts-expand .post-title-link::before {
   background: var(--night-accent);
@@ -2776,6 +2778,59 @@ header.header {
 .posts-collapse .post-meta-container {
   color: var(--night-faint);
 }
+.pagination {
+  align-items: center;
+  border: 0;
+  display: flex;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  font-family: var(--night-sans);
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+  gap: 8px;
+  justify-content: center;
+  margin: 58px 0 0;
+}
+.pagination .prev,
+.pagination .next,
+.pagination .page-number,
+.pagination .space {
+  align-items: center;
+  border: 0;
+  border-radius: 999px;
+  box-sizing: border-box;
+  color: var(--night-muted);
+  display: inline-flex;
+  height: 40px;
+  justify-content: center;
+  line-height: 1;
+  margin: 0;
+  min-width: 40px;
+  padding: 0 12px;
+  text-decoration: none;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+.pagination .prev,
+.pagination .next {
+  background: var(--night-paper-raised);
+}
+.pagination .page-number.current,
+.pagination a:hover,
+.pagination a:focus-visible {
+  background: var(--night-accent-soft);
+  color: var(--night-accent);
+}
+.pagination a:focus-visible {
+  outline: 2px solid var(--night-accent);
+  outline-offset: 3px;
+}
+.pagination .space {
+  color: var(--night-faint);
+  min-width: 20px;
+  padding: 0;
+}
 .night-comments {
   margin-top: 58px;
   padding-top: 42px;
@@ -2860,6 +2915,10 @@ header.header {
   .site-title {
     font-size: 20px;
   }
+  .index.posts-expand .post-title,
+  .post.posts-expand .post-title {
+    font-size: 18px;
+  }
   .night-nav-links {
     gap: 11px;
   }
@@ -2882,6 +2941,16 @@ header.header {
   }
   .post-body {
     font-size: 16.5px;
+  }
+  .pagination {
+    gap: 6px;
+    margin-top: 42px;
+  }
+  .pagination .prev,
+  .pagination .next,
+  .pagination .page-number {
+    height: 44px;
+    min-width: 44px;
   }
 }
 @media (max-width: 480px) {
