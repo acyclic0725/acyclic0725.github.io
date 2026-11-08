@@ -1221,7 +1221,7 @@ pre code {
   vertical-align: middle;
 }
 .links-of-author a::before {
-  background: #b45e54;
+  background: #ff8;
   display: inline-block;
   margin-right: 3px;
   transform: translateY(-2px);
@@ -2651,17 +2651,14 @@ header.header {
 }
 .posts-expand .post-title {
   font-family: var(--night-sans);
-  font-size: clamp(1.9rem, 4.8vw, 2.15rem);
+  font-size: 26px;
   font-weight: 580;
   letter-spacing: -0.025em;
   line-height: 1.2;
 }
-.post.posts-expand .post-title {
+.post.posts-expand .post-title,
+.page.posts-expand .post-title {
   text-align: center;
-}
-.index.posts-expand .post-title,
-.post.posts-expand .post-title {
-  font-size: 26px;
 }
 .posts-expand .post-title-link::before {
   background: var(--night-accent);
@@ -2915,8 +2912,7 @@ header.header {
   .site-title {
     font-size: 20px;
   }
-  .index.posts-expand .post-title,
-  .post.posts-expand .post-title {
+  .posts-expand .post-title {
     font-size: 18px;
   }
   .night-nav-links {
